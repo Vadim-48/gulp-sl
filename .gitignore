@@ -1,0 +1,15 @@
+# Ігноруємо залежності
+node_modules/
+
+# Ігноруємо збірку gh-pages
+.publish/
+
+# Тимчасові файли
+.DS_Store
+npm-debug.log*
+
+# VS Code
+.vscode/
+
+# Інші тимчасові або системні файли
+*.log
