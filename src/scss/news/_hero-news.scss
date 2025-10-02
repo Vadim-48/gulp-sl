@@ -1,0 +1,108 @@
+.news__hero{
+    padding-top: 14.7%;
+}
+
+.hero {
+
+    &__wrapper {
+        margin: 0 10% 0 10%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // gap: 35%;
+    }
+    &__btn{
+        display: none;
+        align-items: center;
+        gap: 20px;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+
+        width: 128px;
+        height: 29px;
+        color: #080808;
+        border: 1px solid #c4c4c4;
+        border-radius: 88px;
+    }
+
+    &__title {
+        color: #080808;
+    }
+
+    &__list {
+        font-weight: 600;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: #828282;
+        display: flex;
+        gap: 9.5%;
+        margin-top: 7px;
+        width: 340px;
+    }
+    &__list-item{
+        padding-bottom: 2px;
+        &.active{
+            color: #080808;
+            border-bottom: 1px solid  rgb(58, 62, 75, 0.8);
+        }
+    }
+    &__list-link{
+        // white-space: nowrap;
+    }
+}
+@media (max-width: 1100px){
+    .news__hero{
+        padding-top: 15.5%;
+    }
+    .hero {
+
+    &__wrapper {
+        flex-direction: column;
+        margin: 0 0 0 11.3%;
+        align-items: start;
+    }
+    &__list {
+        margin-top: 28px;
+        gap: 7.5%;
+    }
+}
+
+}
+@media (max-width: 850px){
+    .news__hero{
+        padding-top: 18.5%;
+    }
+    .hero {
+    &__list {
+        margin-top: 28px;
+        gap: 8.3%;
+    }
+}
+}
+@media (max-width: 650px){
+    .news__hero{
+        padding-top: 32%;
+    }
+    .hero {
+
+        &__wrapper {
+            margin: 0;
+            // display: flex;
+            // align-items: center;
+            // justify-content: space-between;
+            // gap: 35%;
+        }
+        &__btn{
+            display: flex;
+            margin-top: 20px;
+        }
+        &__list {
+            display: none;
+        }
+    }
+}
+@media (max-width: 450px){
+
+}

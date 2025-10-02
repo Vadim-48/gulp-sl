@@ -1,0 +1,228 @@
+.request {
+    position: relative;
+    background: #080808;
+    padding: 12.5% 8.5% 12.5% 9.1%;
+
+    &__galery {
+        position: absolute;
+        display: flex;
+        left: 24.4%;
+        left: 48.8%;
+        transform: translateX(-50%);
+        top: 41%;
+    }
+
+    &__photo {
+        display: block;
+        width: 211px;
+        height: 273px;
+        transition: all 0.3s ease;
+        
+        & img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        &_10{
+            z-index: 3;
+            transform: rotate(-6deg);
+            &:hover{
+                z-index: 15;
+                transform: rotate(0deg);
+            }
+        }
+        &_9{
+            margin-left: -159px;
+            z-index: 4;
+            margin-top: -8px;
+            &:hover{
+                z-index: 15;
+                transform: rotate(0deg);
+            }
+        }
+        &_8{
+            margin-left: -159px;
+            z-index: 5;
+            margin-top: -23px;
+            transform: rotate(-6deg);
+            &:hover{
+                z-index: 15;
+                transform: rotate(0deg);
+            }
+        }
+        &_7{
+            margin-left: -155px;
+            z-index: 6;
+            margin-top: -43px;
+            transform: rotate(-2deg);
+            &:hover{
+                z-index: 15;
+                transform: rotate(0deg);
+            }
+        }
+        &_6{
+            margin-left: -147px;
+            z-index: 7;
+            margin-top: -75px;
+            transform: rotate(-11deg);
+            &:hover{
+                z-index: 15;
+                transform: rotate(0deg);
+            }
+        }
+        &_5{
+            margin-left: -172px;
+            z-index: 8;
+            margin-top: -91px;
+            transform: rotate(-6deg);
+            &:hover{
+                z-index: 15;
+                transform: rotate(0deg);
+            }
+        }
+        &_4{
+            margin-left: -156px;
+            z-index: 9;
+            margin-top: -100px;
+            &:hover{
+                z-index: 15;
+                transform: rotate(0deg);
+            }
+        }
+        &_3{
+            margin-left: -157px;
+            z-index: 10;
+            margin-top: -117px;
+            transform: rotate(-6deg);
+            &:hover{
+                z-index: 15;
+                transform: rotate(0deg);
+            }
+        }
+        &_2{
+            margin-left: -156px;
+            z-index: 11;
+            margin-top: -139px;
+            transform: rotate(-2deg);
+             &:hover{
+                z-index: 15;
+                transform: rotate(0deg);
+            }
+        }
+        &_1{
+            margin-left: -148px;
+            z-index: 12;
+            margin-top: -167px;
+            transform: rotate(-11deg);
+            &:hover{
+                z-index: 15;
+                transform: rotate(0deg);
+            }
+        }
+    }
+
+    &__wrap {
+        position: relative;
+        z-index: 15;
+        pointer-events: none;
+
+    }
+    &__block-name{
+        left: -19%;
+        top: 23.5%;
+    }
+
+    &__title {
+        line-height: 1.42;
+        width: 40%;
+    }
+
+    &__text {
+        width: 33%;
+        margin: 27px 0 0 auto;
+    }
+
+    &__btn {
+        background: #fff;
+        color: #080808;
+        margin: 42px 15.7% 0 auto;
+    }
+}
+@media (max-width: 1100px){
+    .request {
+        padding: 12.5% 0 14% 0;
+        &__galery{
+            display: none;
+        }
+        &__wrap {
+            text-align: center;
+        }
+        &__block-name{
+            left: -7.8%;
+            top: 22%;
+        }
+        &__title {
+            width: 40%;
+            margin: 10px auto 0 auto;
+        }
+    
+        &__text {
+            width: 50%;
+            margin: 25px auto 0 auto;
+        }
+    
+        &__btn {
+            margin: 7.2% auto 0 auto;
+            height: 42px;
+        }
+    }
+
+}
+@media (max-width: 850px){
+    .request {
+        padding-bottom: 16.4%;
+        &__block-name{
+            left: -10.8%;
+            top: 23%;
+        }
+        &__title {
+            width: 54%;
+            margin-top: 24px;
+        }
+    
+        &__text {
+            width: 68%;
+            margin-top: 26px;
+        }
+        &__btn{
+            margin: 7.7% auto 0 auto;
+        }
+    }
+
+
+}
+@media (max-width: 650px){
+
+}
+@media (max-width: 450px){
+    .request {
+        padding-bottom: 25.5%;
+        &__wrap {
+            text-align: start;
+        }
+        &__title {
+            width: 90%;
+            margin: 50px 0 0 0;
+            line-height: 1.21;
+        }
+    
+        &__text {
+            width: 100%;
+            margin-top: 23px;
+        }
+        &__btn {
+            margin: 11.5% 0 0 2px;
+        }
+    }
+}
+

@@ -1,0 +1,33 @@
+.block-name{
+    font-size: 8px;
+    line-height: 171%;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #828282;
+    transform: rotate(-90deg);
+    opacity: 0.32;
+    // width: 110px;
+    height: inherit;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    position: absolute;
+    // left: 13px;
+    // top: 4.9%;
+    &::before{
+        content: '';
+        display: block;
+        height: 1px;
+        width: 57px;
+        margin-right: 9px;
+        background: rgb(130, 130, 130, 0.16);
+    }
+}
+
+@media (max-width: 650px){
+    .block-name{
+        display: none;
+    }
+}

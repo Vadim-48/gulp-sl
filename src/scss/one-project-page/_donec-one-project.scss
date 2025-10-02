@@ -1,0 +1,104 @@
+.one-project{
+    &__donec {
+        padding: 9.7% 0 9.8% 0;
+    }
+}
+.donec {
+    color: #080808;
+
+    &__wrapper{
+        margin-left: 10%;
+    }
+    &__title {
+        width: 35%;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 137%;
+    }
+
+    &__text {
+        width: 61%;
+        margin-top: 17px;
+    }
+
+    &__btn {
+        margin-top: 45px;
+    }
+}
+
+@media (max-width: 1100px){
+    .one-project{
+        &__donec {
+            padding: 11.7% 0 12.2% 0;
+        }
+    }
+    .donec {
+    
+        &__wrapper{
+            margin-left: 11.3%;
+        }
+        &__title {
+            width: 50%;
+        }
+    
+        &__text {
+            width: 74%;
+            margin-top: 14px;
+        }
+    }
+
+}
+@media (max-width: 850px){
+    .one-project{
+        &__donec {
+            padding: 13.7% 0 13.3% 0;
+        }
+    }
+    .donec {
+    
+        &__wrapper{
+            margin-left: 11.3%;
+        }
+        &__title {
+            width: 70%;
+        }
+    
+        &__text {
+            width: 87%;
+            margin-top: 20px;
+        }
+    
+        &__btn {
+            margin-top: 47px;
+        }
+    }
+
+}
+@media (max-width: 650px){
+    .one-project{
+        &__donec {
+            padding: 21.7% 0 21.3% 0;
+        }
+    }
+    .donec {
+    
+        &__wrapper{
+            margin-left: 0;
+        }
+        &__title {
+            width: 100%;
+        }
+    
+        &__text {
+            width: 100%;
+        }
+    
+        &__btn {
+            margin-top: 46px;
+        }
+    }
+
+}
+@media (max-width: 450px){
+
+}

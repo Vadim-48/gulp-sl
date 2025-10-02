@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-one-project.css">
+    <title>SL</title>
+</head>
+<body>
+    <header class="header" id="header"> 
+        <div class="container">
+            @@include('html/header.html',{})
+        </div>
+        @@include('html/burger.html',{})
+    </header>
+    <main>
+        <section class="one-project__hero hero">
+            @@include('html/one-project-page/hero-one-project.html',{})
+        </section>
+        <section class="one-project__donec donec">
+            <div class="container">
+                @@include('html/one-project-page/donec-one-project.html',{})
+            </div>
+        </section>
+        <section class="one-project__galery galery">
+            <div class="container">
+                @@include('html/one-project-page/galery-one-project.html',{})
+            </div>
+        </section>
+        <section class="one-project__request request">
+            <div class="container">
+                @@include('html/main-page/request.html',{})
+            </div>
+        </section>
+        <section class="one-project__proportions proportions">
+            <div class="container">
+                @@include('html/one-project-page/proportions-one-project.html',{})
+            </div>
+            <div class="proportions__bg_white"></div>
+        </section>
+    </main>
+    <script src="js/app-one-project.js" defer></script>
+</body>
+</html>

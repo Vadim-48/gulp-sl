@@ -1,0 +1,49 @@
+.header {    
+    color: black;
+    &.scrolled {
+        color: #fff;
+        & .btn{
+            color: #fff;
+            border: 1px solid rgba(253, 253, 253, 0.32);
+        }
+        & .burger{
+            color: #fff;
+            &__btn{
+                & span{
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
+.header__btn{
+    border-color: rgba(0, 0, 0, 0.32);
+    color: #080808;
+    transition: all 0.3s ease;
+}
+
+.burger{
+    color: #000;
+    &__btn span{
+        background-color: #000;
+    }
+}
+
+.lock{
+    .header{
+        color: #fff;
+        &__btn{
+            border-color: #fff;
+            color: #fff;
+        }
+    }
+    .burger{
+        color: #fff;
+        &__btn span{
+            background-color: #fff;
+        }
+    }
+}
+
+
+

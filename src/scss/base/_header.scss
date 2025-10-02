@@ -1,0 +1,126 @@
+.header {
+    // position: sticky;
+    position: fixed;
+    top: 0;
+    transition: all 0.3s ease;
+    z-index: 40;
+    width: 100%;
+    &.scrolled {
+        background-color: #000;
+        // color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        padding-bottom: 24px;
+        // width: 100%;
+        // & .btn{
+        //     color: #fff;
+        //     border: 1px solid rgba(253, 253, 253, 0.32);
+        // }
+    }
+    
+    &__wrapper{
+        padding-top: 25px;
+        font-weight: 600;
+        font-size: 11px;
+        letter-spacing: 0.06em;         
+    }
+
+    &__lang {
+        justify-self: center;
+    }
+
+    &__btn {
+        justify-self: end;
+    }
+}
+// .header .scrolled {
+//     background-color: #a73c3c;
+//     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+//   }
+  
+.nav {
+    display: grid;
+    grid-template-columns: 2fr 12fr 2fr 3fr;
+    align-items: center;
+
+    &__menu {
+        display: flex;
+        margin-left: 60px;
+        margin-left: 7.5%;
+        gap: 48px;
+    }
+}
+.logo {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.3em; 
+}
+.menu {
+    &__link {
+    }
+}
+
+@media (max-width: 1100px){
+    .header{
+        &__btn{
+        width: 158px;
+        height: 42px;
+        // margin-right: -4px;
+        }
+        &__lang{
+            margin-left: 23%;
+            justify-self: start;
+        }
+    }
+
+}
+@media (max-width: 850px){
+    .header {
+        &__lang{
+            margin: 4px 0 0 -10px;
+        }
+        &__btn{
+            margin-right: 0;
+        }
+    }
+}
+@media (max-width: 650px){
+    .header{
+        &__btn{
+            display: none;
+        }
+    }
+    .nav {
+        grid-template-columns: 2fr 12fr 3fr;
+    }
+}
+@media (max-width: 450px){
+    .header {
+
+        &__wrapper{
+            padding-top: 16px;      
+        }
+        &__lang{
+            // grid-column: 2 / 3;
+            // grid-row: 1 / 2;
+            margin: 0 0 0 auto;
+            padding-right: 20px;
+            order: 2;
+            align-self: end;
+
+        }
+    }
+    .item__btn{
+        width: 158px;
+        height: 42px;
+        margin: -4px 6px 0 0;
+    }
+    .nav {
+        grid-template-columns: 2fr 10fr  4fr;
+        & .burger{
+            // grid-column: 3 / 4;
+            order: 3;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css">
+    <title>SL</title>
+</head>
+<body>
+    <header class="header" id="header"> 
+        <div class="container">
+            @@include('html/header.html',{})
+        </div>
+        @@include('html/burger.html',{})
+    </header>
+    <main>
+        <section class="hero pos-relative">
+            @@include('html/main-page/hero-swiper.html',{})
+            @@include('html/main-page/hero-content.html',{})
+            <div class="container">
+                @@include('html/main-page/main-footer.html',{})
+            </div>
+        </section>
+        <section class="philosophy">
+            <div class="container">
+                @@include('html/main-page/philosophy.html',{})
+            </div>
+        </section>
+        <section class="our-project">
+            <div class="container">
+                @@include('html/main-page/our-project.html',{})
+            </div>
+        </section>
+        <section class="request">
+            <div class="container">
+                @@include('html/main-page/request.html',{})
+            </div>
+        </section>
+        <section class="lorem">
+            <div class="container">
+                @@include('html/main-page/lorem.html',{})
+            </div>
+        </section>
+        <section class="drop">
+            <div class="container">
+                @@include('html/main-page/drop.html',{})
+            </div>
+        </section>
+    </main>
+    <footer class="footer" id="footer">
+        <div class="container">
+            @@include('html/footer.html',{})
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+
+.philosophy {
+    color: #080808;
+    margin-top: 224px;
+    position: relative;
+    &__wrap{
+        max-width: 39%;
+        margin-left: 10.2%;
+        // padding-left: 10%;
+        position: relative;
+    }
+    &__block-name{
+        left: -35.5%;
+        top: 50px;  
+    }
+
+    &__img-right {
+        position: absolute;
+        right: 0;
+        top: -8.2%;
+        width: 36%;
+        max-width: 513px;
+        & img{
+            width: 100%;
+        }
+    }
+
+    &__text {
+        // margin-top: 14px;
+        margin-top: 12px;
+        &:nth-of-type(2){
+            margin-top: 32px;
+        }
+    }
+    &__btn-more{
+        color: #080808;
+        margin-top: 11.4%;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20%;
+    }
+
+    &__row-photo {
+        position: relative;
+        width: 24.2%;
+        margin-left: 10.2%;
+    }
+    &__row-img-top{
+        display: block;
+        position: absolute;
+        left: 74%;
+        top: -31.5%;
+        width: 88%;
+        & img{
+            width: 100%;
+        }
+    }
+    &__row-img-static{
+        display: block;
+        width: 100%;
+        & img{
+            width: 100%;
+        }
+    }
+    &__row-right{
+        position: relative;
+        width: 32%;
+        display: flex;
+        gap: 30px;
+        margin: 11.5% 12% 0 0;
+        
+        // margin: 11.5% 0 0 0;
+        // width: 44%;
+        // padding-right: 12%;
+    }
+    &__row-img-text{
+        width: 18px;
+        align-self: start;
+        margin-top: 10px;
+    }
+    &__row-text{
+        font-size: 20px;
+    }
+    &__row-block-name{
+        right: -54%;
+        top: 31%;
+    }
+}
+
+@media (max-width: 1100px){
+    .philosophy {
+        margin-top: 183px;
+        &__img-right {
+            top: -7.2%;
+            width: 34%;
+            aspect-ratio: 349 / 439;
+            & img{
+                height: 100%;
+            }
+
+        }
+        &__wrap{
+            max-width: 48%;
+            margin-left: 11.3%;
+        }
+        &__block-name{
+            left: -34%;
+            top: 53px;
+        }
+        &__text {
+            &:nth-of-type(2){
+                margin-top: 17px;
+            }
+        }
+        &__btn-more{
+            margin-top: 8.8%;
+        }
+        &__row{
+            margin-top: 21.2%;
+        }
+
+        &__row-photo {
+            width: 21%;
+            margin-left: 11.5%;
+        }
+
+        &__row-img-top{
+            left: 80.3%;
+            top: -40%;
+            width: 100%;
+            & img{
+                width: 100%;
+            }
+        }
+        &__row-right{
+            width: 37%;
+            display: flex;
+            gap: 18px;
+            margin: 6% 11.5% 0 0;
+    
+        }
+        &__row-img-text{
+            width: 11px;
+        }
+        &__row-text{
+            font-size: 16px;
+        }
+         
+    }
+}
+@media (max-width: 850px){
+    .philosophy {
+        margin-top: 107px;
+        &__img-right {
+            display: none;
+        }
+        &__wrap{
+            max-width: 81%;
+        }
+        &__block-name{
+            left: -22.5%;
+            top: 53px;
+        }
+        &__btn-more{
+            margin-top: 6.1%;
+        }
+        &__row {
+            margin-top: 30.7%;
+            flex-direction: column;
+        }
+        &__row-photo {
+            width: 22.7%;  
+        }
+        &__row-img-top{
+            width: 250%;
+            left: 91%;
+            top: -74%;
+        }
+        &__row-right{
+            align-self: flex-end;
+            margin: 3% 11% 0 0;
+            width: 48%;
+        }
+        &__row-block-name {
+            right: -46%;
+            top: 65%;
+        }
+    }
+
+}
+// @media (max-width: 650px){
+
+// }
+@media (max-width: 450px){
+    .philosophy {
+        margin-top: 84px;
+        &__text:first-of-type {
+            margin-top: 15px;
+        }
+        &__wrap{
+            max-width: 100%;
+            margin-left: 0;
+        }
+        &__btn-more{
+            margin-top: 9.8%;
+        }
+        &__row {
+            margin-top: 60.6%;
+        }
+        &__row-photo {
+            width: 40.2%;  
+            margin-left: 0;
+        }
+        &__row-img-top{
+            width: 198%;
+            left: 51%;
+            top: -71%;
+        }
+        &__row-right{
+            align-self: center;
+            margin: 22.8% 0 0 0%;
+            width: 100%;
+            gap: 32px
+        }
+    }
+}
+
+

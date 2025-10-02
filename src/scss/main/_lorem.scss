@@ -1,0 +1,319 @@
+.lorem {
+    position: relative;
+    color: #080808;
+    overflow: hidden;
+    &__galery {
+        
+    }
+
+    &__photo {
+        position: absolute;
+        z-index: 3;
+        & img{
+            width: 100%;
+        }
+
+        &_1 {
+            // top: -10%;
+            bottom: 70.2%;
+            right: 7.5%;
+            width: 19%;
+            max-width: 271px;
+        }
+
+        &_2 {
+            bottom: 89.4%;
+            right: 22%;
+            width: 24.2%;
+            max-width: 348px;
+        }
+
+        &_3 {
+            bottom: 70%;
+            left: 10%;
+            width: 19%;
+            max-width: 271px;
+        }
+
+        &_4 {
+            bottom: 49%;
+            left: -9.5%;
+            width: 24%;
+            max-width: 348px;
+        }
+
+        &_5 {
+            top: 89%;
+            left: -9%;
+            width: 19%;
+            max-width: 271px;
+        }
+
+        &_6 {
+            top: 69.4%;
+            left: 19.4%;
+            width: 19.8%;
+            max-width: 285px;
+        }
+
+        &_7 {
+            top: 88.4%;
+            right: 31.3%;
+            width: 15%;
+            max-width: 214px;
+        }
+
+        &_8 {
+            bottom: 13%;
+            right: -6%;
+            width: 28%;
+            max-width: 402px;
+        }
+    }
+
+    &__wrap {
+        margin: 26.8% auto 25.7% auto;
+        z-index: 5;
+        position: relative;
+
+        text-align: center;
+        width: 33%;
+        // margin: 26.8% auto 0 auto;
+        // margin-left: 48%;
+        // transform: translate(-50%);
+    }
+
+    &__title {
+        font-size: 56px;
+    }
+
+    &__text {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1.71;
+        margin-top: 22px;
+    }
+}
+
+.img{
+    &_271{
+        width: 271px;
+        height: 180px;  
+    }
+    &_348{
+        width: 348px;
+        height: 231px; 
+    }
+    &_271{
+        width: 271px;
+        height: 180px;  
+    }
+}
+
+@media (max-width: 1100px){
+    .lorem{
+        &__wrap {
+            margin: 37.3% auto 36% auto;
+            width: 45%;
+        }
+        &__title{
+            font-size: 48px;
+        }
+        &__text{
+            margin-top: 25px;
+            
+        }
+
+        &__photo {
+    
+            &_1 {
+                bottom: 66.3%;
+                right: 9.4%;
+                width: 22.4%;
+            }
+    
+            &_2 {
+                bottom: 82.8%;
+                right: 26.5%;
+                width: 29%;
+            }
+    
+            &_3 {
+                bottom: 66.2%;
+                left: 0.8%;
+                width: 22.5%;
+                // display: none;
+            }
+    
+            &_4 {
+                bottom: 47.8%;
+                left: -23%;
+                width: 29%;
+            }
+    
+            &_5 {
+                display: none;
+            }
+    
+            &_6 {
+                top: 68.2%;
+                left: 6%;
+                width: 23.8%;
+            }
+    
+            &_7 {
+                top: 84.7%;
+                right: 29.5%;
+                width: 18%;
+            }
+    
+            &_8 {
+                bottom: 16%;
+                right: -15.2%;
+                width: 33.4%;
+            }
+        }
+    }
+}
+@media (max-width: 850px){
+    .lorem{
+        &__wrap {
+            margin: 54% auto 52% auto;
+            width: 65%;
+        }
+        &__title{
+            font-size: 44px;
+        }
+        &__text{
+            margin-top: 27px;
+            
+        }
+
+        &__photo {
+    
+            &_1 {
+                bottom: 66.6%;
+                right: -9.9%;
+                width: 28.4%;
+            }
+    
+            &_2 {
+                bottom: 81.5%;
+                right: 11.4%;
+                width: 36%;
+            }
+    
+            &_3 {
+                bottom: 71%;
+                left: 5%;
+                width: 25.4%;
+            }
+    
+            &_4 {
+                bottom: 56%;
+                left: -21%;
+                width: 32.4%;
+            }
+    
+            &_6 {
+                top: 74.3%;
+                left: 5.9%;
+                width: 29.4%;
+            }
+    
+            &_7 {
+                top: 89%;
+                right: 20.7%;
+                width: 22%;
+            }
+    
+            &_8 {
+                bottom: 15.5%;
+                right: -32.5%;
+                width: 41%;
+            }
+        }
+    }
+
+}
+@media (max-width: 650px){
+
+}
+@media (max-width: 450px){
+    .lorem{
+        &__wrap {
+            margin: 90% auto 78% auto;
+            width: 100%;
+        }
+        &__title{
+            font-size: 32px;
+        }
+        &__text{
+            margin-top: 18px;
+            
+        }
+
+        &__photo {
+    
+            &_1 {
+                display: none;
+            }
+    
+            &_2 {
+                bottom: 66.3%;
+                right: -24.3%;
+                width: 46%;
+            }
+    
+            &_3 {
+                bottom: 82%;
+                left: 13.6%;
+                width: 33%;
+            }
+    
+            &_4 {
+                bottom: -2%;
+                left: -14%;
+                bottom: 70%;
+                left: -24%;
+                width: 41.4%;
+                
+            }
+    
+            &_5 {
+                display: block;
+                // top: 68%;
+                // left: 5.8%;
+                // width: 28%;
+                z-index: -14;
+                top: 71.3%;
+                left: -26.1%;
+                width: 49.4%;
+            }
+    
+            &_6 {
+                // top: 71.3%;
+                // left: -26.1%;
+                // width: 49.4%;
+
+                top: 68%;
+                left: 5.8%;
+                width: 28%;
+                z-index: -14;
+            }
+    
+            &_7 {
+                top: 91%;
+                right: 11%;
+                width: 28%;
+            }
+    
+            &_8 {
+                bottom: 18%;
+                right: -37.5%;
+                width: 53%;
+            }
+        }
+    }
+
+}

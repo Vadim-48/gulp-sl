@@ -1,0 +1,27 @@
+.request-projects{
+    background: #fafafa;
+    color: #080808;
+    & .request__btn{
+        background: #fafafa;
+        border: 1px solid #080808;
+    }
+}
+
+@media (max-width: 1100px){
+    .pageRpoject-request{
+        padding: 10.5% 0 12.6% 0;
+    }
+}
+@media (max-width: 850px){
+    .pageRpoject-request{
+        padding-bottom: 13.7%;
+    }
+}
+@media (max-width: 650px){
+    .pageRpoject-request{
+        padding: 11.5% 0 14% 0;
+    }
+}
+@media (max-width: 450px){
+
+}

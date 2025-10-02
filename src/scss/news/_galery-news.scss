@@ -1,0 +1,236 @@
+.news__galery{
+    margin-top: 8.8%;
+}
+
+.galery {
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 7px;
+    }
+    &__block-long{
+        display: flex;
+        grid-column: span 2;
+        background: #f2f2f2;
+    }
+    &__text-block {
+        width: 50%;
+        color: #080808;
+        display: flex;
+    }
+    &__text-block-wrapper{
+        margin-left: 8.5%;
+        margin-bottom: 0;
+        margin-top: auto;
+    }
+
+    &__title {
+        font-size: 28px;
+        width: 388px;
+        line-height: 122%;
+    }
+
+    &__text {
+        width: 434px;
+        margin-top: 22px;
+    }
+
+    &__btn {
+        margin-top: 60px;
+        margin-top: 13.6%;
+        margin-bottom: 58px;
+    }
+
+    &__block {
+        width: 50%;
+    }
+
+    &__photo {
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__img-block {
+        position: relative;
+    }
+
+    &__img-title {
+        position: absolute;
+        z-index: 2;
+        bottom: 9%;
+        left: 8.8%;
+        font-size: 28px;
+        line-height: 127%;
+        width: 40%;
+    }
+
+    &__pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 7.3%;
+        gap: 20px;
+
+        font-weight: 600;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: #080808;
+
+        &-left{
+            margin-right: 13px;
+
+        }
+        &-number{
+
+        }
+        &-dots{
+            opacity: 0.5;
+        }
+        &-right{
+            margin-left: 13px;
+        }
+    }
+}
+
+@media (max-width: 1100px){
+    .news__galery{
+        margin-top: 10.3%;
+    }
+    
+    .galery {
+        &__wrapper {
+            gap: 4px 6px;
+        }
+        &__text-block-wrapper{
+            margin-left: 10%;
+        }
+    
+        &__title {
+            font-size: 20px;
+            width: 260px;
+        }
+    
+        &__text {
+            width: 343px;
+            margin-top: 23px;
+        }
+    
+        &__btn {
+            margin-top: 13%;
+            margin-bottom: 50px;
+        }
+    
+    
+        &__img-title {
+            bottom: 10.7%;
+            left: 9.8%;
+            font-size: 20px;
+        }
+    
+        &__pagination {
+            margin-top: 7%;
+        }
+    }
+}
+@media (max-width: 850px){
+    .news__galery{
+        margin-top: 12.8%;
+    }
+    
+    .galery {
+    
+        &__title {
+            font-size: 16px;
+            width: 215px;
+        }
+    
+        &__text {
+            display: none;
+        }
+    
+        &__btn {
+            margin-top: 21%;
+            margin-bottom: 36px;
+        }
+    
+    
+        &__img-title {
+            bottom: 10%;
+            font-size: 16px;
+        }
+    
+        &__pagination {
+            margin-top: 8.3%;
+            gap: 19px;
+            
+            &-left{
+                margin-right: 5px;
+            }
+            &-right{
+                margin-left: 5px;
+            }
+        }
+    }
+}
+@media (max-width: 650px){
+    .news__galery{
+        margin-top: 16.8%;
+    }
+    
+    .galery {
+        &__wrapper {
+            grid-template-columns: 1fr;
+            gap: 6px;
+        }
+        &__text-block-wrapper{
+            margin-left: 7%;
+        }
+        &__block-long{
+            flex-direction: column-reverse;
+            grid-column: span 1;
+            gap: 24px;
+            &_revers{
+                flex-direction: column;
+            }
+        }
+        &__text-block {
+            width: 100%;
+        }
+    
+        &__title {
+            width: 100%;
+            line-height: 127%;
+        }
+    
+        &__text {
+            display: none;
+        }
+    
+        &__btn {
+            margin-top: 12%;
+            margin-bottom: 26px;
+        }
+        &__block {
+            width: 100%;
+            & img{
+                aspect-ratio: 3 / 2;
+            }
+        }
+    
+        &__img-title {
+            bottom: 7.5%;
+            left: 6.8%;
+        }
+    
+        &__pagination {
+            margin-top: 15.3%;
+        }
+    }
+
+}
+@media (max-width: 450px){
+
+}

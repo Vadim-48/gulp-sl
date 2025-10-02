@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-news.css">
+    <title>SL</title>
+</head>
+<body class="news-page">
+    <header class="header" id="header"> 
+        <div class="container">
+            @@include('html/header.html',{})
+        </div>
+        @@include('html/burger.html',{})
+    </header>
+    <main>
+        <section class="news__hero hero">
+            <div class="container">
+                @@include('html/news/hero-news.html',{})
+            </div>
+        </section>
+        <section class="news__galery galery">
+            <div class="container">
+                @@include('html/news/galery-news.html',{})
+            </div>
+        </section>
+        <section class="news__send send">
+            <div class="container">
+                @@include('html/news/send-news.html',{})
+            </div>
+        </section>
+    </main>
+    <footer class="footer" id="footer">
+        <div class="container">
+            @@include('html/footer.html',{})
+        </div>
+    </footer>
+    <script src="js/app-news.js"></script>
+</body>
+</html>

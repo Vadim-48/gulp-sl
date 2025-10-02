@@ -1,0 +1,114 @@
+:root {
+    --font-family: "Montserrat", sans-serif;
+    --second-family: "FreightBigProLight-Italic", sans-serif;
+    --third-family: "Adieu", sans-serif;
+    --font3: "Roboto", sans-serif;
+  }
+ 
+
+body{
+    font-family: var(--font-family);
+    font-weight: 700;
+    color: #fff;
+    background: #fafafa;
+    position: relative;
+    // position: relative;
+}
+body::-webkit-scrollbar-track{
+    background: #17176c;
+}
+
+.container {
+    max-width: 1440px;
+    padding: 0 64px;
+    margin: 0 auto;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: #fff;
+    border: 1px solid rgba(253, 253, 253, 0.32);
+    width: 183px;
+    height: 48px; 
+    // transition: all 0.3s ease;
+
+    &-more{
+
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase; 
+        display: flex;
+        align-items: center;
+        &::before{
+            content: '';
+            display: block;
+            height: 1px;
+            width: 8px;
+            margin-right: 9px;
+            background: rgba(49, 49, 49, 0.2);
+        }
+        &::after{
+            content: '';
+            display: block;
+            height: 1px;
+            width: 56px;
+            margin-left: 9px;
+            background: rgba(49, 49, 49, 0.2);
+        }
+    }
+}
+
+.title{
+    font-size: 36px; 
+}
+.text{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.71;
+    opacity: 0.7;
+}
+
+@media (max-width: 1100px){
+    .container{
+        padding: 0 56px;
+    }
+    .title{
+        font-size: 32px; 
+    }
+}
+@media (max-width: 850px){
+    .container{
+        padding: 0 48px;
+    }  
+
+}
+@media (max-width: 650px){
+    .container{
+        padding: 0 24px;
+    }
+    .title{
+        font-size: 26px; 
+    }
+}
+
+// focus (focus-visible), hover, active
+
+
+
+
+// $maxWidth: 1920;
+// @mixin adaptiv-value($property, $pcSize, $mobSize) {
+//  $addSize: $pcSize - $mobSize;
+//  $calWidth: $maxWidth - 320;
+//  #{$property}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+// }
+
+// .container {
+//     @include adaptiv-value("font-size", 60, 30);
+// }
+

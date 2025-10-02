@@ -1,0 +1,141 @@
+.logo, .header__lang, .header__btn{
+    z-index: 41;
+}
+
+.burger{
+    display: none;
+    z-index: 40;
+    color: #fff;
+
+    &__btn{
+        position: relative;
+        width: 32px;
+        height: 25px;
+        padding: 2px;
+        & span{
+            position: absolute;
+            height: 1px;
+            width: 28px;
+            background-color: #fff;
+            top: 10px;
+            transition: all 0.3s ease 0s;
+        }
+
+        & span:nth-child(2) {
+            top: 15px;
+        }
+    } 
+    &__menu-btn{
+        margin-top: 56px;
+        display: none;
+    }
+}
+
+.burger{
+    &__block{
+        color: #fff;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: #000;
+        top: 0;
+        left: -100vw;
+        transition: all 0.3s ease 0s;
+        padding: 80px 0;
+        &.active{
+            left: 0;
+        }
+    }
+    &__menu{
+        font-weight: 700;
+        font-size: 32px;  
+        opacity: 0.5;
+        margin-left: 21%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-y: auto;
+    }
+    &__item{
+        margin-top: 41px;
+        &:first-child{
+            margin-top: 0;
+        }
+    }
+    &__footer{
+        & .hero__main-footer{
+            bottom: 48px;
+        }       
+    }
+}
+
+
+@media (max-width: 1100px){
+    .burger{
+        display: flex;
+        align-items: center;
+        margin-top: -5px;
+        margin-left: 10.5%;
+        &__btn{
+            display: block;
+            &.active{
+                & span:first-child {
+                    transform: rotate(45deg);
+                    top: 13px;
+                }
+                & span:nth-child(2) {
+                    transform: rotate(-45deg);
+                    top: 13px;
+                } 
+            }
+        }
+        &__text{
+            display: flex;
+            margin-top: 1.5px;
+            margin-left: 23px;
+        }
+    }
+    .nav__menu{
+        display: none;
+    }  
+    body.lock{
+        overflow: hidden;
+    }
+   
+}
+
+@media (max-width: 850px){
+    .burger{
+        margin-left: 22%;
+        &__menu{
+            margin-left: 24.5%;
+        }
+        &__footer{
+            & .hero__main-footer{
+                bottom: 32px;
+            }       
+        }
+    }
+}
+@media (max-width: 650px){
+    .burger{
+        &__block{
+            padding: 55px 0;
+        }
+        &__menu{
+            margin: 0;
+            align-items: center;
+        }
+        &__menu-btn{
+            display: block;
+        }
+        &__footer{
+            & .hero__main-footer{
+                bottom: 22px;
+                width: 93%;
+            }       
+        }
+    }
+
+}
