@@ -32,6 +32,77 @@ function isWebp() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   runPreloader: () => (/* binding */ runPreloader)
+/* harmony export */ });
+// // preloader.js
+// export function runPreloader() {
+//     const preloader = document.querySelector('.preloader');
+//     const progressEl = document.querySelector('.preloader__progress');
+//     const mainContent = document.querySelector('.body-content');
+  
+//     let progress = 0;
+  
+//     //  Симуляція поступового відсотка (поки сторінка вантажиться)
+//     const fakeProgressInterval = setInterval(() => {
+//       if (progress < 95) {
+//         progress += Math.floor(Math.random() * 3) + 1; // +1..3%
+//         if (progress > 95) progress = 95;
+//         progressEl.textContent = progress;
+//       }
+//     }, 100);
+  
+//     //  Реальне завершення завантаження всієї сторінки
+//     window.addEventListener('load', () => {
+//       clearInterval(fakeProgressInterval);
+//       progress = 100;
+//       progressEl.textContent = progress;
+  
+//       // Плавне зникнення прелоадера
+//       preloader.classList.add('preloader--hidden');
+  
+//       // Показати контент
+//       setTimeout(() => {
+//         preloader.style.display = 'none';
+//         mainContent.classList.remove('body-content_hidden');
+//       }, 500);
+//     });
+//   }  
+
+// preloader.js
+function runPreloader() {
+  const preloader = document.querySelector('.preloader');
+  const progressEl = document.querySelector('.preloader__progress');
+  const mainContent = document.querySelector('.body-content');
+
+  let currentPercent = 0;
+
+  const interval = setInterval(() => {
+    currentPercent += 10;
+    if (currentPercent > 100) currentPercent = 100;
+
+    progressEl.textContent = currentPercent;
+
+    if (currentPercent >= 100) {
+      clearInterval(interval);
+
+      // Плавне зникнення прелоадера
+      preloader.classList.add('preloader_hidden');
+
+      setTimeout(() => {
+        preloader.style.display = 'none';
+        mainContent.classList.remove('body-content_hidden');
+      }, 300);
+    }
+  }, 50); // Зміни тривалість тут, щоб керувати швидкістю (300мс на крок)
+}
+
+
+/***/ }),
+/* 3 */
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   initBurger: () => (/* binding */ initBurger)
 /* harmony export */ });
 function initBurger() {
@@ -72,7 +143,7 @@ function initBurger() {
   }
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -115,7 +186,7 @@ function initSwiper() {
   }
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -151,7 +222,34 @@ function initLocationDropdown() {
   }
 
 /***/ }),
-/* 5 */
+/* 6 */
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   handleBlockLargeResize: () => (/* binding */ handleBlockLargeResize)
+/* harmony export */ });
+function handleBlockLargeResize() {
+    const blockLargeElements = document.querySelectorAll(".block_large");
+  
+    if (blockLargeElements.length > 0) {
+      const updateClass = () => {
+        blockLargeElements.forEach((el) => {
+          if (window.innerWidth <= 850) {
+            el.classList.remove("block_large");
+          } else {
+            el.classList.add("block_large");
+          }
+        });
+      };
+  
+      updateClass();
+      window.addEventListener("resize", updateClass);
+    }
+  }
+
+/***/ }),
+/* 7 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -166,6 +264,28 @@ function initHeaderScroll() {
       }
     });
   }
+
+/***/ }),
+/* 8 */
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initLangToggle: () => (/* binding */ initLangToggle)
+/* harmony export */ });
+function initLangToggle() {
+  const langToggle = document.querySelector('.header__lang');
+  const langMenu = document.querySelector('.header__lang-menu');
+
+  langToggle.addEventListener('click', function (event) {
+    event.stopPropagation();
+    langMenu.classList.toggle('active');
+  });
+
+  document.addEventListener('click', function () {
+    langMenu.classList.remove('active');
+  });
+}
 
 /***/ })
 /******/ 	]);
@@ -229,35 +349,46 @@ var __webpack_exports__ = {};
 (() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _modules_initBurger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _modules_initSwiper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-/* harmony import */ var _modules_initLocationDropdown_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var _modules_initHeaderScroll_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _modules_preloader_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _modules_init_burger_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _modules_init_swiper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _modules_block_large_handler_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
+/* harmony import */ var _modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7);
+/* harmony import */ var _modules_init_lang_toggle_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8);
 
 
 
 
-// import { handleBlockLargeResize } from "./modules/blockLargeHandler.js";
+
+
+
 
 
 // WebP support check
 _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__.isWebp();
 
 document.addEventListener("DOMContentLoaded", () => {
+  //preloader
+  (0,_modules_preloader_js__WEBPACK_IMPORTED_MODULE_1__.runPreloader)();
+
   // Initialize burger menu
-  (0,_modules_initBurger_js__WEBPACK_IMPORTED_MODULE_1__.initBurger)();
+  (0,_modules_init_burger_js__WEBPACK_IMPORTED_MODULE_2__.initBurger)();
 
   // Initialize Swiper slider
-  (0,_modules_initSwiper_js__WEBPACK_IMPORTED_MODULE_2__.initSwiper)();
+  (0,_modules_init_swiper_js__WEBPACK_IMPORTED_MODULE_3__.initSwiper)();
 
   // Initialize location dropdown
-  (0,_modules_initLocationDropdown_js__WEBPACK_IMPORTED_MODULE_3__.initLocationDropdown)();
+  (0,_modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_4__.initLocationDropdown)();
 
   // Responsive class toggle based on screen width
-  // handleBlockLargeResize(); 
+  (0,_modules_block_large_handler_js__WEBPACK_IMPORTED_MODULE_5__.handleBlockLargeResize)(); 
   
   // Scroll
-  (0,_modules_initHeaderScroll_js__WEBPACK_IMPORTED_MODULE_4__.initHeaderScroll)();
+  (0,_modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_6__.initHeaderScroll)();
+
+  // Lang
+  (0,_modules_init_lang_toggle_js__WEBPACK_IMPORTED_MODULE_7__.initLangToggle)();
 });
 
 

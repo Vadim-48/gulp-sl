@@ -1,10 +1,13 @@
 <div class="proportions__wrapper">
     <a href="#!" class="proportions__btn">Next project</a>
     <h2 class="proportions__title title">Perfect proportions</h2>
-    <picture class="proportions__photo">
-        <source srcset="@img/one-project-page/proportions/img_2.jpg" media="(max-width: 1100px)" />
-        <source srcset="@img/one-project-page/proportions/img_3.jpg" media="(max-width: 850px)" />
-        <source srcset="@img/one-project-page/proportions/img_4.jpg" media="(max-width: 450px)" />
-        <img src="@img/one-project-page/proportions/img_1.jpg" loading="lazy" alt="?">
-    </picture>
+    @@include('../picture.html', {
+        "class": "proportions__photo",
+        "imgPath": "@img/one-project-page/proportions/img",
+        "imgExt": "jpg",
+        "alt": "img",
+        "imgPath1": true,
+        "imgPath2": true,
+        "imgPath3": true
+    })
 </div>

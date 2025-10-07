@@ -1,9 +1,10 @@
-<picture class="philosophy__img-right">
-    <source srcset="@img/main/philosophy/philosophy_1-2.jpg" media="(max-width: 1100px)">
-    <img src="@img/main/philosophy/philosophy_1-1.jpg" loading="lazy" alt="img">
-</picture>
-<!-- <p class="block-name">about</p> -->
-<!-- <div class="philosophy__wrapper"> -->
+@@include('../picture.html', {
+    "class": "philosophy__img-right",
+    "imgPath": "@img/main/philosophy/philosophy_1",
+    "imgExt": "jpg",
+    "alt": "img",
+    "imgPath1": true,
+  })
     
 <div class="philosophy__wrap">
     <p class="philosophy__block-name block-name">about</p>
@@ -24,18 +25,24 @@
 </div>
 <div class="philosophy__row">
     <div class="philosophy__row-photo">
-        <picture class="philosophy__row-img-top">
-            <source srcset="@img/main/philosophy/philosophy_3-2.jpg" media="(max-width: 1100px)">
-            <source srcset="@img/main/philosophy/philosophy_3-3.jpg" media="(max-width: 850px)">
-            <source srcset="@img/main/philosophy/philosophy_3-4.jpg" media="(max-width: 450px)">
-            <img src="@img/main/philosophy/philosophy_3-1.jpg" loading="lazy" alt="img">
-        </picture>
-        <picture class="philosophy__row-img-static">
-            <source srcset="@img/main/philosophy/philosophy_2-2.jpg" media="(max-width: 1100px)">
-            <source srcset="@img/main/philosophy/philosophy_2-3.jpg" media="(max-width: 850px)">
-            <source srcset="@img/main/philosophy/philosophy_2-4.jpg" media="(max-width: 450px)">
-            <img src="@img/main/philosophy/philosophy_2-1.jpg" loading="lazy" alt="img">
-        </picture>
+        @@include('../picture.html', {
+            "class": "philosophy__row-img-top",
+            "imgPath": "@img/main/philosophy/philosophy_3",
+            "imgExt": "jpg",
+            "alt": "img",
+            "imgPath1": true,
+            "imgPath2": true,
+            "imgPath3": true
+          })
+          @@include('../picture.html', {
+            "class": "philosophy__row-img-static",
+            "imgPath": "@img/main/philosophy/philosophy_2",
+            "imgExt": "jpg",
+            "alt": "img",
+            "imgPath1": true,
+            "imgPath2": true,
+            "imgPath3": true
+          })
     </div>
     <div class="philosophy__row-right">
         <img src="@img/main/philosophy/quotes.svg" alt="img" class="philosophy__row-img-text">
@@ -46,4 +53,3 @@
         <p class="philosophy__row-block-name block-name">Ceo company</p>
     </div>
 </div>
-<!-- </div> -->

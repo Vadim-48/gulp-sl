@@ -1,14 +1,19 @@
 import * as flsFunctions from "./modules/functions.js";
-import { initBurger } from "./modules/initBurger.js";
-import { initSwiper } from "./modules/initSwiper.js";
-import { initLocationDropdown } from "./modules/initLocationDropdown.js";
-// import { handleBlockLargeResize } from "./modules/blockLargeHandler.js";
-import { initHeaderScroll } from "./modules/initHeaderScroll.js";
+import { runPreloader } from './modules/preloader.js';
+import { initBurger } from "./modules/init-burger.js";
+import { initSwiper } from "./modules/init-swiper.js";
+import { initLocationDropdown } from "./modules/init-location-dropdown.js";
+import { handleBlockLargeResize } from "./modules/block-large-handler.js";
+import { initHeaderScroll } from "./modules/init-header-scroll.js";
+import { initLangToggle } from './modules/init-lang-toggle.js';
 
 // WebP support check
 flsFunctions.isWebp();
 
 document.addEventListener("DOMContentLoaded", () => {
+  //preloader
+  runPreloader();
+
   // Initialize burger menu
   initBurger();
 
@@ -19,9 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
   initLocationDropdown();
 
   // Responsive class toggle based on screen width
-  // handleBlockLargeResize(); 
+  handleBlockLargeResize(); 
   
   // Scroll
   initHeaderScroll();
+
+  // Lang
+  initLangToggle();
 });
 

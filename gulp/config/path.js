@@ -10,6 +10,7 @@ export const path = {
         js: `${buildFolder}/js/`,
         css: `${buildFolder}/css/`,
         html: `${buildFolder}/`,
+        // html: `${srcFolder}/html/**/*.html`,
         images: `${buildFolder}/img/`,
         fonts: `${buildFolder}/fonts/`,
         files: `${buildFolder}/files/`
@@ -20,14 +21,16 @@ export const path = {
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
         svg: `${srcFolder}/img/**/*.svg`,
         scss: `${srcFolder}/scss/*.scss`,
-        html: `${srcFolder}/*.html`,  // Змінити html на pug
+        // html: `${srcFolder}/*.html`,  // Змінити html на pug
+        html: `${srcFolder}/**/*.html`,
         files: `${srcFolder}/files/**/*.*`,
         svgicons: `${srcFolder}/svgicons/*.svg`,
     },
     watch: {
         js: `${srcFolder}/js/**/*.js`,
         scss: `${srcFolder}/scss/**/*.scss`,
-        html: `${srcFolder}/**/*.html`, // Змінити html на pug, потім в html.js
+        // html: `${srcFolder}/**/*.html`, // Змінити html на pug, потім в html.js
+        html: `${srcFolder}/**/*.html`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
         files: `${srcFolder}/files/**/*.*`,
         svgicons: `${srcFolder}/svgicons/*.svg`,

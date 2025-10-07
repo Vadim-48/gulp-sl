@@ -4,43 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap" rel="stylesheet"> -->
+    <link rel="icon" href="@img/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/style-projects.css">
     <title>SL</title>
 </head>
 <body class="projects-page">
-   
-    <header class="header header-projects" id="header"> 
-        <div class="container">
-            @@include('html/header.html',{})
-        </div>
-        @@include('html/burger.html',{})
-    </header> 
-    
-    <main>          
-        <section class="hero-projects hero"> 
+    @@include('html/preloader.html',{})
+    <div class="body-content body-content_hidden">
+        <header class="header header-projects" id="header"> 
             <div class="container">
-                @@include('html/projects-page/hero-projects.html',{})
+                @@include('html/header.html',{})
             </div>
-        </section> 
-        <section class="galery-projects"> 
+            @@include('html/burger.html',{})
+        </header> 
+        
+        <main>          
+            <section class="hero-projects hero"> 
+                <div class="container">
+                    @@include('html/projects-page/hero-projects.html',{})
+                </div>
+            </section> 
+            <section class="galery-projects"> 
+                <div class="container">
+                    @@include('html/projects-page/galery-projects.html',{})
+                </div>
+            </section> 
+            <section class="request request-projects">
+                <div class="container">
+                    @@include('html/main-page/request.html',{})
+                </div>
+            </section>
+        </main>
+        <footer class="footer-projects footer">
             <div class="container">
-                @@include('html/projects-page/galery-projects.html',{})
+                @@include('html/footer-black.html',{})
             </div>
-        </section> 
-        <section class="request request-projects">
-            <div class="container">
-                @@include('html/main-page/request.html',{})
-            </div>
-        </section>
-    </main>
-    <footer class="footer-projects footer">
-        <div class="container">
-            @@include('html/footer-black.html',{})
-        </div>
-    </footer>
+        </footer>
+    </div>
     <script src="js/app-projects.js" defer></script>
 </body>
 </html> 

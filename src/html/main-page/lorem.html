@@ -1,49 +1,73 @@
 <div class="lorem__galery">
-    <picture class="lorem__photo lorem__photo_1">
-        <source srcset="@img/main/lorem/lorem_1-1.jpg" media="(max-width: 1100px)">
-        <source srcset="@img/main/lorem/lorem_1-2.jpg" media="(max-width: 850px)">
-        <img src="@img/main/lorem/lorem_1.jpg" loading="lazy" alt="img">
-    </picture>
-    <picture class="lorem__photo lorem__photo_2">
-        <source srcset="@img/main/lorem/lorem_2-1.jpg" media="(max-width: 1100px)">
-        <source srcset="@img/main/lorem/lorem_2-2.jpg" media="(max-width: 850px)">
-        <source srcset="@img/main/lorem/lorem_2-3.jpg" media="(max-width: 450px)">
-        <img src="@img/main/lorem/lorem_2.jpg" loading="lazy" alt="img">
-    </picture>
-    <picture class="lorem__photo lorem__photo_3">
-        <source srcset="@img/main/lorem/lorem_3-1.jpg" media="(max-width: 1100px)">
-        <source srcset="@img/main/lorem/lorem_3-2.jpg" media="(max-width: 850px)">
-        <source srcset="@img/main/lorem/lorem_3-3.jpg" media="(max-width: 450px)">
-        <img src="@img/main/lorem/lorem_3.jpg" loading="lazy" alt="img">
-    </picture>
-    <picture class="lorem__photo lorem__photo_4">
-        <source srcset="@img/main/lorem/lorem_4-1.jpg" media="(max-width: 1100px)">
-        <source srcset="@img/main/lorem/lorem_4-2.jpg" media="(max-width: 850px)">
-        <source srcset="@img/main/lorem/lorem_4-3.jpg" media="(max-width: 450px)">
-        <img src="@img/main/lorem/lorem_4.jpg" loading="lazy" alt="img">
-    </picture>
-    <picture class="lorem__photo lorem__photo_5">
-        <source srcset="@img/main/lorem/lorem_5-3.jpg" media="(max-width: 450px)">
-        <img src="@img/main/lorem/lorem_5.jpg" loading="lazy" alt="img">
-    </picture>
-    <picture class="lorem__photo lorem__photo_6">
-        <source srcset="@img/main/lorem/lorem_6-1.jpg" media="(max-width: 1100px)">
-        <source srcset="@img/main/lorem/lorem_6-2.jpg" media="(max-width: 850px)">
-        <source srcset="@img/main/lorem/lorem_6-3.jpg" media="(max-width: 450px)">
-        <img src="@img/main/lorem/lorem_6.jpg" loading="lazy" alt="img">
-    </picture>
-    <picture class="lorem__photo lorem__photo_7">
-        <source srcset="@img/main/lorem/lorem_7-1.jpg" media="(max-width: 1100px)">
-        <source srcset="@img/main/lorem/lorem_7-2.jpg" media="(max-width: 850px)">
-        <source srcset="@img/main/lorem/lorem_7-3.jpg" media="(max-width: 450px)">
-        <img src="@img/main/lorem/lorem_7.jpg" loading="lazy" alt="img">
-    </picture>
-    <picture class="lorem__photo lorem__photo_8">
-        <source srcset="@img/main/lorem/lorem_8-1.jpg" media="(max-width: 1100px)">
-        <source srcset="@img/main/lorem/lorem_8-2.jpg" media="(max-width: 850px)">
-        <source srcset="@img/main/lorem/lorem_8-3.jpg" media="(max-width: 450px)">
-        <img src="@img/main/lorem/lorem_8.jpg" loading="lazy" alt="img">
-    </picture>
+    @@include('../picture.html', {
+        "class": "lorem__photo lorem__photo_1",
+        "imgPath": "@img/main/lorem/lorem_1",
+        "imgExt": "jpg",
+        "alt": "img",
+        "imgPath1": true,
+        "imgPath2": true,
+      })
+    @@include('../picture.html', {
+        "class": "lorem__photo lorem__photo_2",
+        "imgPath": "@img/main/lorem/lorem_2",
+        "imgExt": "jpg",
+        "alt": "img",
+        "imgPath1": true,
+        "imgPath2": true,
+        "imgPath3": true
+      })
+      @@include('../picture.html', {
+        "class": "lorem__photo lorem__photo_3",
+        "imgPath": "@img/main/lorem/lorem_3",
+        "imgExt": "jpg",
+        "alt": "img",
+        "imgPath1": true,
+        "imgPath2": true,
+        "imgPath3": true
+      })
+      @@include('../picture.html', {
+        "class": "lorem__photo lorem__photo_4",
+        "imgPath": "@img/main/lorem/lorem_4",
+        "imgExt": "jpg",
+        "alt": "img",
+        "imgPath1": true,
+        "imgPath2": true,
+        "imgPath3": true
+      })
+      @@include('../picture.html', {
+        "class": "lorem__photo lorem__photo_5",
+        "imgPath": "@img/main/lorem/lorem_5",
+        "imgExt": "jpg",
+        "alt": "img",
+        "imgPath3": true
+      })
+      @@include('../picture.html', {
+        "class": "lorem__photo lorem__photo_6",
+        "imgPath": "@img/main/lorem/lorem_6",
+        "imgExt": "jpg",
+        "alt": "img",
+        "imgPath1": true,
+        "imgPath2": true,
+        "imgPath3": true
+      })
+      @@include('../picture.html', {
+        "class": "lorem__photo lorem__photo_7",
+        "imgPath": "@img/main/lorem/lorem_7",
+        "imgExt": "jpg",
+        "alt": "img",
+        "imgPath1": true,
+        "imgPath2": true,
+        "imgPath3": true
+      })
+      @@include('../picture.html', {
+        "class": "lorem__photo lorem__photo_8",
+        "imgPath": "@img/main/lorem/lorem_8",
+        "imgExt": "jpg",
+        "alt": "img",
+        "imgPath1": true,
+        "imgPath2": true,
+        "imgPath3": true
+      })
 </div>
 <div class="lorem__wrap">
     <h2 class="lorem__title">@lorem.ipsum</h2>

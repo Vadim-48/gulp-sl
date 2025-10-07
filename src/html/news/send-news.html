@@ -13,10 +13,12 @@
         </form>
     </div>
 </div>
-
-<picture class="send__bg">
-    <source srcset="@img/news-page/send/send-bd-4.jpg" media="(max-width: 1100px)" />
-    <source srcset="@img/news-page/send/send-bd-3.jpg" media="(max-width: 850px)" />
-    <source srcset="@img/news-page/send/send-bd-2.jpg" media="(max-width: 450px)" />
-    <img src="@img/news-page/send/send-bd-1.jpg" loading="lazy" alt="?">
-</picture>
+  @@include('../picture.html', {
+    "class": "send__bg",
+    "imgPath": "@img/news-page/send/send-bd",
+    "alt": "img",
+    "imgExt": "jpg",
+    "imgPath1": true,
+    "imgPath2": true,
+    "imgPath3": true
+  })

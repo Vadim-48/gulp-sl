@@ -11,7 +11,13 @@ export const html = () => {
                 message: "Error: <%= error.message %>"
             }))
         )
-        .pipe(fileInclude())       // Закоментувати для pug,
+        // .pipe(fileInclude())       // Закоментувати для pug,
+
+        .pipe(fileInclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))       // <-- для шляхві при компонентах
+
         // .pipe(pug({              // Розкоментувати для pug     
         //     // Стиснення HTML файлу
         //     pretty: true,

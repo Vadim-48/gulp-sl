@@ -1,9 +1,12 @@
-<picture class="hero__bg">
-    <source srcset="@img/one-project-page/hero/hero_bg_2.jpg" media="(max-width: 1100px)" />
-    <source srcset="@img/one-project-page/hero/hero_bg_3.jpg" media="(max-width: 800px)" />
-    <source srcset="@img/one-project-page/hero/hero_bg_4.jpg" media="(max-width: 380px)" />
-    <img src="@img/one-project-page/hero/hero_bg_1.jpg" loading="lazy" alt="?">
-</picture>
+@@include('../picture.html', {
+    "class": "hero__bg",
+    "imgPath": "@img/one-project-page/hero/hero_bg",
+    "imgExt": "jpg",
+    "alt": "img",
+    "imgPath1": true,
+    "imgPath2": true,
+    "imgPath3": true
+})
 <div class="container">
     <div class="hero__wrapper">
         <h1 class="hero__title title">Residence <br class="hero__title_br">by the lighthouse</h1>

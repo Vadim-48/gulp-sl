@@ -1,29 +1,41 @@
 <div class="galery__inner">
     <div class="galery__wrapper">
-        <picture class="galery__photo galery__photo_large">
-            <source srcset="@img/one-project-page/galery/photo_1_2.jpg" media="(max-width: 1100px)" />
-            <source srcset="@img/one-project-page/galery/photo_1_3.jpg" media="(max-width: 850px)" />
-            <source srcset="@img/one-project-page/galery/photo_1_4.jpg" media="(max-width: 450px)" />
-            <img src="@img/one-project-page/galery/photo_1_1.jpg" loading="lazy" alt="?">
-        </picture>
-        <picture class="galery__photo">
-            <source srcset="@img/one-project-page/galery/photo_2_2.jpg" media="(max-width: 1100px)" />
-            <source srcset="@img/one-project-page/galery/photo_2_3.jpg" media="(max-width: 850px)" />
-            <source srcset="@img/one-project-page/galery/photo_2_4.jpg" media="(max-width: 450px)" />
-            <img src="@img/one-project-page/galery/photo_2_1.jpg" loading="lazy" alt="?">
-        </picture>
-        <picture class="galery__photo">
-            <source srcset="@img/one-project-page/galery/photo_3_2.jpg" media="(max-width: 1100px)" />
-            <source srcset="@img/one-project-page/galery/photo_3_3.jpg" media="(max-width: 850px)" />
-            <source srcset="@img/one-project-page/galery/photo_3_4.jpg" media="(max-width: 450px)" />
-            <img src="@img/one-project-page/galery/photo_3_1.jpg" loading="lazy" alt="?">
-        </picture>
-        <picture class="galery__photo galery__photo_large">
-            <source srcset="@img/one-project-page/galery/photo_4_2.jpg" media="(max-width: 1100px)" />
-            <source srcset="@img/one-project-page/galery/photo_4_3.jpg" media="(max-width: 850px)" />
-            <source srcset="@img/one-project-page/galery/photo_4_4.jpg" media="(max-width: 450px)" />
-            <img src="@img/one-project-page/galery/photo_4_1.jpg" loading="lazy" alt="?">
-        </picture>
+        @@include('../picture.html', {
+            "class": "galery__photo galery__photo_large",
+            "imgPath": "@img/one-project-page/galery/photo_1",
+            "imgExt": "jpg",
+            "alt": "img",
+            "imgPath1": true,
+            "imgPath2": true,
+            "imgPath3": true
+          })
+          @@include('../picture.html', {
+            "class": "galery__photo",
+            "imgPath": "@img/one-project-page/galery/photo_2",
+            "imgExt": "jpg",
+            "alt": "img",
+            "imgPath1": true,
+            "imgPath2": true,
+            "imgPath3": true
+          })
+          @@include('../picture.html', {
+            "class": "galery__photo",
+            "imgPath": "@img/one-project-page/galery/photo_3",
+            "imgExt": "jpg",
+            "alt": "img",
+            "imgPath1": true,
+            "imgPath2": true,
+            "imgPath3": true
+          })
+          @@include('../picture.html', {
+            "class": "galery__photo galery__photo_large",
+            "imgPath": "@img/one-project-page/galery/photo_4",
+            "imgExt": "jpg",
+            "alt": "img",
+            "imgPath1": true,
+            "imgPath2": true,
+            "imgPath3": true
+          })
     </div>
     <a href="#!" class="galery__btn btn">View more photo</a>
 </div>

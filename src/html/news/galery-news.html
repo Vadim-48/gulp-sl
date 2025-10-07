@@ -7,44 +7,56 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel gravida urna. 
                     Donec blandit sapien eu diam ullamcorper euismod. Nam tempus pellentesque ligula ut aliquam.
                 </p>
-                <a href="#!" class="galery__btn btn-more">Discover more</a>
+                <a href="one-news-page.html" class="galery__btn btn-more">Discover more</a>
             </div>
         </div>
         <div class="galery__block">
-            <picture class="galery__photo">
-                <source srcset="@img/news-page/galery-news/galery-news-4-2.jpg" media="(max-width: 1100px)" />
-                <source srcset="@img/news-page/galery-news/galery-news-4-3.jpg" media="(max-width: 850px)" />
-                <source srcset="@img/news-page/galery-news/galery-news-4-4.jpg" media="(max-width: 450px)" />
-                <img src="@img/news-page/galery-news/galery-news-4-1.jpg" loading="lazy" alt="?">
-            </picture>
+            @@include('../picture.html', {
+                "class": "galery__photo",
+                "imgPath": "@img/news-page/galery-news/galery-news-1",
+                "alt": "img",
+                "imgExt": "jpg",
+                "imgPath1": true,
+                "imgPath2": true,
+                "imgPath3": true
+              })
         </div>
     </div>
     <div class="galery__img-block">
-        <picture class="galery__photo">
-            <source srcset="@img/news-page/galery-news/galery-news-2-2.jpg" media="(max-width: 1100px)" />
-            <source srcset="@img/news-page/galery-news/galery-news-2-3.jpg" media="(max-width: 850px)" />
-            <source srcset="@img/news-page/galery-news/galery-news-2-4.jpg" media="(max-width: 450px)" />
-            <img src="@img/news-page/galery-news/galery-news-2-1.jpg" loading="lazy" alt="?">
-        </picture>
+        @@include('../picture.html', {
+            "class": "galery__photo",
+            "imgPath": "@img/news-page/galery-news/galery-news-2",
+            "alt": "img",
+            "imgExt": "jpg",
+            "imgPath1": true,
+            "imgPath2": true,
+            "imgPath3": true
+          })
         <h2 class="galery__img-title">Non-standard plinth options</h2>
     </div>
     <div class="galery__img-block">
-        <picture class="galery__photo">
-            <source srcset="@img/news-page/galery-news/galery-news-3-2.jpg" media="(max-width: 1100px)" />
-            <source srcset="@img/news-page/galery-news/galery-news-3-3.jpg" media="(max-width: 850px)" />
-            <source srcset="@img/news-page/galery-news/galery-news-3-4.jpg" media="(max-width: 450px)" />
-            <img src="@img/news-page/galery-news/galery-news-3-1.jpg" loading="lazy" alt="?">
-        </picture>
+        @@include('../picture.html', {
+            "class": "galery__photo",
+            "imgPath": "@img/news-page/galery-news/galery-news-3",
+            "alt": "img",
+            "imgExt": "jpg",
+            "imgPath1": true,
+            "imgPath2": true,
+            "imgPath3": true
+          })
         <h2 class="galery__img-title">Interior design, LCD Rybalsky</h2>
     </div>
     <div class="galery__block-long galery__block-long_revers">
         <div class="galery__block">
-            <picture class="galery__photo">
-                <source srcset="@img/news-page/galery-news/galery-news-4-2.jpg" media="(max-width: 1100px)" />
-                <source srcset="@img/news-page/galery-news/galery-news-4-3.jpg" media="(max-width: 850px)" />
-                <source srcset="@img/news-page/galery-news/galery-news-4-4.jpg" media="(max-width: 450px)" />
-                <img src="@img/news-page/galery-news/galery-news-4-1.jpg" loading="lazy" alt="?">
-            </picture>
+            @@include('../picture.html', {
+                "class": "galery__photo",
+                "imgPath": "@img/news-page/galery-news/galery-news-1",
+                "alt": "img",
+                "imgExt": "jpg",
+                "imgPath1": true,
+                "imgPath2": true,
+                "imgPath3": true
+              })
         </div>
         <div class="galery__text-block">
             <div class="galery__text-block-wrapper">
@@ -53,7 +65,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel gravida urna. 
                     Donec blandit sapien eu diam ullamcorper euismod. Nam tempus pellentesque ligula ut aliquam.
                 </p>
-                <a href="#!" class="galery__btn btn-more">Discover more</a>
+                <a href="one-news-page.html" class="galery__btn btn-more">Discover more</a>
             </div>
         </div>
     </div>

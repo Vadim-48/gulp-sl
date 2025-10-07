@@ -1,0 +1,138 @@
+.duis {
+    margin-top: 6.9%;
+    color: #080808;
+    &__galery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+    &__galery-photo {
+        & img{
+            width: 100%;
+        }
+    }
+    &__galery-photo_large{
+        grid-column: span 2;
+    }
+
+    &__content {
+        width: 54.5%;
+        margin: 7.3% 0 0 10.1%;
+    }
+
+    &__title {
+        font-size: 16px;
+        line-height: 137%;
+    }
+
+    &__text {
+        margin-top: 15px;
+        &:nth-of-type(2){
+            margin-top: 40px;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        margin-top: 40px;
+    }
+
+    &__list-item {
+        position: relative;
+        padding-left: 16px;
+        margin-top: 12px;
+        // margin-bottom: 0;
+        &::before {
+            content: ''; 
+            position: absolute;
+            left: 0; 
+            top: 9px;
+            width: 6px;
+            height: 6px; 
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: transparent;
+          }
+    }
+    &__social{
+        display: none;
+    }
+}
+
+@media (max-width: 1100px){
+    .duis {
+        margin-top: 5.4%;
+    
+        &__content {
+            width: 78.5%;
+            margin: 9.6% 0 0 11.2%;
+        }
+    
+        &__text {
+            margin-top: 23px;
+            &:nth-of-type(2){
+                margin-top: 33px;
+            }
+        }
+    
+        &__list {
+            margin-top: 32px;
+        }
+    
+        &__list-item {
+
+        }
+        &__social{
+            display: block;
+            margin-top: 52px;
+        }
+    }
+
+}
+@media (max-width: 850px){
+    .duis {
+        margin-top: 9.5%;
+    
+        &__content {
+            width: 77.5%;
+            margin: 10.6% 0 0 11.2%;
+        }
+    
+        &__text {
+            &:nth-of-type(2){
+                margin-top: 30px;
+            }
+        }
+    
+    
+        &__list-item {
+            margin-top: 11px;
+        }
+        &__social{
+            margin-top: 45px;
+        }
+    }
+}
+@media (max-width: 650px){
+    .duis {
+        margin-top: 11.5%;
+        &__galery {
+            grid-template-columns: 1fr;
+            gap: 7px;
+        }
+        &__galery-photo_large{
+            grid-column: span 1;
+        }
+    
+        &__content {
+            width: 100%;
+            margin: 18.7% 0 0 0;
+        }
+        &__social{
+            margin-top: 35px;
+        }
+    }
+}
+@media (max-width: 450px){
+
+}

@@ -1,3 +1,67 @@
+@font-face {
+  font-family: FreightBigProLight;
+  font-display: swap;
+  src: url("../fonts/FreightBigProLight-Italic.woff2") format("woff2"), url("../fonts/FreightBigProLight-Italic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: adieu;
+  font-display: swap;
+  src: url("../fonts/adieu.woff2") format("woff2"), url("../fonts/adieu.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto_Condensed;
+  font-display: swap;
+  src: url("../fonts/Roboto_Condensed-Regular.woff2") format("woff2"), url("../fonts/Roboto_Condensed-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -111,10 +175,6 @@ body {
   position: relative;
 }
 
-body::-webkit-scrollbar-track {
-  background: #17176c;
-}
-
 .container {
   max-width: 1440px;
   padding: 0 64px;
@@ -181,6 +241,37 @@ body::-webkit-scrollbar-track {
   opacity: 0.7;
 }
 
+.body-content {
+  display: block;
+}
+
+.body-content_hidden {
+  display: none;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #080808;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 200;
+}
+
+.preloader__text {
+  text-align: center;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -207,6 +298,34 @@ body::-webkit-scrollbar-track {
 .header__lang {
   -ms-grid-column-align: center;
       justify-self: center;
+  position: relative;
+}
+
+.header__lang-menu {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  background: rgba(181, 181, 181, 0.4);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 4px;
+}
+
+.header__lang-menu.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .header__btn {
@@ -609,6 +728,7 @@ body::-webkit-scrollbar-track {
   display: block;
   width: 211px;
   height: 273px;
+  line-height: 0;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -1067,7 +1187,7 @@ body::-webkit-scrollbar-track {
   }
 
   .header__lang {
-    margin: 4px 0 0 -10px;
+    margin: 4px 0 4px -10px;
   }
 
   .header__btn {
@@ -1369,7 +1489,7 @@ body::-webkit-scrollbar-track {
   }
 
   .header__lang {
-    margin: 0 0 0 auto;
+    margin: 0 0 4px auto;
     padding-right: 20px;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;

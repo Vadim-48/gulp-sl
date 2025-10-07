@@ -4,16 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap&_v=20251002192858" rel="stylesheet">
-    <link rel="stylesheet" href="css/style-one-project.css?_v=20251002192858">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap&_v=20251008014552" rel="stylesheet"> -->
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style-one-project.css?_v=20251008014552">
     <title>SL</title>
 </head>
 <body>
-    <header class="header" id="header"> 
-        <div class="container">
-            <div class="header__wrapper">
+    <!-- <div class="preloader" id="preloader">
+    <div class="preloader__content">
+      <div class="preloader__text">HI <span id="preloader__progress">0</span>%</div>
+      <div class="preloader__bar">
+        <div id="preloader__fill"></div>
+      </div>
+    </div>
+  </div> -->
+<div class="preloader">
+    <div class="preloader__text">HI <span class="preloader__progress">0</span>%</div>
+</div>
+    <div class="body-content body-content_hidden">
+        <header class="header" id="header"> 
+            <div class="container">
+                <div class="header__wrapper">
     <nav class="nav">
         <a href="index.html" class="logo">Logo</a>
             <ul class="nav__menu">
@@ -37,13 +50,20 @@
             </div>
             <span class="burger__text">Menu</span> 
         </div>
-        <button class="header__lang">En</button>
+        <div class="header__lang">
+            <button>En</button>
+            <div class="header__lang-menu">
+                <span>En</span>
+                <span>En</span>
+                <span>En</span>
+            </div>
+        </div>
         <button class="header__btn btn">Send Request</button>
     </nav>
 </div>
 
-        </div>
-        <div class="burger__block">
+            </div>
+            <div class="burger__block">
     <ul class="burger__menu">
         <li class="burger__item">
             <a href="index.html" class="burger__item-link">Home</a>
@@ -93,15 +113,24 @@
 </div>
     </div>
 </div>
-    </header>
-    <main>
-        <section class="one-project__hero hero">
-            <picture class="hero__bg">
-    <source srcset="img/one-project-page/hero/hero_bg_2.jpg" media="(max-width: 1100px)" />
-    <source srcset="img/one-project-page/hero/hero_bg_3.jpg" media="(max-width: 800px)" />
-    <source srcset="img/one-project-page/hero/hero_bg_4.jpg" media="(max-width: 380px)" />
-    <img src="img/one-project-page/hero/hero_bg_1.jpg" loading="lazy" alt="?">
+        </header>
+        <main>
+            <section class="one-project__hero hero">
+                <picture class="hero__bg">
+  
+    <source srcset="img/one-project-page/hero/hero_bg-3.webp" type="image/webp" media="(max-width: 450px)">
+  
+  
+    <source srcset="img/one-project-page/hero/hero_bg-2.webp" type="image/webp" media="(max-width: 850px)">
+  
+  
+    <source srcset="img/one-project-page/hero/hero_bg-1.webp" type="image/webp" media="(max-width: 1100px)">
+  
+  <source srcset="img/one-project-page/hero/hero_bg.webp" type="image/webp">
+  <img src="img/one-project-page/hero/hero_bg.jpg" alt="img" loading="lazy" class="hero__bg">
 </picture>
+
+
 <div class="container">
     <div class="hero__wrapper">
         <h1 class="hero__title title">Residence <br class="hero__title_br">by the lighthouse</h1>
@@ -153,10 +182,10 @@
   
 
 
-        </section>
-        <section class="one-project__donec donec">
-            <div class="container">
-                <div class="donec__wrapper">
+            </section>
+            <section class="one-project__donec donec">
+                <div class="container">
+                    <div class="donec__wrapper">
     <h2 class="donec__title">Donec et ipsum nec quam posuere maximus eu in erat. Duis laoreet finibus consectetur. </h2>
     <p class="donec__text text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -169,73 +198,119 @@
     </p>
     <div class="donec__btn btn-more">Discover more</div>
 </div>
-            </div>
-        </section>
-        <section class="one-project__galery galery">
-            <div class="container">
-                <div class="galery__inner">
+                </div>
+            </section>
+            <section class="one-project__galery galery">
+                <div class="container">
+                    <div class="galery__inner">
     <div class="galery__wrapper">
         <picture class="galery__photo galery__photo_large">
-            <source srcset="img/one-project-page/galery/photo_1_2.jpg" media="(max-width: 1100px)" />
-            <source srcset="img/one-project-page/galery/photo_1_3.jpg" media="(max-width: 850px)" />
-            <source srcset="img/one-project-page/galery/photo_1_4.jpg" media="(max-width: 450px)" />
-            <img src="img/one-project-page/galery/photo_1_1.jpg" loading="lazy" alt="?">
-        </picture>
-        <picture class="galery__photo">
-            <source srcset="img/one-project-page/galery/photo_2_2.jpg" media="(max-width: 1100px)" />
-            <source srcset="img/one-project-page/galery/photo_2_3.jpg" media="(max-width: 850px)" />
-            <source srcset="img/one-project-page/galery/photo_2_4.jpg" media="(max-width: 450px)" />
-            <img src="img/one-project-page/galery/photo_2_1.jpg" loading="lazy" alt="?">
-        </picture>
-        <picture class="galery__photo">
-            <source srcset="img/one-project-page/galery/photo_3_2.jpg" media="(max-width: 1100px)" />
-            <source srcset="img/one-project-page/galery/photo_3_3.jpg" media="(max-width: 850px)" />
-            <source srcset="img/one-project-page/galery/photo_3_4.jpg" media="(max-width: 450px)" />
-            <img src="img/one-project-page/galery/photo_3_1.jpg" loading="lazy" alt="?">
-        </picture>
-        <picture class="galery__photo galery__photo_large">
-            <source srcset="img/one-project-page/galery/photo_4_2.jpg" media="(max-width: 1100px)" />
-            <source srcset="img/one-project-page/galery/photo_4_3.jpg" media="(max-width: 850px)" />
-            <source srcset="img/one-project-page/galery/photo_4_4.jpg" media="(max-width: 450px)" />
-            <img src="img/one-project-page/galery/photo_4_1.jpg" loading="lazy" alt="?">
-        </picture>
+  
+    <source srcset="img/one-project-page/galery/photo_1-3.webp" type="image/webp" media="(max-width: 450px)">
+  
+  
+    <source srcset="img/one-project-page/galery/photo_1-2.webp" type="image/webp" media="(max-width: 850px)">
+  
+  
+    <source srcset="img/one-project-page/galery/photo_1-1.webp" type="image/webp" media="(max-width: 1100px)">
+  
+  <source srcset="img/one-project-page/galery/photo_1.webp" type="image/webp">
+  <img src="img/one-project-page/galery/photo_1.jpg" alt="img" loading="lazy" class="galery__photo galery__photo_large">
+</picture>
+
+
+          <picture class="galery__photo">
+  
+    <source srcset="img/one-project-page/galery/photo_2-3.webp" type="image/webp" media="(max-width: 450px)">
+  
+  
+    <source srcset="img/one-project-page/galery/photo_2-2.webp" type="image/webp" media="(max-width: 850px)">
+  
+  
+    <source srcset="img/one-project-page/galery/photo_2-1.webp" type="image/webp" media="(max-width: 1100px)">
+  
+  <source srcset="img/one-project-page/galery/photo_2.webp" type="image/webp">
+  <img src="img/one-project-page/galery/photo_2.jpg" alt="img" loading="lazy" class="galery__photo">
+</picture>
+
+
+          <picture class="galery__photo">
+  
+    <source srcset="img/one-project-page/galery/photo_3-3.webp" type="image/webp" media="(max-width: 450px)">
+  
+  
+    <source srcset="img/one-project-page/galery/photo_3-2.webp" type="image/webp" media="(max-width: 850px)">
+  
+  
+    <source srcset="img/one-project-page/galery/photo_3-1.webp" type="image/webp" media="(max-width: 1100px)">
+  
+  <source srcset="img/one-project-page/galery/photo_3.webp" type="image/webp">
+  <img src="img/one-project-page/galery/photo_3.jpg" alt="img" loading="lazy" class="galery__photo">
+</picture>
+
+
+          <picture class="galery__photo galery__photo_large">
+  
+    <source srcset="img/one-project-page/galery/photo_4-3.webp" type="image/webp" media="(max-width: 450px)">
+  
+  
+    <source srcset="img/one-project-page/galery/photo_4-2.webp" type="image/webp" media="(max-width: 850px)">
+  
+  
+    <source srcset="img/one-project-page/galery/photo_4-1.webp" type="image/webp" media="(max-width: 1100px)">
+  
+  <source srcset="img/one-project-page/galery/photo_4.webp" type="image/webp">
+  <img src="img/one-project-page/galery/photo_4.jpg" alt="img" loading="lazy" class="galery__photo galery__photo_large">
+</picture>
+
+
     </div>
     <a href="#!" class="galery__btn btn">View more photo</a>
 </div>
-            </div>
-        </section>
-        <section class="one-project__request request">
-            <div class="container">
-                <div class="request__galery">
+                </div>
+            </section>
+            <section class="one-project__request request">
+                <div class="container">
+                    <div class="request__galery">
     <picture class="request__photo request__photo_10">
-        <img src="img/main/request/Galery-5.jpg" loading="lazy" alt="img">
+        <source srcset="img/main/request/galery-5.webp" type="image/webp">
+        <img src="img/main/request/galery-5.jpg" loading="lazy" alt="img">
     </picture>
     <picture class="request__photo request__photo_9">
-        <img src="img/main/request/Galery-4.jpg" loading="lazy" alt="img">
+        <source srcset="img/main/request/galery-4.webp" type="image/webp">
+        <img src="img/main/request/galery-4.jpg" loading="lazy" alt="img">
     </picture>
     <picture class="request__photo request__photo_8">
-        <img src="img/main/request/Galery-3.jpg" loading="lazy" alt="img">
+        <source srcset="img/main/request/galery-3.webp" type="image/webp">
+        <img src="img/main/request/galery-3.jpg" loading="lazy" alt="img">
     </picture>
     <picture class="request__photo request__photo_7">
-        <img src="img/main/request/Galery-2.jpg" loading="lazy" alt="img">
+        <source srcset="img/main/request/galery-2.webp" type="image/webp">
+        <img src="img/main/request/galery-2.jpg" loading="lazy" alt="img">
     </picture>
     <picture class="request__photo request__photo_6">
-        <img src="img/main/request/Galery-1.jpg" loading="lazy" alt="img">
+        <source srcset="img/main/request/galery-1.webp" type="image/webp">
+        <img src="img/main/request/galery-1.jpg" loading="lazy" alt="img">
     </picture>
     <picture class="request__photo request__photo_5">
-        <img src="img/main/request/Galery-5.jpg" loading="lazy" alt="img">
+        <source srcset="img/main/request/galery-5.webp" type="image/webp">
+        <img src="img/main/request/galery-5.jpg" loading="lazy" alt="img">
     </picture>
     <picture class="request__photo request__photo_4">
-        <img src="img/main/request/Galery-4.jpg" loading="lazy" alt="img">
+        <source srcset="img/main/request/galery-4.webp" type="image/webp">
+        <img src="img/main/request/galery-4.jpg" loading="lazy" alt="img">
     </picture>
     <picture class="request__photo request__photo_3">
-        <img src="img/main/request/Galery-3.jpg" loading="lazy" alt="img">
+        <source srcset="img/main/request/galery-3.webp" type="image/webp">
+        <img src="img/main/request/galery-3.jpg" loading="lazy" alt="img">
     </picture>
     <picture class="request__photo request__photo_2">
-        <img src="img/main/request/Galery-2.jpg" loading="lazy" alt="img">
+        <source srcset="img/main/request/galery-2.webp" type="image/webp">
+        <img src="img/main/request/galery-2.jpg" loading="lazy" alt="img">
     </picture>
     <picture class="request__photo request__photo_1">
-        <img src="img/main/request/Galery-1.jpg" loading="lazy" alt="img">
+        <source srcset="img/main/request/galery-1.webp" type="image/webp">
+        <img src="img/main/request/galery-1.jpg" loading="lazy" alt="img">
     </picture>
 </div>
 <div class="request__wrap">
@@ -247,24 +322,34 @@
     </p>
     <button class="request__btn btn">Make request</button>
 </div>
-            </div>
-        </section>
-        <section class="one-project__proportions proportions">
-            <div class="container">
-                <div class="proportions__wrapper">
+                </div>
+            </section>
+            <section class="one-project__proportions proportions">
+                <div class="container">
+                    <div class="proportions__wrapper">
     <a href="#!" class="proportions__btn">Next project</a>
     <h2 class="proportions__title title">Perfect proportions</h2>
     <picture class="proportions__photo">
-        <source srcset="img/one-project-page/proportions/img_2.jpg" media="(max-width: 1100px)" />
-        <source srcset="img/one-project-page/proportions/img_3.jpg" media="(max-width: 850px)" />
-        <source srcset="img/one-project-page/proportions/img_4.jpg" media="(max-width: 450px)" />
-        <img src="img/one-project-page/proportions/img_1.jpg" loading="lazy" alt="?">
-    </picture>
+  
+    <source srcset="img/one-project-page/proportions/img-3.webp" type="image/webp" media="(max-width: 450px)">
+  
+  
+    <source srcset="img/one-project-page/proportions/img-2.webp" type="image/webp" media="(max-width: 850px)">
+  
+  
+    <source srcset="img/one-project-page/proportions/img-1.webp" type="image/webp" media="(max-width: 1100px)">
+  
+  <source srcset="img/one-project-page/proportions/img.webp" type="image/webp">
+  <img src="img/one-project-page/proportions/img.jpg" alt="img" loading="lazy" class="proportions__photo">
+</picture>
+
+
 </div>
-            </div>
-            <div class="proportions__bg_white"></div>
-        </section>
-    </main>
-    <script src="js/app-one-project.js?_v=20251002192858" defer></script>
+                </div>
+                <div class="proportions__bg_white"></div>
+            </section>
+        </main>
+    </div>
+    <script src="js/app-one-project.js?_v=20251008014552" defer></script>
 </body>
 </html>

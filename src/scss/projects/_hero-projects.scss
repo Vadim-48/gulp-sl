@@ -24,28 +24,46 @@
     &__text {
         color: #080808;
     }
-    &__btn{
+    &__dropdown{
+        position: relative;
         display: none;
-        // display: flex;
-        // flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        justify-content: center;
         font-weight: 600;
         font-size: 11px;
         letter-spacing: 0.06em;
+        color: #080808;
+    }
+    &__dropdown-btn{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: center;
+        // font-weight: 600;
+        // font-size: 11px;
+        // letter-spacing: 0.06em;
 
         width: 128px;
         height: 29px;
-        color: #080808;
+
         border: 1px solid #c4c4c4;
         border-radius: 88px;
-        // & span{
-        //     display: block;
-        // }
-        // & img{
-        //     display: block;
-        // }
+    }
+    &__dropdown-list{
+        position: absolute;
+        z-index: 3;
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 15px;
+        // margin-top: 10px;
+        width: 100%;
+        background: rgb(181, 181, 181, 0.6);
+        left: 50%;
+        bottom: 38px;
+        transform: translateX(-50%);
+        border-radius: 8px;
+            &.active{
+                display: flex;
+            }
     }
     &__list {
         font-weight: 600;
@@ -109,8 +127,12 @@
 @media (max-width: 650px){
     .hero {
         // padding-bottom: 0px;
-        &__btn{
-            display: flex;
+        &__dropdown{
+            margin-top: 27px;
+            position: absolute;
+        }
+        &__dropdown{
+            display: block;
         }
         &__list {
             display: none;
@@ -134,9 +156,9 @@
             width: 100%;
             margin: 16px 0 0 0;
         }
-        &__btn{
-            margin-top: 27px;
-        }
+        // &__btn{
+           
+        // }
     }
 }
 
