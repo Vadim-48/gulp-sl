@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="icon" href="@img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style-about.css">
+    <title>SL</title>
+</head>
+<body>
+    @@include('html/preloader.html',{})
+    <div class="body-content body-content_hidden">
+        <header class="header" id="header"> 
+            <div class="container">
+                @@include('html/header.html',{})
+            </div>
+            @@include('html/burger.html',{})
+        </header>
+        <main>
+            <section class="hero">
+                <!-- <div class="container"> -->
+                    @@include('html/about/hero.html',{})
+                <!-- </div> -->
+            </section>
+            <section class="company">
+                <div class="container">
+                    @@include('html/about/company.html',{})
+                </div>
+            </section>
+            <section class="experience">
+                <!-- <div class="container"> -->
+                    @@include('html/about/experience.html',{})
+                /
+            </section>
+            <section class="team">
+                <div class="container">
+                    @@include('html/about/team.html',{})
+                </div>
+            </section>
+            <section class="lorem">
+                <div class="container">
+                    @@include('html/main-page/lorem.html',{})
+                </div>
+            </section>
+            <section class="work">
+                <div class="container">
+                    @@include('html/about/work.html',{})
+                </div>
+            </section>
+        </main>
+        <footer class="footer" id="footer">
+            <div class="container">
+                <!-- @@include('html/footer-black.html',{}) -->
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/app-about.js" defer></script>
+</body>
+</html>
