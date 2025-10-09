@@ -1,0 +1,59 @@
+<div class="company__wrapper">
+    <div class="company__content">
+        <h2 class="company__title title">Company Philosophy </h2>
+        <p class="company__text text">
+            The basic philosophy of our studio is to create individual, aesthetically stunning solutions for 
+            our customers by lightning-fast development of projects employing unique styles and architecture. 
+        </p>
+        <div class="progressbar__wrap">
+            <div class="progressbar__btn-prev">
+                <img src="@img/about/swiper/arrow-left.svg" alt="" class="btn-prev__arrow">
+                <span class="progressbar__currentNumbers">01</span>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="progressbar__btn-next">
+                <span class="progressbar__allNumbers">04</span>
+                <img src="@img/about/swiper/arrow-right.svg" alt="" class="btn-next__arrow">
+            </div>
+        </div>
+    </div>
+
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            
+            <div class="swiper-slide">
+                @@include('../picture.html', {
+                    "class": "swiper-slide__photo",
+                    "imgPath": "@img/about/swiper/swiper-1",
+                    "imgExt": "jpg",
+                    "alt": "img",
+                })
+            </div>
+            <div class="swiper-slide">
+                @@include('../picture.html', {
+                    "class": "swiper-slide__photo",
+                    "imgPath": "@img/about/swiper/swiper-2",
+                    "imgExt": "jpg",
+                    "alt": "img",
+                })
+            </div>
+            <div class="swiper-slide">
+                @@include('../picture.html', {
+                    "class": "swiper-slide__photo",
+                    "imgPath": "@img/about/swiper/swiper-1",
+                    "imgExt": "jpg",
+                    "alt": "img",
+                })
+            </div>
+            <div class="swiper-slide">
+                @@include('../picture.html', {
+                    "class": "swiper-slide__photo",
+                    "imgPath": "@img/about/swiper/swiper-2",
+                    "imgExt": "jpg",
+                    "alt": "img",
+                })
+            </div>
+        </div>
+    </div> 
+</div>

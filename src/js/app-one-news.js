@@ -1,4 +1,5 @@
 import * as flsFunctions from "./modules/functions.js";
+import { runPreloader } from './modules/preloader.js';
 import { initBurger } from "./modules/init-burger.js";
 import { initSwiperOneNews } from "./modules/init-swiper-one-news.js";
 import { initLocationDropdown } from "./modules/init-location-dropdown.js";
@@ -9,6 +10,9 @@ import { initHeaderScroll } from "./modules/init-header-scroll.js";
 flsFunctions.isWebp();
 
 document.addEventListener("DOMContentLoaded", () => {
+  //preloader
+  runPreloader();
+  
   // Initialize burger menu
   initBurger();
 

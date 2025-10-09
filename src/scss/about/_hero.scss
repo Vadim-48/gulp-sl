@@ -1,0 +1,44 @@
+.hero {
+    overflow: hidden;
+    padding-top: 96px;
+    &__wrapper{
+        position: relative;
+    }
+    &__bg{
+        // width: 100vw;
+        // height: calc(100vh - 96px);
+        overflow: hidden;
+        & img{
+            width: 100vw;
+            height: calc(100vh - 96px);
+            // height: 87vh;
+        }
+
+    }
+
+    &__content {
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        top: 0;
+        left: 0;
+        height: calc(100vh - 96px);
+        width: 100vw;
+    }
+
+    &__title {
+        margin-top: 10px;
+        line-height: 121%; 
+    }
+
+    &__text {
+        width: 26%;
+        opacity: 1;
+    }
+}
+

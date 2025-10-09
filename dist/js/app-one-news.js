@@ -27,7 +27,77 @@ function isWebp() {
 
 
 /***/ }),
-/* 2 */,
+/* 2 */
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   runPreloader: () => (/* binding */ runPreloader)
+/* harmony export */ });
+// // preloader.js
+// export function runPreloader() {
+//     const preloader = document.querySelector('.preloader');
+//     const progressEl = document.querySelector('.preloader__progress');
+//     const mainContent = document.querySelector('.body-content');
+  
+//     let progress = 0;
+  
+//     //  Симуляція поступового відсотка (поки сторінка вантажиться)
+//     const fakeProgressInterval = setInterval(() => {
+//       if (progress < 95) {
+//         progress += Math.floor(Math.random() * 3) + 1; // +1..3%
+//         if (progress > 95) progress = 95;
+//         progressEl.textContent = progress;
+//       }
+//     }, 100);
+  
+//     //  Реальне завершення завантаження всієї сторінки
+//     window.addEventListener('load', () => {
+//       clearInterval(fakeProgressInterval);
+//       progress = 100;
+//       progressEl.textContent = progress;
+  
+//       // Плавне зникнення прелоадера
+//       preloader.classList.add('preloader--hidden');
+  
+//       // Показати контент
+//       setTimeout(() => {
+//         preloader.style.display = 'none';
+//         mainContent.classList.remove('body-content_hidden');
+//       }, 500);
+//     });
+//   }  
+
+// preloader.js
+function runPreloader() {
+  const preloader = document.querySelector('.preloader');
+  const progressEl = document.querySelector('.preloader__progress');
+  const mainContent = document.querySelector('.body-content');
+
+  let currentPercent = 0;
+
+  const interval = setInterval(() => {
+    currentPercent += 10;
+    if (currentPercent > 100) currentPercent = 100;
+
+    progressEl.textContent = currentPercent;
+
+    if (currentPercent >= 100) {
+      clearInterval(interval);
+
+      // Плавне зникнення прелоадера
+      preloader.classList.add('preloader_hidden');
+
+      setTimeout(() => {
+        preloader.style.display = 'none';
+        mainContent.classList.remove('body-content_hidden');
+      }, 300);
+    }
+  }, 50); // Зміни тривалість тут, щоб керувати швидкістю (300мс на крок)
+}
+
+
+/***/ }),
 /* 3 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -228,10 +298,12 @@ var __webpack_exports__ = {};
 (() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _modules_init_burger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _modules_init_swiper_one_news_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
-/* harmony import */ var _modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
-/* harmony import */ var _modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
+/* harmony import */ var _modules_preloader_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _modules_init_burger_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _modules_init_swiper_one_news_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(13);
+/* harmony import */ var _modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
+
 
 
 
@@ -243,20 +315,23 @@ __webpack_require__.r(__webpack_exports__);
 _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__.isWebp();
 
 document.addEventListener("DOMContentLoaded", () => {
+  //preloader
+  (0,_modules_preloader_js__WEBPACK_IMPORTED_MODULE_1__.runPreloader)();
+  
   // Initialize burger menu
-  (0,_modules_init_burger_js__WEBPACK_IMPORTED_MODULE_1__.initBurger)();
+  (0,_modules_init_burger_js__WEBPACK_IMPORTED_MODULE_2__.initBurger)();
 
   // Initialize Swiper slider
-  (0,_modules_init_swiper_one_news_js__WEBPACK_IMPORTED_MODULE_2__.initSwiperOneNews)();
+  (0,_modules_init_swiper_one_news_js__WEBPACK_IMPORTED_MODULE_3__.initSwiperOneNews)();
 
   // Initialize location dropdown
-  (0,_modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_3__.initLocationDropdown)();
+  (0,_modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_4__.initLocationDropdown)();
 
   // Responsive class toggle based on screen width
 //   handleBlockLargeResize(); 
   
   // Scroll
-  (0,_modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_4__.initHeaderScroll)();
+  (0,_modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_5__.initHeaderScroll)();
 });
 
 })();
