@@ -1,6 +1,6 @@
 .team {
     color: #080808;
-    margin: 11.3% 0 10% 0;
+    margin: 12.3% 0 10% 0;
     &__wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -23,9 +23,10 @@
         display: flex;
         align-items: flex-start;
 
-        gap: 27px;
+        gap: 31px;
         margin: 11% 0 0 -46px;
         width: 92%;
+        width: 422px;
     }
     &__about-text-img{
         margin-top: 10px;
@@ -34,9 +35,10 @@
         font-size: 20px;
     }
     &__ceo-photo{
-        width: 78.8%;
+        display: block;
+        max-width: 89%;
         // margin: 0 auto;
-        margin-left: 5%;
+        margin-left: 4.5%;
         & img{
             width: 100%;
             height: 100%;
@@ -44,11 +46,11 @@
     }
 
     &__content-photo {
-        margin: -6% 0 0 11%;
+        margin: -6.5% 0 0 10.8%;
     }
 
     &__block-wrap {
-        margin: 16% 0 0 9%;
+        margin: 15.5% 0 0 9%;
         display: flex;
         // grid-template-columns: 1fr 1fr 1fr;
         gap: 60px;
@@ -66,19 +68,53 @@
 
     &__block-text {
         width: 98px;
-        margin-top: 10px;
+        margin-top: 12px;
         line-height: 1.32;
     }
 
     &__content-text {
-        margin: 58px 0 0 9%;
+        margin: 56px 0 0 9%;
         width: 78%;
     }
 }
-.title {
+
+@media (max-width: 1100px){
+    .team{
+        &__about {
+        margin: 11% 0 0 14%;
+        }
+        &__about-text-wrap {
+            width: 98%;
+        }
+        &__about-text {
+            font-size: 16px;
+            line-height: 1.41;
+        }
+        &__content-photo {
+            margin: -3% 0 0 8%;
+        }
+    }  
 }
-.text {
+@media (max-width: 850px){
+    .experience{
+        &__photo-right {
+            display: none;
+        }
+        &__text {
+            width: 76%;
+        }
+    }
+
 }
+@media (max-width: 650px){
+
+}
+@media (max-width: 450px){
+
+}
+
+
+
 
 
 

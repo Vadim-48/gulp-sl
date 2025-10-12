@@ -589,7 +589,7 @@ body {
 }
 
 .company__wrapper {
-  margin-top: 10.5%;
+  margin-top: 9.7%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -598,9 +598,12 @@ body {
 }
 
 .company__content {
-  width: 56%;
+  width: 380px;
   line-height: 1.21;
-  margin: 15.5% 0 0 30%;
+  margin: 13.7% auto 0 auto;
+  -webkit-transform: translateX(25%);
+      -ms-transform: translateX(25%);
+          transform: translateX(25%);
 }
 
 .company__text {
@@ -608,12 +611,16 @@ body {
   opacity: 1;
 }
 
+.company__swiper {
+  min-width: 0;
+}
+
 .progressbar__wrap {
   position: relative;
   font-size: 11px;
   font-weight: 300;
   color: #828282;
-  margin-top: 42px;
+  margin-top: 44px;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -641,8 +648,7 @@ body {
   background: rgba(130, 130, 130, 0.32);
   width: 224px !important;
   height: 1px !important;
-  margin-top: 5px;
-  margin-left: 12.5%;
+  margin: 5px 0 0 45px;
 }
 
 .swiper-pagination-progressbar-fill {
@@ -650,8 +656,13 @@ body {
 }
 
 .swiper {
-  width: 84.5%;
-  aspect-ratio: 46/37;
+  margin-left: 8%;
+}
+
+.swiper-slide__photo {
+  display: block;
+  width: 98%;
+  height: 444px;
 }
 
 .swiper-slide__photo img {
@@ -721,7 +732,7 @@ body {
 
 .team {
   color: #080808;
-  margin: 11.3% 0 10% 0;
+  margin: 12.3% 0 10% 0;
 }
 
 .team__wrapper {
@@ -749,9 +760,10 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  gap: 27px;
+  gap: 31px;
   margin: 11% 0 0 -46px;
   width: 92%;
+  width: 422px;
 }
 
 .team__about-text-img {
@@ -763,8 +775,9 @@ body {
 }
 
 .team__ceo-photo {
-  width: 78.8%;
-  margin-left: 5%;
+  display: block;
+  max-width: 89%;
+  margin-left: 4.5%;
 }
 
 .team__ceo-photo img {
@@ -773,11 +786,11 @@ body {
 }
 
 .team__content-photo {
-  margin: -6% 0 0 11%;
+  margin: -6.5% 0 0 10.8%;
 }
 
 .team__block-wrap {
-  margin: 16% 0 0 9%;
+  margin: 15.5% 0 0 9%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -790,12 +803,12 @@ body {
 
 .team__block-text {
   width: 98px;
-  margin-top: 10px;
+  margin-top: 12px;
   line-height: 1.32;
 }
 
 .team__content-text {
-  margin: 58px 0 0 9%;
+  margin: 56px 0 0 9%;
   width: 78%;
 }
 
@@ -1041,6 +1054,47 @@ body {
     margin-left: 40px;
   }
 
+  .hero__text {
+    width: 50%;
+  }
+
+  .company__content {
+    -webkit-transform: translateX(10%);
+        -ms-transform: translateX(10%);
+            transform: translateX(10%);
+  }
+
+  .progressbar__wrap {
+    gap: 236px;
+  }
+
+  .progressbar__btn-next,
+  .progressbar__btn-prev {
+    min-width: 35px;
+    cursor: pointer;
+  }
+
+  .experience__block-title {
+    font-size: 38px;
+  }
+
+  .team__about {
+    margin: 11% 0 0 14%;
+  }
+
+  .team__about-text-wrap {
+    width: 98%;
+  }
+
+  .team__about-text {
+    font-size: 16px;
+    line-height: 1.41;
+  }
+
+  .team__content-photo {
+    margin: -3% 0 0 8%;
+  }
+
   .lorem__wrap {
     margin: 37.3% auto 36% auto;
     width: 45%;
@@ -1141,6 +1195,43 @@ body {
   .main-footer__contacts,
   .main-footer__mail {
     margin-left: 32px;
+  }
+
+  .experience__content-wrap {
+    width: 300px;
+    gap: 26px 0px;
+  }
+
+  .company__wrapper {
+    display: block;
+  }
+
+  .company__content {
+    width: 70%;
+  }
+
+  .company__swiper {
+    margin-top: 2%;
+  }
+
+  .swiper-pagination-progressbar {
+    margin: 5px 0 0 38px;
+  }
+
+  .btn-prev__arrow {
+    margin-right: 6px;
+  }
+
+  .btn-next__arrow {
+    margin-left: 6px;
+  }
+
+  .experience__photo-right {
+    display: none;
+  }
+
+  .experience__text {
+    width: 76%;
   }
 
   .lorem__wrap {
@@ -1277,6 +1368,10 @@ body {
 
   .hero__main-footer {
     width: 80%;
+  }
+
+  .company__content {
+    width: 90%;
   }
 
   .footer__inner {

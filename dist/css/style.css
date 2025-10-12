@@ -835,14 +835,16 @@ body {
           justify-content: space-between;
   height: 100%;
   padding: 32px;
-  display: none;
-  width: 100%;
-}
-
-.block__visible {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+      -ms-transform: translateY(20px);
+          transform: translateY(20px);
+  pointer-events: none;
 }
 
 .block__top {
@@ -950,6 +952,7 @@ body {
 }
 
 .request__photo_10 {
+  margin: 0 0 0 -4px;
   z-index: 3;
   -webkit-transform: rotate(-6deg);
       -ms-transform: rotate(-6deg);
@@ -964,9 +967,8 @@ body {
 }
 
 .request__photo_9 {
-  margin-left: -159px;
+  margin: -10px 0 0 -160px;
   z-index: 4;
-  margin-top: -8px;
 }
 
 .request__photo_9:hover {
@@ -977,9 +979,8 @@ body {
 }
 
 .request__photo_8 {
-  margin-left: -159px;
+  margin: -24px 0 0 -156px;
   z-index: 5;
-  margin-top: -23px;
   -webkit-transform: rotate(-6deg);
       -ms-transform: rotate(-6deg);
           transform: rotate(-6deg);
@@ -993,9 +994,8 @@ body {
 }
 
 .request__photo_7 {
-  margin-left: -155px;
+  margin: -43px 0 0 -159px;
   z-index: 6;
-  margin-top: -43px;
   -webkit-transform: rotate(-2deg);
       -ms-transform: rotate(-2deg);
           transform: rotate(-2deg);
@@ -1009,9 +1009,8 @@ body {
 }
 
 .request__photo_6 {
-  margin-left: -147px;
+  margin: -75px 0 0 -147px;
   z-index: 7;
-  margin-top: -75px;
   -webkit-transform: rotate(-11deg);
       -ms-transform: rotate(-11deg);
           transform: rotate(-11deg);
@@ -1025,9 +1024,8 @@ body {
 }
 
 .request__photo_5 {
-  margin-left: -172px;
+  margin: -91px 0 0 -172px;
   z-index: 8;
-  margin-top: -91px;
   -webkit-transform: rotate(-6deg);
       -ms-transform: rotate(-6deg);
           transform: rotate(-6deg);
@@ -1041,9 +1039,8 @@ body {
 }
 
 .request__photo_4 {
-  margin-left: -156px;
+  margin: -100px 0 0 -156px;
   z-index: 9;
-  margin-top: -100px;
 }
 
 .request__photo_4:hover {
@@ -1054,9 +1051,8 @@ body {
 }
 
 .request__photo_3 {
-  margin-left: -157px;
+  margin: -117px 0 0 -157px;
   z-index: 10;
-  margin-top: -117px;
   -webkit-transform: rotate(-6deg);
       -ms-transform: rotate(-6deg);
           transform: rotate(-6deg);
@@ -1070,9 +1066,8 @@ body {
 }
 
 .request__photo_2 {
-  margin-left: -156px;
+  margin: -139px 0 0 -156px;
   z-index: 11;
-  margin-top: -139px;
   -webkit-transform: rotate(-2deg);
       -ms-transform: rotate(-2deg);
           transform: rotate(-2deg);
@@ -1086,9 +1081,8 @@ body {
 }
 
 .request__photo_1 {
-  margin-left: -148px;
+  margin: -169px 0 0 -150px;
   z-index: 12;
-  margin-top: -167px;
   -webkit-transform: rotate(-11deg);
       -ms-transform: rotate(-11deg);
           transform: rotate(-11deg);
@@ -1280,8 +1274,8 @@ body {
   display: grid;
   -ms-grid-columns: 20% 22% 20% 1fr;
   grid-template-columns: 20% 22% 20% 1fr;
-  margin-top: 63px;
-  row-gap: 68px;
+  margin-top: 60px;
+  row-gap: 70px;
 }
 
 .drop__mail-wrap {
@@ -1385,6 +1379,21 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (min-width: 1101px) {
+  .block:hover .block__inner {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    pointer-events: auto;
+    -webkit-transition: opacity 0.5s ease, visibility 0.5s, -webkit-transform 0.3s ease;
+    transition: opacity 0.5s ease, visibility 0.5s, -webkit-transform 0.3s ease;
+    transition: opacity 0.5s ease, transform 0.3s ease, visibility 0.5s;
+    transition: opacity 0.5s ease, transform 0.3s ease, visibility 0.5s, -webkit-transform 0.3s ease;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -1588,9 +1597,11 @@ body {
   }
 
   .block__inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
     padding: 31px 0 35px 30px;
   }
 
@@ -1899,7 +1910,6 @@ body {
   }
 
   .our-project__galery {
-    margin-top: 15%;
     margin: 14.5% 0 0 0;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -2257,7 +2267,7 @@ body {
   }
 
   .philosophy {
-    margin-top: 84px;
+    margin-top: 81px;
   }
 
   .philosophy__text:first-of-type {
@@ -2270,7 +2280,7 @@ body {
   }
 
   .philosophy__btn-more {
-    margin-top: 9.8%;
+    margin-top: 10.8%;
   }
 
   .philosophy__row {

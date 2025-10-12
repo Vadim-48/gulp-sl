@@ -41,7 +41,6 @@
         position: relative;
         padding-left: 16px;
         margin-top: 12px;
-        // margin-bottom: 0;
         &::before {
             content: ''; 
             position: absolute;
@@ -56,6 +55,13 @@
     }
     &__social{
         display: none;
+    }
+    &__line{
+        background: #828282;
+        opacity: 0.16;  
+        width: 80%;   
+        height: 1px;
+        margin: 7.6% auto 0 auto;
     }
 }
 
@@ -86,6 +92,10 @@
             display: block;
             margin-top: 52px;
         }
+        &__line{
+            width: 77%;   
+            margin: 9.6% auto 0 auto;
+        }
     }
 
 }
@@ -103,13 +113,16 @@
                 margin-top: 30px;
             }
         }
-    
-    
+       
         &__list-item {
             margin-top: 11px;
         }
         &__social{
             margin-top: 45px;
+        }
+        &__line{
+            width: 88.5%;   
+            margin: 10.6% 0 0 11.2%;
         }
     }
 }
@@ -130,6 +143,10 @@
         }
         &__social{
             margin-top: 35px;
+        }
+        &__line{
+            width: 100%;   
+            margin: 19.4% auto 0 auto;
         }
     }
 }

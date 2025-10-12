@@ -25,6 +25,7 @@
             height: 100%;
         }
         &_10{
+            margin: 0 0 0 -4px;
             z-index: 3;
             transform: rotate(-6deg);
             &:hover{
@@ -33,18 +34,16 @@
             }
         }
         &_9{
-            margin-left: -159px;
+            margin: -10px 0 0 -160px;
             z-index: 4;
-            margin-top: -8px;
             &:hover{
                 z-index: 15;
                 transform: rotate(0deg);
             }
         }
         &_8{
-            margin-left: -159px;
+            margin: -24px 0 0 -156px;
             z-index: 5;
-            margin-top: -23px;
             transform: rotate(-6deg);
             &:hover{
                 z-index: 15;
@@ -52,9 +51,8 @@
             }
         }
         &_7{
-            margin-left: -155px;
+            margin: -43px 0 0 -159px;
             z-index: 6;
-            margin-top: -43px;
             transform: rotate(-2deg);
             &:hover{
                 z-index: 15;
@@ -62,9 +60,8 @@
             }
         }
         &_6{
-            margin-left: -147px;
+            margin: -75px 0 0 -147px;
             z-index: 7;
-            margin-top: -75px;
             transform: rotate(-11deg);
             &:hover{
                 z-index: 15;
@@ -72,9 +69,8 @@
             }
         }
         &_5{
-            margin-left: -172px;
+            margin: -91px 0 0 -172px;
             z-index: 8;
-            margin-top: -91px;
             transform: rotate(-6deg);
             &:hover{
                 z-index: 15;
@@ -82,18 +78,16 @@
             }
         }
         &_4{
-            margin-left: -156px;
+            margin: -100px 0 0 -156px;
             z-index: 9;
-            margin-top: -100px;
             &:hover{
                 z-index: 15;
                 transform: rotate(0deg);
             }
         }
         &_3{
-            margin-left: -157px;
+            margin: -117px 0 0 -157px;
             z-index: 10;
-            margin-top: -117px;
             transform: rotate(-6deg);
             &:hover{
                 z-index: 15;
@@ -101,9 +95,8 @@
             }
         }
         &_2{
-            margin-left: -156px;
+            margin: -139px 0 0 -156px;
             z-index: 11;
-            margin-top: -139px;
             transform: rotate(-2deg);
              &:hover{
                 z-index: 15;
@@ -111,9 +104,8 @@
             }
         }
         &_1{
-            margin-left: -148px;
+            margin: -169px 0 0 -150px;
             z-index: 12;
-            margin-top: -167px;
             transform: rotate(-11deg);
             &:hover{
                 z-index: 15;

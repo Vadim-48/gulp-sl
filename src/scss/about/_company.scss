@@ -2,15 +2,16 @@
     color: #080808;
     
     &__wrapper {
-        margin-top: 10.5%;
+        margin-top: 9.7%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         min-width: 0;
     }
     &__content{
-        width: 56%; 
+        width: 380px;
         line-height: 1.21;
-        margin: 15.5% 0 0 30%;
+        margin: 13.7% auto 0 auto;
+        transform: translateX(25%);
     }
     &__title {
         // margin: 16% auto;
@@ -20,6 +21,10 @@
         margin-top: 12px;
         opacity: 1;
     }
+    &__swiper{
+        // width: 100%;
+        min-width: 0;
+    }
 }
 
 .progressbar{
@@ -28,12 +33,7 @@
         font-size: 11px;
         font-weight: 300;
         color: #828282;
-
-        // position: absolute;
-        // top: 61.49vh;
-        // right: 1.96vw;
-        // transform: translateX(-50%);
-        margin-top: 42px;
+        margin-top: 44px;
         z-index: 1;
         display: flex;
         flex-wrap: nowrap;
@@ -52,11 +52,13 @@
 }
 
 .swiper-pagination-progressbar{
+    // position: absolute;
     background: rgb(130, 130, 130, 0.32);
     width: 224px !important;
     height: 1px !important;
-    margin-top: 5px;
-    margin-left: 12.5%;
+    // margin-top: 5px;
+    // margin-left: 12.5%;
+    margin: 5px 0 0 45px;
 }
 .swiper-pagination-progressbar-fill {
     background-color: #828282 !important;
@@ -64,8 +66,12 @@
 
 
 .swiper{
-    width: 84.5%;
-    aspect-ratio: 46 / 37;
+    margin-left: 8%;
+    // display: none;
+    // width: 92%;
+    // margin-right: 0;
+    // min-width: 0;
+    // aspect-ratio: 46 / 37;
 
     & .swiper-scrollbar-drag{
         // background-color: #340d0d;
@@ -74,14 +80,68 @@
 
 .swiper-slide {
     &__photo{
-        // width: 100%;
+        display: block;
+        width: 98%;
         // height:100%;
+        height: 444px;
         & img{
             width: 100%;
             height:100%; 
         }
     }
 }
+
+@media (max-width: 1100px){
+    .company__content {
+        transform: translateX(10%);
+    }
+    .progressbar{
+        &__wrap{
+            gap: 236px;
+        }
+        &__btn-next, &__btn-prev {
+            min-width: 35px;
+            cursor: pointer;
+        }
+    }
+}
+@media (max-width: 850px){
+    .experience__content-wrap {
+        width: 300px;
+        gap: 26px 0px;
+    }
+    .company{
+        &__wrapper {
+            display: block;
+        }
+        &__content{
+            width: 70%;
+        }
+        &__swiper{
+            margin-top: 2%;
+        }
+    }
+    .swiper-pagination-progressbar {
+        margin: 5px 0 0 38px;
+    }
+    .btn-prev__arrow{
+        margin-right: 6px;
+    }
+    .btn-next__arrow{
+        margin-left: 6px;
+    }
+}
+@media (max-width: 650px){
+    .company__content {
+        width: 90%;
+    }
+
+}
+@media (max-width: 450px){
+
+}
+
+
 
 
 

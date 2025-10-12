@@ -6,7 +6,6 @@
 }
 
 .hero {
-    // padding-top: 18.4%;
     position: relative;
     overflow-x: hidden;
 
@@ -135,16 +134,9 @@
 }
 @media (max-width: 850px){
     .hero{
-        &__bg{
-            & img{
-                // aspect-ratio: 4/5;
-            }
-        }
         &__wrapper {
             top: 38.5%;
-            // display: flex;
-            // flex-direction: column;
-            // justify-content: center;
+            left: 16%;
         }
         &__title {
             line-height: 116%;
@@ -166,6 +158,7 @@
 }
 @media (max-width: 650px){
     .hero{
+        
         &__title {
             line-height: 116%;
         }

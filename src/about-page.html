@@ -16,8 +16,8 @@
     <title>SL</title>
 </head>
 <body>
-    @@include('html/preloader.html',{})
-    <div class="body-content body-content_hidden">
+    <!-- @@include('html/preloader.html',{})
+    <div class="body-content body-content_hidden"> -->
         <header class="header" id="header"> 
             <div class="container">
                 @@include('html/header.html',{})
@@ -26,19 +26,15 @@
         </header>
         <main>
             <section class="hero">
-                <!-- <div class="container"> -->
-                    @@include('html/about/hero.html',{})
-                <!-- </div> -->
+                @@include('html/about/hero.html',{})
             </section>
             <section class="company">
-                <div class="container">
+                <!-- <div class="container"> -->
                     @@include('html/about/company.html',{})
-                </div>
+                <!-- </div> -->
             </section>
             <section class="experience">
-                <!-- <div class="container"> -->
-                    @@include('html/about/experience.html',{})
-                /
+                @@include('html/about/experience.html',{})
             </section>
             <section class="team">
                 <div class="container">
@@ -61,7 +57,7 @@
                 <!-- @@include('html/footer-black.html',{}) -->
             </div>
         </footer>
-    </div>
+    <!-- </div> -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/app-about.js" defer></script>
 </body>
