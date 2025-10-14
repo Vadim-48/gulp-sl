@@ -16,8 +16,8 @@
     <title>SL</title>
 </head>
 <body>
-    <!-- @@include('html/preloader.html',{}) -->
-    <!-- <div class="body-content body-content_hidden"> -->
+    @@include('html/preloader.html',{})
+    <div class="body-content body-content_hidden">
         <header class="header" id="header"> 
             <div class="container">
                 @@include('html/header.html',{})
@@ -41,9 +41,7 @@
                 </div>
             </section>
             <section class="our-news">
-                <!-- <div class="container"> -->
-                    @@include('html/one-news/our-news-one-news.html',{})
-                <!-- </div> -->
+                @@include('html/one-news/our-news-one-news.html',{})
             </section>
         </main>
         <footer class="footer" id="footer">
@@ -51,7 +49,7 @@
                 @@include('html/footer-black.html',{})
             </div>
         </footer>
-    <!-- </div> -->
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/app-one-news.js" defer></script>
 </body>
