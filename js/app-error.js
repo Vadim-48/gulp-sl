@@ -1,8 +1,8 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
-/******/ 	var __webpack_modules__ = ({
-
-/***/ 1:
+/******/ 	var __webpack_modules__ = ([
+/* 0 */,
+/* 1 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -27,61 +27,8 @@ function isWebp() {
 
 
 /***/ }),
-
-/***/ 2:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   runPreloader: () => (/* binding */ runPreloader)
-/* harmony export */ });
-// preloader.js
-function runPreloader() {
-  const preloader = document.querySelector('.preloader');
-  const progressEl = document.querySelector('.preloader__progress');
-  const preloaderText = document.querySelector('.preloader__text');
-  const mainContent = document.querySelector('.body-content');
-
-  let progress = 0;
-
-  // Simulating gradual loading
-  const fakeProgressInterval = setInterval(() => {
-    if (progress < 95) {
-      progress += Math.floor(Math.random() * 3) + 1; // +1..3%
-      if (progress > 95) progress = 95;
-      progressEl.textContent = progress;
-    }
-  }, 100);
-
-  // When the page is fully loaded
-  window.addEventListener('load', () => {
-    clearInterval(fakeProgressInterval);
-    progress = 100;
-    progressEl.textContent = progress;
-
-    // We show 100% first
-    preloaderText.textContent = `HI ${progress}%`;
-
-    // Delay 0.5 seconds before replacing all text with "HILIGHT"
-    setTimeout(() => {
-      preloaderText.textContent = 'HILIGHT';
-
-      // Smoothly disappearing the preloader
-      preloader.classList.add('preloader--hidden');
-
-      setTimeout(() => {
-        preloader.style.display = 'none';
-        mainContent.classList.remove('body-content_hidden');
-      }, 500);
-    }, 500);
-  });
-}
-
-
-
-/***/ }),
-
-/***/ 3:
+/* 2 */,
+/* 3 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -126,71 +73,68 @@ function initBurger() {
   }
 
 /***/ }),
-
-/***/ 7:
+/* 4 */,
+/* 5 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   initHeaderScroll: () => (/* binding */ initHeaderScroll)
+/* harmony export */   initLocationDropdown: () => (/* binding */ initLocationDropdown)
 /* harmony export */ });
-function initHeaderScroll() {
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('header');
-      if (header) {
-        header.classList.toggle('scrolled', window.scrollY > 0);
-      }
+function initLocationDropdown() {
+    const buttons = document.querySelectorAll(".location__btn");
+  
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+  
+        const container = btn.closest(".main-footer__location");
+        const content = container?.querySelector(".location__content");
+        const arrow = btn.querySelector(".location__arrow");
+  
+        content?.classList.toggle("active");
+        arrow?.classList.toggle("active");
+      });
+    });
+  
+    // Close all dropdowns on outside click
+    document.addEventListener("click", () => {
+      document.querySelectorAll(".location__content.active").forEach(el => el.classList.remove("active"));
+      document.querySelectorAll(".location__arrow.active").forEach(el => el.classList.remove("active"));
+    });
+  
+    // Prevent closing when clicking inside content
+    document.querySelectorAll(".location__content").forEach(content => {
+      content.addEventListener("click", e => e.stopPropagation());
     });
   }
 
 /***/ }),
-
-/***/ 18:
+/* 6 */,
+/* 7 */,
+/* 8 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   initSwiperAbout: () => (/* binding */ initSwiperAbout)
+/* harmony export */   initLangToggle: () => (/* binding */ initLangToggle)
 /* harmony export */ });
-function initSwiperAbout() {
-    // Check if Swiper is loaded and .swiper element exists
-    if (typeof Swiper === "undefined" || !document.querySelector('.swiper')) return;
-  
-    new Swiper('.swiper', {
-      navigation: {
-        nextEl: '.progressbar__btn-next',
-        prevEl: '.progressbar__btn-prev'
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'progressbar',
-      },
-      on: {
-        slideChange: function () {
-          updateSlideNumbers(this);
-        },
-        init: function () {
-          updateSlideNumbers(this);
-        },
-      },
-      slidesPerView: 1.17,
-      loop: true,
-      grabCursor: true,
-    });
-  
-    // Update slide number display
-    function updateSlideNumbers(swiper) {
-      const current = swiper.realIndex;
-      const display = document.querySelector('.progressbar__currentNumbers');
-      if (display) {
-        display.textContent = current + 1 < 10 ? `0${current + 1}` : current + 1;
-      }
-    }
-  }
+function initLangToggle() {
+  const langToggle = document.querySelector('.header__lang');
+  const langMenu = document.querySelector('.header__lang-menu');
+
+  langToggle.addEventListener('click', function (event) {
+    event.stopPropagation();
+    langMenu.classList.toggle('active');
+  });
+
+  document.addEventListener('click', function () {
+    langMenu.classList.remove('active');
+  });
+}
 
 /***/ })
-
-/******/ 	});
+/******/ 	]);
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
@@ -251,16 +195,14 @@ var __webpack_exports__ = {};
 (() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _modules_preloader_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _modules_init_burger_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-/* harmony import */ var _modules_init_swiper_about_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(18);
-/* harmony import */ var _modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
+/* harmony import */ var _modules_init_burger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
+/* harmony import */ var _modules_init_lang_toggle_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
+
+// import { runPreloader } from './modules/preloader.js';
 
 
-
-
-// import { initLocationDropdown } from "./modules/init-location-dropdown.js";
-// import { handleBlockLargeResize } from "./modules/block-large-handler.js";
+// import { initHeaderScroll } from "./modules/init-header-scroll.js";
 
 
 // WebP support check
@@ -268,22 +210,19 @@ _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__.isWebp();
 
 document.addEventListener("DOMContentLoaded", () => {
   //preloader
-  (0,_modules_preloader_js__WEBPACK_IMPORTED_MODULE_1__.runPreloader)();
+//   runPreloader();
   
   // Initialize burger menu
-  (0,_modules_init_burger_js__WEBPACK_IMPORTED_MODULE_2__.initBurger)();
-
-  // Initialize Swiper slider
-  (0,_modules_init_swiper_about_js__WEBPACK_IMPORTED_MODULE_3__.initSwiperAbout)();
+  (0,_modules_init_burger_js__WEBPACK_IMPORTED_MODULE_1__.initBurger)();
 
   // Initialize location dropdown
-//   initLocationDropdown();
+  (0,_modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_2__.initLocationDropdown)();
 
-  // Responsive class toggle based on screen width
-//   handleBlockLargeResize(); 
-  
   // Scroll
-  (0,_modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_4__.initHeaderScroll)();
+//   initHeaderScroll();
+
+  // Lang
+  (0,_modules_init_lang_toggle_js__WEBPACK_IMPORTED_MODULE_3__.initLangToggle)();
 });
 })();
 
