@@ -1,17 +1,16 @@
 import * as flsFunctions from "./modules/functions.js";
-import { runPreloader } from './modules/preloader.js';
+// import { runPreloader } from './modules/preloader.js';
 import { initBurger } from "./modules/init-burger.js";
 import { initLocationDropdown } from "./modules/init-location-dropdown.js";
 // import { initHeaderScroll } from "./modules/init-header-scroll.js";
 import { initLangToggle } from './modules/init-lang-toggle.js';
-import { initApartamentsToggle } from './modules/init-apartaments-toggle.js';
 
 // WebP support check
 flsFunctions.isWebp();
 
 document.addEventListener("DOMContentLoaded", () => {
   //preloader
-  runPreloader();
+//   runPreloader();
   
   // Initialize burger menu
   initBurger();
@@ -20,11 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initLocationDropdown();
 
   // Scroll
-  // initHeaderScroll();
+//   initHeaderScroll();
 
   // Lang
   initLangToggle();
-
-  // Apartaments
-  initApartamentsToggle()
 });
