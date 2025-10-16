@@ -335,6 +335,7 @@ body {
 }
 
 .burger__block {
+  position: relative;
   color: #fff;
   position: fixed;
   width: 100vw;
@@ -379,7 +380,7 @@ body {
 }
 
 .burger__footer .hero__main-footer {
-  bottom: 6%;
+  bottom: 24px;
 }
 
 .hero__main-footer {
