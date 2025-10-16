@@ -33,6 +33,7 @@
 
 .burger{
     &__block{
+        position: relative;
         color: #fff;
         position: fixed;
         width: 100vw;
@@ -65,8 +66,9 @@
     }
     &__footer{
         & .hero__main-footer{
-            //bottom: 48px;
-            bottom: 6%;
+            bottom: 24px;
+            // bottom: 6%;
+
         }       
     }
 }
