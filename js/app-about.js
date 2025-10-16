@@ -35,67 +35,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   runPreloader: () => (/* binding */ runPreloader)
 /* harmony export */ });
-// // preloader.js
-// export function runPreloader() {
-//     const preloader = document.querySelector('.preloader');
-//     const progressEl = document.querySelector('.preloader__progress');
-//     const mainContent = document.querySelector('.body-content');
-  
-//     let progress = 0;
-  
-//     //  Симуляція поступового відсотка (поки сторінка вантажиться)
-//     const fakeProgressInterval = setInterval(() => {
-//       if (progress < 95) {
-//         progress += Math.floor(Math.random() * 3) + 1; // +1..3%
-//         if (progress > 95) progress = 95;
-//         progressEl.textContent = progress;
-//       }
-//     }, 100);
-  
-//     //  Реальне завершення завантаження всієї сторінки
-//     window.addEventListener('load', () => {
-//       clearInterval(fakeProgressInterval);
-//       progress = 100;
-//       progressEl.textContent = progress;
-  
-//       // Плавне зникнення прелоадера
-//       preloader.classList.add('preloader--hidden');
-  
-//       // Показати контент
-//       setTimeout(() => {
-//         preloader.style.display = 'none';
-//         mainContent.classList.remove('body-content_hidden');
-//       }, 500);
-//     });
-//   }  
-
 // preloader.js
 function runPreloader() {
   const preloader = document.querySelector('.preloader');
   const progressEl = document.querySelector('.preloader__progress');
+  const preloaderText = document.querySelector('.preloader__text');
   const mainContent = document.querySelector('.body-content');
 
-  let currentPercent = 0;
+  let progress = 0;
 
-  const interval = setInterval(() => {
-    currentPercent += 10;
-    if (currentPercent > 100) currentPercent = 100;
+  // Simulating gradual loading
+  const fakeProgressInterval = setInterval(() => {
+    if (progress < 95) {
+      progress += Math.floor(Math.random() * 3) + 1; // +1..3%
+      if (progress > 95) progress = 95;
+      progressEl.textContent = progress;
+    }
+  }, 100);
 
-    progressEl.textContent = currentPercent;
+  // When the page is fully loaded
+  window.addEventListener('load', () => {
+    clearInterval(fakeProgressInterval);
+    progress = 100;
+    progressEl.textContent = progress;
 
-    if (currentPercent >= 100) {
-      clearInterval(interval);
+    // We show 100% first
+    preloaderText.textContent = `HI ${progress}%`;
 
-      // Плавне зникнення прелоадера
-      preloader.classList.add('preloader_hidden');
+    // Delay 0.5 seconds before replacing all text with "HILIGHT"
+    setTimeout(() => {
+      preloaderText.textContent = 'HILIGHT';
+
+      // Smoothly disappearing the preloader
+      preloader.classList.add('preloader--hidden');
 
       setTimeout(() => {
         preloader.style.display = 'none';
         mainContent.classList.remove('body-content_hidden');
-      }, 300);
-    }
-  }, 50); // Зміни тривалість тут, щоб керувати швидкістю (300мс на крок)
+      }, 500);
+    }, 500);
+  });
 }
+
 
 
 /***/ }),

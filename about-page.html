@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap&_v=20251013023440" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap&_v=20251016143317" rel="stylesheet">
     <link
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20251013023440"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20251016143317"
     />
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <link rel="stylesheet" href="css/style-about.css?_v=20251013023440">
+    <link rel="stylesheet" href="css/style-about.css?_v=20251016143317">
     <title>SL</title>
 </head>
 <body>
-    
+    <div class="preloader">
+    <div class="preloader__text">HI <span class="preloader__progress">0</span>%</div>
+</div>
+    <div class="body-content body-content_hidden">
         <header class="header" id="header"> 
             <div class="container">
                 <div class="header__wrapper">
@@ -129,8 +132,7 @@
 </div>
             </section>
             <section class="company">
-                <!-- <div class="container"> -->
-                    <div class="company__wrapper">
+                <div class="company__wrapper">
     <div class="company__content">
         <h2 class="company__title title">Company Philosophy </h2>
         <p class="company__text text">
@@ -223,7 +225,6 @@
         </div>
     </div>   
 </div>
-                <!-- </div> -->
             </section>
             <section class="experience">
                 <div class="experience__wrapper">
@@ -334,7 +335,7 @@
 </div>
                 </div>
             </section>
-            <section class="lorem">
+            <section class="lorem about-lorem">
                 <div class="container">
                     <div class="lorem__galery">
     <picture class="lorem__photo lorem__photo_1">
@@ -463,17 +464,49 @@
             </section>
             <section class="work">
                 <div class="container">
-                    
+                    <h2 class="work__title title">Do you want to work in our team?</h2>
+<div class="work__wrap">
+    <form action="#!" class="work__form">
+        <span class="work__form-text">Email</span>
+        <input type="text" class="work__form-input">
+        <img src="img/about/arrow-right.svg" alt="->" class="work__form-img">
+    </form>
+    <div class="work__content">
+        <p class="work__content-text text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam.
+        </p>
+        <div class="work__content-wrap">
+            <a href="maito:info@hi-light.pl" class="work__mail">info@hi-light.pl</a>
+            <div class="work__sub-text">
+                <span>Fb</span>
+                <span>In</span>
+                <span>Be</span>
+            </div>
+        </div>
+    </div>
+</div>
+
                 </div>
             </section>
         </main>
         <footer class="footer" id="footer">
             <div class="container">
-                
+                <div class="footer__inner">
+    <p class="footer__rights">
+        © Copyright 2018. All rights reserved
+    </p>
+    <div class="footer__wrap">
+        <span>Made with love in</span>
+        <div class="footer__first-last">
+            <img src="img/footer/first-last-black.svg" alt="">
+        </div>
+    </div>
+</div>
             </div>
         </footer>
-    <!-- </div> -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20251013023440"></script>
-    <script src="js/app-about.js?_v=20251013023440" defer></script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20251016143317"></script>
+    <script src="js/app-about.js?_v=20251016143317" defer></script>
 </body>
 </html>
