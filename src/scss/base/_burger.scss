@@ -66,9 +66,11 @@
     }
     &__footer{
         & .hero__main-footer{
-            bottom: 24px;
+            // bottom: 48px;
+            bottom: calc(50px + env(safe-area-inset-bottom));
+            position: fixed;
+            transform: translateZ(0);
             // bottom: 6%;
-
         }       
     }
 }

@@ -292,7 +292,10 @@ body {
 }
 
 .burger__footer .hero__main-footer {
-  bottom: 24px;
+  bottom: calc(50px + env(safe-area-inset-bottom));
+  position: fixed;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
 
 .header {
