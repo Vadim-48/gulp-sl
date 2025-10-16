@@ -68,7 +68,28 @@
     }
 }
 @media (max-width: 850px){
-
+    .experience{
+        &__wrapper {
+            grid-template-columns: 1fr;
+        }
+        &__photo {
+            width: 100%;
+            margin-left: 0%;
+        }
+        &__photo-right {
+            display: none;
+        }
+        &__text {
+            width: 76%;
+        }
+        &__content-wrap {
+            display: flex;
+            width: 86%;
+            justify-content: center;
+            margin: 7.6% 5% 0 5%;
+            flex-wrap: wrap;
+        }
+    }
 }
 @media (max-width: 650px){
 

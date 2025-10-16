@@ -1,0 +1,11 @@
+.about-lorem{
+    background:  #080808;
+}
+.lorem{
+    &__wrap {
+        color: #fff;
+    }
+    &__text{
+        opacity: 0.6;
+    }
+}
