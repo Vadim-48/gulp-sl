@@ -68,7 +68,7 @@
         & .hero__main-footer{
             // bottom: 48px;
             bottom: calc(50px + env(safe-area-inset-bottom));
-            position: fixed;
+            // position: fixed;
             transform: translateZ(0);
             left: 0;
             right: 0;
