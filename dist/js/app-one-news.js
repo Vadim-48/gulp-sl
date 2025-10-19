@@ -180,11 +180,59 @@ function initHeaderScroll() {
 
 /***/ }),
 /* 8 */,
-/* 9 */,
+/* 9 */
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initAreaSelector: () => (/* binding */ initAreaSelector)
+/* harmony export */ });
+// export function initAreaSelector() {
+//     const items = document.querySelectorAll('.popup__line-point');
+//     const input = document.getElementById('areaValue');
+//
+//     if (!items.length || !input) return;
+//
+//     items.forEach(item => {
+//         item.addEventListener('click', () => {
+//             // знімаємо active з усіх
+//             items.forEach(i => i.querySelector('.popup__point-item').classList.remove('active'));
+//
+//             // додаємо active до поточного
+//             item.querySelector('.popup__point-item').classList.add('active');
+//
+//             // зберігаємо значення у hidden input
+//             input.value = item.dataset.value;
+//         });
+//     });
+// }
+
+function initAreaSelector() {
+    const items = document.querySelectorAll('.popup__line-point');
+    const input = document.getElementById('areaValue');
+
+    if (!items.length || !input) return;
+
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            // Зняти active з усіх
+            items.forEach(i => i.querySelector('.popup__point-item').classList.remove('active'));
+
+            // Додати active до поточного
+            item.querySelector('.popup__point-item').classList.add('active');
+
+            // Записати значення в hidden input
+            input.value = item.dataset.value;
+        });
+    });
+}
+
+/***/ }),
 /* 10 */,
 /* 11 */,
 /* 12 */,
-/* 13 */
+/* 13 */,
+/* 14 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -281,15 +329,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _modules_preloader_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _modules_init_burger_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-/* harmony import */ var _modules_init_swiper_one_news_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(13);
+/* harmony import */ var _modules_init_swiper_one_news_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(14);
 /* harmony import */ var _modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
 /* harmony import */ var _modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
+/* harmony import */ var _modules_init_area_selector_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9);
 
 
 
 
 
 // import { handleBlockLargeResize } from "./modules/block-large-handler.js";
+
 
 
 // WebP support check
@@ -313,6 +363,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Scroll
   (0,_modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_5__.initHeaderScroll)();
+
+  (0,_modules_init_area_selector_js__WEBPACK_IMPORTED_MODULE_6__.initAreaSelector)();
 });
 
 })();

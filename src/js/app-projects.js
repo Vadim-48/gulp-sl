@@ -6,6 +6,7 @@ import { handleBlockLargeResize } from "./modules/block-large-handler.js";
 import { initHeaderScroll } from "./modules/init-header-scroll.js";
 import { initLangToggle } from './modules/init-lang-toggle.js';
 import { initApartamentsToggle } from './modules/init-apartaments-toggle.js';
+import { initAreaSelector } from './modules/init-area-selector.js';
 
 // WebP support check
 flsFunctions.isWebp();
@@ -30,5 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initLangToggle();
 
   // Apartaments
-  initApartamentsToggle()
+  initApartamentsToggle();
+
+  initAreaSelector();
 });

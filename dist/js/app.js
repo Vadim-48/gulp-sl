@@ -269,6 +269,54 @@ function initLangToggle() {
   });
 }
 
+/***/ }),
+/* 9 */
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initAreaSelector: () => (/* binding */ initAreaSelector)
+/* harmony export */ });
+// export function initAreaSelector() {
+//     const items = document.querySelectorAll('.popup__line-point');
+//     const input = document.getElementById('areaValue');
+//
+//     if (!items.length || !input) return;
+//
+//     items.forEach(item => {
+//         item.addEventListener('click', () => {
+//             // знімаємо active з усіх
+//             items.forEach(i => i.querySelector('.popup__point-item').classList.remove('active'));
+//
+//             // додаємо active до поточного
+//             item.querySelector('.popup__point-item').classList.add('active');
+//
+//             // зберігаємо значення у hidden input
+//             input.value = item.dataset.value;
+//         });
+//     });
+// }
+
+function initAreaSelector() {
+    const items = document.querySelectorAll('.popup__line-point');
+    const input = document.getElementById('areaValue');
+
+    if (!items.length || !input) return;
+
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            // Зняти active з усіх
+            items.forEach(i => i.querySelector('.popup__point-item').classList.remove('active'));
+
+            // Додати active до поточного
+            item.querySelector('.popup__point-item').classList.add('active');
+
+            // Записати значення в hidden input
+            input.value = item.dataset.value;
+        });
+    });
+}
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -338,6 +386,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_block_large_handler_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 /* harmony import */ var _modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7);
 /* harmony import */ var _modules_init_lang_toggle_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8);
+/* harmony import */ var _modules_init_area_selector_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9);
+
 
 
 
@@ -371,6 +421,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Lang
   (0,_modules_init_lang_toggle_js__WEBPACK_IMPORTED_MODULE_7__.initLangToggle)();
+
+  (0,_modules_init_area_selector_js__WEBPACK_IMPORTED_MODULE_8__.initAreaSelector)();
 });
 
 

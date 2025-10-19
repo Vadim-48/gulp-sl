@@ -17,6 +17,7 @@
 </head>
 <body>
     @@include('html/preloader.html',{})
+    @@include('html/popup/popup-request.html',{})
     <div class="body-content body-content_hidden">
         <header class="header" id="header"> 
             <div class="container">
@@ -56,6 +57,15 @@
                 <div class="container">
                     @@include('html/main-page/drop.html',{})
                 </div>
+                @@include('../src/html/picture.html', {
+                "class": "drop__bg",
+                "imgPath": "@img/main/drop/drop_bg",
+                "imgExt": "png",
+                "alt": "img",
+                "imgPath1": true,
+                "imgPath2": true,
+                "imgPath3": true
+                })
             </section>
         </main>
         <footer class="footer" id="footer">

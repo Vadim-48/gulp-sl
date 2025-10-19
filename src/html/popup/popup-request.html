@@ -1,0 +1,82 @@
+<div id="popup" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <div class="popup__form-wrap">
+                <h1 class="form__title">Calculate the cost of work</h1>
+                <form action="#" id="formRequest" method="post" enctype="multipart/form-data" class="popup__form form">
+                    <input type="text" required name="name" placeholder="Name" class="form__input">
+                    <input type="text" required name="surename" placeholder="Last name" class="form__input">
+                    <input type="tel" required pattern="\+?[0-9\s\-\(\)]{10,20}" title = "+38(067)123-45-67, 067 123 4567" name="phone" placeholder="Phone" class="form__input">
+                    <input type="text" required name="city" placeholder="Your city" class="form__input">
+                    <input type="email" required name="email" placeholder="Email" class="form__input">
+                    <select name="type" required class="form__select">
+                        <option value="" disabled selected hidden>Property type</option>
+                        <option  value="type-1" class="form__select-option">Property type-1</option>
+                        <option value="type-2" class="form__select-option">Property type-2</option>
+                        <option value="type-3" class="form__select-option">Property type-3</option>
+                    </select>
+                    <input type="text" name="comment" placeholder="Your comment" class="form__input form__input-comment">
+<!--                    <input type="hidden" name="area" id="areaValue">-->
+                </form>
+            </div>
+            <div class="popup__area">
+                <h2 class="popup__title">Area (m2)</h2>
+                <div class="popup__line-row">
+                    <hr class="popup__line popup__line_long">
+                    <div class="popup__line-wrapper">
+                        <hr class="popup__line">
+                        <div class="popup__line-point">
+                            <p class="popup__point-text" data-value="to 50">to 50</p>
+                            <div class="popup__point-item"><div></div></div>
+                        </div>
+                        <div class="popup__line-point">
+                            <p class="popup__point-text" data-value="50-150">50-150</p>
+                            <div class="popup__point-item active"><div></div></div>
+                        </div>
+                        <div class="popup__line-point">
+                            <p class="popup__point-text" data-value="150-250">150-250</p>
+                            <div class="popup__point-item"><div></div></div>
+                        </div>
+                        <div class="popup__line-point">
+                            <p class="popup__point-text" data-value="250-400">250-400</p>
+                            <div class="popup__point-item"><div></div></div>
+                        </div>
+                    </div>
+                    <div class="popup__line-wrapper">
+                        <hr class="popup__line">
+                        <div class="popup__line-point">
+                            <p class="popup__point-text" data-value="400-600">400-600</p>
+                            <div class="popup__point-item"><div></div></div>
+                        </div>
+                        <div class="popup__line-point">
+                            <p class="popup__point-text" data-value="600-800">600-800</p>
+                            <div class="popup__point-item"><div></div></div>
+                        </div>
+                        <div class="popup__line-point">
+                            <p class="popup__point-text" data-value="800-1000">800-1000</p>
+                            <div class="popup__point-item"><div></div></div>
+                        </div>
+                        <div class="popup__line-point">
+                            <p class="popup__point-text" data-value="1000+">1000+</p>
+                            <div class="popup__point-item"><div></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup__row-btn">
+                    <div class="popup__add">
+                        <label class="popup__add-file">
+                            <input type="file" name="file" form="formRequest">
+                            <span></span>
+                            <span></span>
+                        </label>
+                        <div class="popup__add-wrap">
+                            <h2 class="popup__add-title">Attach your file</h2>
+                            <p class="popup__add-text">File size not more than 10 MB</p>
+                        </div>
+                    </div>
+                    <a href="" form="formRequest" class="popup__btn">Send Request</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

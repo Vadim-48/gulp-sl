@@ -4,26 +4,23 @@ import { initBurger } from "./modules/init-burger.js";
 import { initLocationDropdown } from "./modules/init-location-dropdown.js";
 // import { initHeaderScroll } from "./modules/init-header-scroll.js";
 import { initLangToggle } from './modules/init-lang-toggle.js';
-import { initAreaSelector } from './modules/init-area-selector.js';
 
 // WebP support check
 flsFunctions.isWebp();
 
 document.addEventListener("DOMContentLoaded", () => {
-  //preloader
+    //preloader
 //   runPreloader();
-  
-  // Initialize burger menu
-  initBurger();
 
-  // Initialize location dropdown
-  initLocationDropdown();
+    // Initialize burger menu
+    initBurger();
 
-  // Scroll
+    // Initialize location dropdown
+    initLocationDropdown();
+
+    // Scroll
 //   initHeaderScroll();
 
-  // Lang
-  initLangToggle();
-
-  initAreaSelector();
+    // Lang
+    initLangToggle();
 });
