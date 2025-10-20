@@ -14,6 +14,13 @@ body{
     position: relative;
     // position: relative;
 }
+body.lock {
+    overflow: hidden;
+}
+.lock {
+    overflow: hidden;
+    height: 100vh;
+}
 
 .container {
     max-width: 1440px;

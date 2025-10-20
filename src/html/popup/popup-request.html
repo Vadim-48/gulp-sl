@@ -1,4 +1,7 @@
 <div id="popup" class="popup">
+    <button class="popup__close">
+        <span></span><span></span>
+    </button>
     <div class="popup__body">
         <div class="popup__content">
             <div class="popup__form-wrap">
@@ -16,7 +19,7 @@
                         <option value="type-3" class="form__select-option">Property type-3</option>
                     </select>
                     <input type="text" name="comment" placeholder="Your comment" class="form__input form__input-comment">
-<!--                    <input type="hidden" name="area" id="areaValue">-->
+    <!--                    <input type="hidden" name="area" id="areaValue">-->
                 </form>
             </div>
             <div class="popup__area">
@@ -29,9 +32,9 @@
                             <p class="popup__point-text" data-value="to 50">to 50</p>
                             <div class="popup__point-item"><div></div></div>
                         </div>
-                        <div class="popup__line-point">
+                        <div class="popup__line-point active">
                             <p class="popup__point-text" data-value="50-150">50-150</p>
-                            <div class="popup__point-item active"><div></div></div>
+                            <div class="popup__point-item"><div></div></div>
                         </div>
                         <div class="popup__line-point">
                             <p class="popup__point-text" data-value="150-250">150-250</p>
@@ -74,7 +77,7 @@
                             <p class="popup__add-text">File size not more than 10 MB</p>
                         </div>
                     </div>
-                    <a href="" form="formRequest" class="popup__btn">Send Request</a>
+                    <button form="formRequest" class="popup__btn">Send Request</button>
                 </div>
             </div>
         </div>

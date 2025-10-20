@@ -143,8 +143,45 @@ p {
   overflow-x: hidden;
   visibility: hidden;
   opacity: 0;
+  -webkit-transition: opacity 0.8s ease, visibility 0.8s ease, -webkit-transform 0.8s ease;
+  transition: opacity 0.8s ease, visibility 0.8s ease, -webkit-transform 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease, visibility 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease, visibility 0.8s ease, -webkit-transform 0.8s ease;
+}
+
+.popup__close {
+  position: fixed;
+  z-index: 51;
+  right: 4%;
+  top: 5%;
+  width: 18px;
+  height: 18px;
+  opacity: 0;
   -webkit-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
+  -webkit-transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+          transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+}
+
+.popup__close div {
+  position: absolute;
+  left: -14%;
+  top: 47%;
+  width: 21px;
+  height: 1px;
+  background-color: #fff;
+}
+
+.popup__close div:first-child {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.popup__close div:last-child {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .popup.open {
@@ -152,9 +189,17 @@ p {
   visibility: visible;
 }
 
+.popup.open .popup__close {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+          transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+}
+
 .popup.open .popup__content {
   -webkit-transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
           transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+  opacity: 1;
 }
 
 .popup__body {
@@ -267,6 +312,17 @@ p {
   gap: 10px;
 }
 
+.popup__line-point.active .popup__point-item {
+  background-color: #1d1f26;
+  -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid #1d1f26;
+}
+
+.popup__line-point.active .popup__point-item div {
+  background-color: #fff;
+}
+
 .popup__point-text {
   position: absolute;
   top: -18px;
@@ -300,17 +356,6 @@ p {
   height: 4px;
   border-radius: 100%;
   background-color: #afb0b2;
-}
-
-.popup__point-item.active {
-  background-color: #1d1f26;
-  -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
-          box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
-  border: 1px solid #1d1f26;
-}
-
-.popup__point-item.active div {
-  background-color: #fff;
 }
 
 .popup__row-btn {
@@ -459,6 +504,15 @@ body {
   color: #fff;
   background: #fafafa;
   position: relative;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+.lock {
+  overflow: hidden;
+  height: 100vh;
 }
 
 .container {

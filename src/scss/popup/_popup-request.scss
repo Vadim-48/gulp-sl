@@ -13,13 +13,54 @@
     overflow-x: hidden;
     visibility: hidden;
     opacity: 0;
-    transition: all 0.8s ease 0s;
+    //transition: all 0.8s ease 0s, overflow-y 0s ease;
+    transition: opacity 0.8s ease, transform 0.8s ease, visibility 0.8s ease;
+    //transition: overflow-y 0s ease;
+    //&__scroll {
+    //    width: 100%;
+    //    height: 100%;
+    //    overflow-y: auto;
+    //}
+    &__close{
+        position: fixed;
+        z-index: 51;
+        right: 4%;
+        //left: 95%;
+        top: 5%;
+        width: 18px;
+        height: 18px;
+        opacity: 0;
+        transition: all 0.8s ease 0s;
+        transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+        & span{
+            display: block;
+            position: absolute;
+            left: -14%;
+            top: 47%;
+            //display: block;
+            width: 21px;
+            height: 1px;
+            background-color: #fff;
+            &:first-child{
+                transform: rotate(-45deg);
+            }
+            &:last-child{
+                transform: rotate(45deg);
+            }
+        }
+    }
     &.open{
         opacity: 1;
         visibility: visible;
     }
+    &.open .popup__close{
+        opacity: 1;
+        visibility: visible;
+        transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+    }
     &.open .popup__content {
         transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+        opacity: 1;
     }
     &__body {
         //aspect-ratio: 1046 / 785;
@@ -108,6 +149,15 @@
         flex-direction: column;
         align-items: center;
         gap: 10px;
+        &.active .popup__point-item{
+            background-color:  #1d1f26;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+            border: 1px solid #1d1f26;
+
+            & div{
+                background-color: #fff;
+            }
+        }
     }
     &__point-text{
         position: absolute;
@@ -134,15 +184,15 @@
             border-radius: 100%;
             background-color: #afb0b2;
         }
-        &.active{
-            background-color:  #1d1f26;
-            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
-            border: 1px solid #1d1f26;
-
-            & div{
-                background-color: #fff;
-            }
-        }
+        //&.active .popup__point-item{
+        //    background-color:  #1d1f26;
+        //    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+        //    border: 1px solid #1d1f26;
+        //
+        //    & div{
+        //        background-color: #fff;
+        //    }
+        //}
     }
 
     &__row-btn {

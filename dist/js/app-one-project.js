@@ -208,45 +208,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   initAreaSelector: () => (/* binding */ initAreaSelector)
 /* harmony export */ });
-// export function initAreaSelector() {
-//     const items = document.querySelectorAll('.popup__line-point');
-//     const input = document.getElementById('areaValue');
-//
-//     if (!items.length || !input) return;
-//
-//     items.forEach(item => {
-//         item.addEventListener('click', () => {
-//             // знімаємо active з усіх
-//             items.forEach(i => i.querySelector('.popup__point-item').classList.remove('active'));
-//
-//             // додаємо active до поточного
-//             item.querySelector('.popup__point-item').classList.add('active');
-//
-//             // зберігаємо значення у hidden input
-//             input.value = item.dataset.value;
-//         });
-//     });
-// }
-
 function initAreaSelector() {
-    const items = document.querySelectorAll('.popup__line-point');
-    const input = document.getElementById('areaValue');
+    const points = document.querySelectorAll('.popup__line-point');
+    const form = document.getElementById('formRequest');
 
-    if (!items.length || !input) return;
+// Створюємо приховане поле, якщо ще не існує
+    let areaInput = form.querySelector('input[name="area"]');
+    if (!areaInput) {
+        areaInput = document.createElement('input');
+        areaInput.type = 'hidden';
+        areaInput.name = 'area';
+        form.appendChild(areaInput);
+    }
 
-    items.forEach(item => {
-        item.addEventListener('click', () => {
-            // Зняти active з усіх
-            items.forEach(i => i.querySelector('.popup__point-item').classList.remove('active'));
+    points.forEach(point => {
+        point.addEventListener('click', () => {
+            // Знімаємо клас active з усіх точок
+            points.forEach(p => p.classList.remove('active'));
 
-            // Додати active до поточного
-            item.querySelector('.popup__point-item').classList.add('active');
+            // Додаємо active до вибраної
+            point.classList.add('active');
 
-            // Записати значення в hidden input
-            input.value = item.dataset.value;
+            // Отримуємо значення площі з data-value
+            const value = point.querySelector('.popup__point-text').dataset.value;
+
+            // Записуємо його в hidden input
+            areaInput.value = value;
+
+            console.log('Обрано площу:', value);
         });
     });
+
+// Встановлюємо значення при завантаженні, якщо вже є активна точка
+    const activePoint = document.querySelector('.popup__line-point.active');
+    if (activePoint) {
+        const initialValue = activePoint.querySelector('.popup__point-text').dataset.value;
+        areaInput.value = initialValue;
+    }
 }
+
 
 /***/ })
 /******/ 	]);
