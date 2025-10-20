@@ -163,7 +163,8 @@ p {
           transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
 }
 
-.popup__close div {
+.popup__close span {
+  display: block;
   position: absolute;
   left: -14%;
   top: 47%;
@@ -172,13 +173,13 @@ p {
   background-color: #fff;
 }
 
-.popup__close div:first-child {
+.popup__close span:first-child {
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
 
-.popup__close div:last-child {
+.popup__close span:last-child {
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
