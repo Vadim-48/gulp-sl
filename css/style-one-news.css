@@ -111,6 +111,15 @@ body {
   position: relative;
 }
 
+body.lock {
+  overflow: hidden;
+}
+
+.lock {
+  overflow: hidden;
+  height: 100vh;
+}
+
 .container {
   max-width: 1440px;
   padding: 0 64px;
@@ -206,6 +215,9 @@ body {
 
 .preloader__text {
   text-align: center;
+  font-weight: 300;
+  font-size: 24px;
+  color: #fafafa;
 }
 
 .logo,
@@ -359,6 +371,10 @@ body {
   border-radius: 88px;
   width: 117px;
   height: 24px;
+  backdrop-filter: blur(2px);
+  -webkit-box-shadow: inset 0 0px 0px 0 rgba(255, 255, 255, 0.23), 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0px 0px 0 rgba(255, 255, 255, 0.23), 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .location__text {

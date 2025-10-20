@@ -162,7 +162,23 @@ function initLocationDropdown() {
 
 /***/ }),
 /* 6 */,
-/* 7 */,
+/* 7 */
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initHeaderScroll: () => (/* binding */ initHeaderScroll)
+/* harmony export */ });
+function initHeaderScroll() {
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (header) {
+        header.classList.toggle('scrolled', window.scrollY > 0);
+      }
+    });
+  }
+
+/***/ }),
 /* 8 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -185,8 +201,57 @@ function initLangToggle() {
 }
 
 /***/ }),
-/* 9 */,
-/* 10 */
+/* 9 */
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initAreaSelector: () => (/* binding */ initAreaSelector)
+/* harmony export */ });
+function initAreaSelector() {
+    const points = document.querySelectorAll('.popup__line-point');
+    const form = document.getElementById('formRequest');
+
+// Створюємо приховане поле, якщо ще не існує
+    let areaInput = form.querySelector('input[name="area"]');
+    if (!areaInput) {
+        areaInput = document.createElement('input');
+        areaInput.type = 'hidden';
+        areaInput.name = 'area';
+        form.appendChild(areaInput);
+    }
+
+    points.forEach(point => {
+        point.addEventListener('click', () => {
+            // Знімаємо клас active з усіх точок
+            points.forEach(p => p.classList.remove('active'));
+
+            // Додаємо active до вибраної
+            point.classList.add('active');
+
+            // Отримуємо значення площі з data-value
+            const value = point.querySelector('.popup__point-text').dataset.value;
+
+            // Записуємо його в hidden input
+            areaInput.value = value;
+
+            console.log('Обрано площу:', value);
+        });
+    });
+
+// Встановлюємо значення при завантаженні, якщо вже є активна точка
+    const activePoint = document.querySelector('.popup__line-point.active');
+    if (activePoint) {
+        const initialValue = activePoint.querySelector('.popup__point-text').dataset.value;
+        areaInput.value = initialValue;
+    }
+}
+
+
+/***/ }),
+/* 10 */,
+/* 11 */,
+/* 12 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -281,13 +346,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_preloader_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _modules_init_burger_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
-/* harmony import */ var _modules_init_lang_toggle_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
-/* harmony import */ var _modules_init_apartaments_toggle_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(10);
+/* harmony import */ var _modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
+/* harmony import */ var _modules_init_lang_toggle_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8);
+/* harmony import */ var _modules_init_apartaments_toggle_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(12);
+/* harmony import */ var _modules_init_area_selector_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9);
 
 
 
 
-// import { initHeaderScroll } from "./modules/init-header-scroll.js";
+
+
 
 
 
@@ -305,13 +373,15 @@ document.addEventListener("DOMContentLoaded", () => {
   (0,_modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_3__.initLocationDropdown)();
 
   // Scroll
-  // initHeaderScroll();
+  (0,_modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_4__.initHeaderScroll)();
 
   // Lang
-  (0,_modules_init_lang_toggle_js__WEBPACK_IMPORTED_MODULE_4__.initLangToggle)();
+  (0,_modules_init_lang_toggle_js__WEBPACK_IMPORTED_MODULE_5__.initLangToggle)();
 
   // Apartaments
-  (0,_modules_init_apartaments_toggle_js__WEBPACK_IMPORTED_MODULE_5__.initApartamentsToggle)()
+  (0,_modules_init_apartaments_toggle_js__WEBPACK_IMPORTED_MODULE_6__.initApartamentsToggle)();
+
+  (0,_modules_init_area_selector_js__WEBPACK_IMPORTED_MODULE_7__.initAreaSelector)();
 });
 
 })();
