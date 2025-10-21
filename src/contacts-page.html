@@ -12,6 +12,9 @@
     <title>SL</title>
 </head>
 <body>
+    @@include('html/popup/popup-request.html',{})
+    @@include('html/popup/popup-thank.html',{})
+    <div class="body-content body-content_hidden">
         <header class="header" id="header"> 
             <div class="container">
                 @@include('html/header.html',{})
@@ -20,11 +23,9 @@
         </header>
         <main>
         <section class="hero-contacts drop">
-<!--                <div class="container">-->
-                    <div class="drop__content">
-                    @@include('html/main-page/drop.html',{})
-                    </div>
-<!--                </div>-->
+            <div class="drop__content">
+                @@include('html/main-page/drop.html',{})
+            </div>
             @@include('../src/html/picture.html', {
             "class": "drop__bg",
             "imgPath": "@img/main/drop/drop_bg",
@@ -36,11 +37,12 @@
             })
         </section>
     </main>
-    <footer class="footer" id="footer">
-        <div class="container">
-            @@include('html/footer.html',{})
-        </div>
-    </footer>
+        <footer class="footer" id="footer">
+            <div class="container">
+                @@include('html/footer.html',{})
+            </div>
+        </footer>
+    </div>
     <script src="js/app-contacts.js" defer></script>
 </body>
 </html>

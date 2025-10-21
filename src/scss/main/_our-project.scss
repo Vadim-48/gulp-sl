@@ -97,6 +97,7 @@
 
     &__btn-more {
         display: none;
+        pointer-events: auto;
         &::before{
             background: rgba(255, 255, 255, 0.4);
         }

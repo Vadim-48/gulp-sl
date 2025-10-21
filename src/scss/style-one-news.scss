@@ -2,6 +2,8 @@
 @use "base/null.scss";
 @use "base/base.scss";
 @use "base/preloader.scss";
+@use "popup/popup-request.scss";
+@use "popup/popup-thank.scss";
 
 @use "base/burger.scss";
 @use "main/main-footer";
@@ -12,8 +14,6 @@
 @use "one-news/donec-one-news.scss";
 @use "one-news/duis-one-news.scss";
 @use "one-news/our-news-one-news.scss";
-
-// @use "main/swiper.scss";
 
 
 @use "main/section-name.scss";

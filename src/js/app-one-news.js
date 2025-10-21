@@ -6,6 +6,7 @@ import { initLocationDropdown } from "./modules/init-location-dropdown.js";
 // import { handleBlockLargeResize } from "./modules/block-large-handler.js";
 import { initHeaderScroll } from "./modules/init-header-scroll.js";
 import { initAreaSelector } from './modules/init-area-selector.js';
+import { initPopupToggle } from './modules/popup.js';
 
 // WebP support check
 flsFunctions.isWebp();
@@ -30,4 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeaderScroll();
 
   initAreaSelector();
+
+  initPopupToggle();
 });

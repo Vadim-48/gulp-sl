@@ -6,6 +6,7 @@ import { initHeaderScroll } from "./modules/init-header-scroll.js";
 import { initLangToggle } from './modules/init-lang-toggle.js';
 import { initApartamentsToggle } from './modules/init-apartaments-toggle.js';
 import { initAreaSelector } from './modules/init-area-selector.js';
+import { initPopupToggle } from './modules/popup.js';
 
 // WebP support check
 flsFunctions.isWebp();
@@ -30,4 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initApartamentsToggle();
 
   initAreaSelector();
+
+  initPopupToggle();
 });

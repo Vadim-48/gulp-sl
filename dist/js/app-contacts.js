@@ -27,7 +27,58 @@ function isWebp() {
 
 
 /***/ }),
-/* 2 */,
+/* 2 */
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   runPreloader: () => (/* binding */ runPreloader)
+/* harmony export */ });
+// preloader.js
+function runPreloader() {
+  const preloader = document.querySelector('.preloader');
+  const progressEl = document.querySelector('.preloader__progress');
+  const preloaderText = document.querySelector('.preloader__text');
+  const mainContent = document.querySelector('.body-content');
+
+  let progress = 0;
+
+  // Simulating gradual loading
+  const fakeProgressInterval = setInterval(() => {
+    if (progress < 95) {
+      progress += Math.floor(Math.random() * 3) + 1; // +1..3%
+      if (progress > 95) progress = 95;
+      progressEl.textContent = progress;
+    }
+  }, 100);
+
+  // When the page is fully loaded
+  window.addEventListener('load', () => {
+    clearInterval(fakeProgressInterval);
+    progress = 100;
+    progressEl.textContent = progress;
+
+    // We show 100% first
+    preloaderText.textContent = `HI ${progress}%`;
+
+    // Delay 0.5 seconds before replacing all text with "HILIGHT"
+    setTimeout(() => {
+      preloaderText.textContent = 'HILIGHT';
+
+      // Smoothly disappearing the preloader
+      preloader.classList.add('preloader--hidden');
+
+      setTimeout(() => {
+        preloader.style.display = 'none';
+        mainContent.classList.remove('body-content_hidden');
+      }, 500);
+    }, 500);
+  });
+}
+
+
+
+/***/ }),
 /* 3 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -149,6 +200,145 @@ function initLangToggle() {
   });
 }
 
+/***/ }),
+/* 9 */,
+/* 10 */
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initPopupToggle: () => (/* binding */ initPopupToggle)
+/* harmony export */ });
+function initPopupToggle() {
+    const popupLinks = document.querySelectorAll('.popup-request');
+    const body = document.querySelector('body');
+    const lockPadding = document.querySelectorAll(".lock-padding");
+
+    let unlock = true;
+
+    const timeout = 800;
+
+    if (popupLinks.length > 0) {
+        for (let index = 0; index < popupLinks.length; index++) {
+            const popupLink = popupLinks[index];
+            popupLink.addEventListener('click', function (e)  {
+                // const popupName = popupLink.getAttribute('href').replace('#', '');
+                const popupName = popupLink.dataset.popupTarget?.replace('#', '');
+                const curentPopup = document.getElementById(popupName);
+                popupOpen(curentPopup);
+                e.preventDefault();
+            });
+        }
+    }
+    const popupCloseIcon = document.querySelectorAll('.close-popup');
+    if (popupCloseIcon.length > 0) {
+        for (let index = 0; index < popupCloseIcon.length; index++) {
+            const el = popupCloseIcon[index];
+            el.addEventListener('click', function (e) {
+                popupClose(el.closest('.popup'));
+                e.preventDefault();
+            });
+        }
+    }
+
+    function popupOpen(curentPopup) {
+        if (curentPopup && unlock) {
+            const popupActive = document.querySelector('.popup.open');
+            if (popupActive) {
+                popupClose(popupActive, false);
+            } else {
+                bodyLock();
+            }
+            curentPopup.classList.add('open');
+            // curentPopup.addEventListener('click', function (e) {
+            //     if (!e.target.closest('.popup__content')) {
+            //         popupClose(e.target.closest('.popup'));
+            //     }
+            // });
+        }
+    }
+    function popupClose(popupActive, doUnlock = true) {
+        if (unlock) {
+            popupActive.classList.remove('open');
+            if (doUnlock) {
+                bodyUnlock();
+            }
+        }
+    }
+
+    function bodyLock() {
+        const lockPaddingValue = window.innerWidth - document.querySelector('.body-content').offsetWidth + 'px';
+
+        if (lockPadding.length > 0) {
+            for (let index = 0; index < lockPadding.length; index++) {
+                const el = lockPadding[index];
+                el.style.paddingRight = lockPaddingValue;
+            }
+        }
+        body.style.paddingRight = lockPaddingValue;
+        body.classList.add('lock-popup');
+
+        unlock = false;
+        setTimeout(function () {
+            unlock = true;
+            }, timeout);
+    }
+
+    function bodyUnlock() {
+        setTimeout(function () {
+            if (lockPadding.length > 0) {
+                for (let index = 0; index < lockPadding.length; index++) {
+                    const el = lockPadding[index];
+                    el.style.paddingRight = '0px'
+                }
+            }
+            body.style.paddingRight = '0px';
+            body.classList.remove('lock-popup');
+        }, timeout);
+
+        unlock = false;
+        setTimeout(function () {
+            unlock = true;
+        }, timeout);
+    }
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+        const popupActive = document.querySelector('.popup.open');
+        popupClose(popupActive);
+        }
+    });
+
+    (function () {
+
+        if (!Element.prototype.closest) {
+
+            Element.prototype.closest = function (css) {
+                var node = this;
+                while (node) {
+                    if (node.matches(css)) return node;
+                    else node = node.parentElement;
+                }
+                return null;
+            };
+        }
+    })();
+    (function () {
+
+        if(!Element.prototype.matches) {
+
+            Element.prototype.matches = Element.prototype.matchesSelector ||
+                Element.prototype.webkitMatchesSelector ||
+                Element.prototype.mozMatchesSelector ||
+                Element.prototype.msMatchesSelector;
+        }
+    })();
+}
+
+
+
+
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -211,12 +401,15 @@ var __webpack_exports__ = {};
 (() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _modules_init_burger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
-/* harmony import */ var _modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
-/* harmony import */ var _modules_init_lang_toggle_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+/* harmony import */ var _modules_preloader_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _modules_init_burger_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var _modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
+/* harmony import */ var _modules_init_lang_toggle_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8);
+/* harmony import */ var _modules_popup_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
 
-// import { runPreloader } from './modules/preloader.js';
+
+
 
 
 
@@ -227,19 +420,21 @@ _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__.isWebp();
 
 document.addEventListener("DOMContentLoaded", () => {
   //preloader
-//   runPreloader();
+  (0,_modules_preloader_js__WEBPACK_IMPORTED_MODULE_1__.runPreloader)();
   
   // Initialize burger menu
-  (0,_modules_init_burger_js__WEBPACK_IMPORTED_MODULE_1__.initBurger)();
+  (0,_modules_init_burger_js__WEBPACK_IMPORTED_MODULE_2__.initBurger)();
 
   // Initialize location dropdown
-  (0,_modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_2__.initLocationDropdown)();
+  (0,_modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_3__.initLocationDropdown)();
 
   // Scroll
-  (0,_modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_3__.initHeaderScroll)();
+  (0,_modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_4__.initHeaderScroll)();
 
   // Lang
-  (0,_modules_init_lang_toggle_js__WEBPACK_IMPORTED_MODULE_4__.initLangToggle)();
+  (0,_modules_init_lang_toggle_js__WEBPACK_IMPORTED_MODULE_5__.initLangToggle)();
+
+  (0,_modules_popup_js__WEBPACK_IMPORTED_MODULE_6__.initPopupToggle)();
 });
 })();
 

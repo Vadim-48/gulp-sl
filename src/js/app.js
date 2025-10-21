@@ -36,6 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initAreaSelector();
 
-  // initPopupToggle();
+  initPopupToggle();
 });
 

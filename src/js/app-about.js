@@ -2,10 +2,9 @@ import * as flsFunctions from "./modules/functions.js";
 import { runPreloader } from './modules/preloader.js';
 import { initBurger } from "./modules/init-burger.js";
 import { initSwiperAbout } from "./modules/init-swiper-about.js";
-// import { initLocationDropdown } from "./modules/init-location-dropdown.js";
-// import { handleBlockLargeResize } from "./modules/block-large-handler.js";
 import { initHeaderScroll } from "./modules/init-header-scroll.js";
 import { initAreaSelector } from './modules/init-area-selector.js';
+import { initPopupToggle } from './modules/popup.js';
 
 // WebP support check
 flsFunctions.isWebp();
@@ -19,15 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize Swiper slider
   initSwiperAbout();
-
-  // Initialize location dropdown
-//   initLocationDropdown();
-
-  // Responsive class toggle based on screen width
-//   handleBlockLargeResize(); 
   
   // Scroll
   initHeaderScroll();
 
   initAreaSelector();
+
+  initPopupToggle();
 });

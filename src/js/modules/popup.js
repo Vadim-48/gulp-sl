@@ -1,244 +1,128 @@
-// export function initPopupToggle() {
-//     const popupButtons = document.querySelectorAll(".popup-request");
-//
-//     if (!popupButtons.length) {
-//         console.warn('Жодної кнопки ".popup-request" не знайдено на сторінці.');
-//         return;
-//     }
-//
-//     const lockBody = () => {
-//         const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-//         document.body.style.paddingRight = scrollBarWidth + "px";
-//         document.body.classList.add("lock");
-//         document.documentElement.classList.add("lock");
-//     };
-//
-//     const unlockBody = () => {
-//         document.body.style.paddingRight = "";
-//         document.body.classList.remove("lock");
-//         document.documentElement.classList.remove("lock");
-//     };
-//
-//     popupButtons.forEach(button => {
-//         button.addEventListener("click", (e) => {
-//             e.preventDefault();
-//
-//             const targetSelector = button.getAttribute("data-popup-target") || "#popup";
-//             const popup = document.querySelector(targetSelector);
-//
-//             if (!popup) {
-//                 console.warn(`Попап "${targetSelector}" не знайдено.`);
-//                 return;
-//             }
-//
-//             popup.classList.add("open");
-//             lockBody();
-//
-//             const closePopup = (event) => {
-//                 if (
-//                     event.target.classList.contains("popup") ||
-//                     event.target.closest(".popup__close")
-//                 ) {
-//                     popup.classList.remove("open");
-//                     unlockBody();
-//                     popup.removeEventListener("click", closePopup);
-//                 }
-//             };
-//
-//             popup.addEventListener("click", closePopup);
-//         });
-//     });
-//
-//     document.addEventListener("click", (e) => {
-//         if (e.target.classList.contains("popup__btn")) {
-//             e.preventDefault();
-//
-//             const currentPopup = e.target.closest(".popup");
-//             if (!currentPopup) return;
-//
-//             currentPopup.classList.remove("open");
-//
-//             const successPopup = document.querySelector("#popupSuccess");
-//             if (successPopup) {
-//                 successPopup.classList.add("open");
-//             }
-//
-//             lockBody();
-//
-//             const closeSuccess = (event) => {
-//                 if (
-//                     event.target.classList.contains("popup") ||
-//                     event.target.closest(".popup__close")
-//                 ) {
-//                     successPopup.classList.remove("open");
-//                     unlockBody();
-//                     successPopup.removeEventListener("click", closeSuccess);
-//                 }
-//             };
-//
-//             successPopup.addEventListener("click", closeSuccess);
-//         }
-//     });
-// }
-
-
 export function initPopupToggle() {
-    const popupButtons = document.querySelectorAll(".popup-request");
+    const popupLinks = document.querySelectorAll('.popup-request');
+    const body = document.querySelector('body');
+    const lockPadding = document.querySelectorAll(".lock-padding");
 
-    if (!popupButtons.length) {
-        console.warn('Жодної кнопки ".popup-request" не знайдено на сторінці.');
-        return;
+    let unlock = true;
+
+    const timeout = 800;
+
+    if (popupLinks.length > 0) {
+        for (let index = 0; index < popupLinks.length; index++) {
+            const popupLink = popupLinks[index];
+            popupLink.addEventListener('click', function (e)  {
+                // const popupName = popupLink.getAttribute('href').replace('#', '');
+                const popupName = popupLink.dataset.popupTarget?.replace('#', '');
+                const curentPopup = document.getElementById(popupName);
+                popupOpen(curentPopup);
+                e.preventDefault();
+            });
+        }
+    }
+    const popupCloseIcon = document.querySelectorAll('.close-popup');
+    if (popupCloseIcon.length > 0) {
+        for (let index = 0; index < popupCloseIcon.length; index++) {
+            const el = popupCloseIcon[index];
+            el.addEventListener('click', function (e) {
+                popupClose(el.closest('.popup'));
+                e.preventDefault();
+            });
+        }
     }
 
-    const lockBody = () => {
-        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-        document.body.style.paddingRight = scrollBarWidth + "px";
-        document.body.classList.add("lock");
-        document.documentElement.classList.add("lock");
-    };
-
-    const unlockBody = () => {
-        document.body.style.paddingRight = "";
-        document.body.classList.remove("lock");
-        document.documentElement.classList.remove("lock");
-    };
-
-    popupButtons.forEach(button => {
-        button.addEventListener("click", (e) => {
-            e.preventDefault();
-
-            const targetSelector = button.getAttribute("data-popup-target") || "#popup";
-            const popup = document.querySelector(targetSelector);
-
-            if (!popup) {
-                console.warn(`Попап "${targetSelector}" не знайдено.`);
-                return;
+    function popupOpen(curentPopup) {
+        if (curentPopup && unlock) {
+            const popupActive = document.querySelector('.popup.open');
+            if (popupActive) {
+                popupClose(popupActive, false);
+            } else {
+                bodyLock();
             }
+            curentPopup.classList.add('open');
+            // curentPopup.addEventListener('click', function (e) {
+            //     if (!e.target.closest('.popup__content')) {
+            //         popupClose(e.target.closest('.popup'));
+            //     }
+            // });
+        }
+    }
+    function popupClose(popupActive, doUnlock = true) {
+        if (unlock) {
+            popupActive.classList.remove('open');
+            if (doUnlock) {
+                bodyUnlock();
+            }
+        }
+    }
 
-            popup.classList.add("open");
-            lockBody();
+    function bodyLock() {
+        const lockPaddingValue = window.innerWidth - document.querySelector('.body-content').offsetWidth + 'px';
 
-            const closePopup = (event) => {
-                if (
-                    event.target.classList.contains("popup") ||
-                    event.target.closest(".popup__close")
-                ) {
-                    // Миттєво прибираємо скрол
-                    popup.style.overflowY = "hidden";
+        if (lockPadding.length > 0) {
+            for (let index = 0; index < lockPadding.length; index++) {
+                const el = lockPadding[index];
+                el.style.paddingRight = lockPaddingValue;
+            }
+        }
+        body.style.paddingRight = lockPaddingValue;
+        body.classList.add('lock-popup');
 
-                    // Закриваємо попап (починається плавне зникнення opacity)
-                    popup.classList.remove("open");
-                    unlockBody();
+        unlock = false;
+        setTimeout(function () {
+            unlock = true;
+            }, timeout);
+    }
 
-                    // Після завершення transition (800ms) прибираємо inline стиль overflowY
-                    setTimeout(() => {
-                        popup.style.overflowY = "";
-                    }, 800);
-
-                    popup.removeEventListener("click", closePopup);
+    function bodyUnlock() {
+        setTimeout(function () {
+            if (lockPadding.length > 0) {
+                for (let index = 0; index < lockPadding.length; index++) {
+                    const el = lockPadding[index];
+                    el.style.paddingRight = '0px'
                 }
-            };
-
-            popup.addEventListener("click", closePopup);
-        });
-    });
-
-    document.addEventListener("click", (e) => {
-        if (e.target.classList.contains("popup__btn")) {
-            e.preventDefault();
-
-            const currentPopup = e.target.closest(".popup");
-            if (!currentPopup) return;
-
-            // Миттєво прибираємо скрол у поточному попапі
-            currentPopup.style.overflowY = "hidden";
-
-            // Закриваємо поточний попап
-            currentPopup.classList.remove("open");
-            unlockBody();
-
-            const successPopup = document.querySelector("#popupSuccess");
-            if (successPopup) {
-                successPopup.classList.add("open");
-                lockBody();
-
-                const closeSuccess = (event) => {
-                    if (
-                        event.target.classList.contains("popup") ||
-                        event.target.closest(".popup__close")
-                    ) {
-                        // Миттєво прибираємо скрол success попапу
-                        successPopup.style.overflowY = "hidden";
-
-                        successPopup.classList.remove("open");
-                        unlockBody();
-
-                        setTimeout(() => {
-                            successPopup.style.overflowY = "";
-                        }, 800);
-
-                        successPopup.removeEventListener("click", closeSuccess);
-                    }
-                };
-
-                successPopup.addEventListener("click", closeSuccess);
             }
+            body.style.paddingRight = '0px';
+            body.classList.remove('lock-popup');
+        }, timeout);
 
-            // Після 800ms прибираємо inline стиль overflowY у поточному попапі
-            setTimeout(() => {
-                currentPopup.style.overflowY = "";
-            }, 800);
+        unlock = false;
+        setTimeout(function () {
+            unlock = true;
+        }, timeout);
+    }
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+        const popupActive = document.querySelector('.popup.open');
+        popupClose(popupActive);
         }
     });
+
+    (function () {
+
+        if (!Element.prototype.closest) {
+
+            Element.prototype.closest = function (css) {
+                var node = this;
+                while (node) {
+                    if (node.matches(css)) return node;
+                    else node = node.parentElement;
+                }
+                return null;
+            };
+        }
+    })();
+    (function () {
+
+        if(!Element.prototype.matches) {
+
+            Element.prototype.matches = Element.prototype.matchesSelector ||
+                Element.prototype.webkitMatchesSelector ||
+                Element.prototype.mozMatchesSelector ||
+                Element.prototype.msMatchesSelector;
+        }
+    })();
 }
 
-
-
-// const popupLinks = document.querySelectorAll('.popup-request');
-// const body = document.querySelector('body');
-// const lockPadding = document.querySelectorAll(".lock-padding");
-//
-// let unlock = true;
-//
-// const timeout = 800;
-//
-// if (popupLinks.length > 0) {
-//     for (let index = 0; index < popupLinks.length; index++) {
-//         const popupLink = popupLinks[index];
-//         popupLink.addEventListener('click', function (e)  {
-//             const popupName = popupLink.getAttribute('href').replace('#', '');
-//             const curentPopup = document.getElementById(popupName);
-//             popupOpen(curentPopup);
-//             e.preventDefault();
-//         });
-//     }
-// }
-// const popupCloseIcon = document.querySelectorAll('.close-popup');
-// if (popupCloseIcon.length > 0) {
-//     for (let index = 0; index < popupCloseIcon.length; index++) {
-//         const el = popupCloseIcon[index];
-//         el.addEventListener('click', function (e) {
-//             popupClose(el.closest('.popup'));
-//             e.preventDefault();
-//         });
-//     }
-// }
-//
-// function popupOpen(curentPopup) {
-//     if (currentPopup && unlock) {
-//         const popupActive = document.querySelector('popup.open');
-//         if (poppupActive) {
-//             popupClose(popupActive, false);
-//         } else {
-//             bodyLock();
-//         }
-//         currentPopup.classList.add('open');
-//         curentPopup.addEventListener('click', function (e) {
-//             if (!e.target.closest('.popup__content')) {
-//                 popupClose(e.target.closest('.popup'));
-//             }
-//         });
-//     }
-// }
 
 

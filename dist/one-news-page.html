@@ -6,18 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap&_v=20251020205438" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap&_v=20251021164633" rel="stylesheet">
     <link
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20251020205438"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20251021164633"
     />
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <link rel="stylesheet" href="css/style-one-news.css?_v=20251020205438">
+    <link rel="stylesheet" href="css/style-one-news.css?_v=20251021164633">
     <title>SL</title>
 </head>
 <body>
     <div class="preloader">
     <div class="preloader__text">HI <span class="preloader__progress">0</span>%</div>
+</div>
+    <div id="popup" class="popup">
+    <button class="popup__close close-popup">
+        <span></span><span></span>
+    </button>
+    <div class="popup__body">
+        <div class="popup__content popup__content-wrap">
+            <div class="popup__form-wrap">
+                <h1 class="form__title">Calculate the cost of work</h1>
+                <form action="#" id="formRequest" method="post" enctype="multipart/form-data" class="popup__form form">
+                    <input type="text" required name="name" placeholder="Name" class="form__input">
+                    <input type="text" required name="surename" placeholder="Last name" class="form__input">
+                    <input type="tel" required pattern="\+?[0-9\s\-\(\)]{10,20}" title = "+38(067)123-45-67, 067 123 4567" name="phone" placeholder="Phone" class="form__input">
+                    <input type="text" required name="city" placeholder="Your city" class="form__input">
+                    <input type="email" required name="email" placeholder="Email" class="form__input">
+                    <select name="type" required class="form__select">
+                        <option value="" disabled selected hidden class="form__select-option">Property type</option>
+                        <option  value="type-1" class="form__select-option">Property type-1</option>
+                        <option value="type-2" class="form__select-option">Property type-2</option>
+                        <option value="type-3" class="form__select-option">Property type-3</option>
+                    </select>
+                    <input type="text" name="comment" placeholder="Your comment" class="form__input form__input-comment">
+                    <input type="hidden" name="area" id="areaValue">
+                </form>
+            </div>
+            <div class="popup__area">
+                <h2 class="popup__title">Area (m2)</h2>
+                <div class="popup__line-row">
+                    <hr class="popup__line popup__line_long">
+                    <div class="popup__line-wrapper">
+                        <hr class="popup__line">
+                        <div class="popup__line-point">
+                            <p class="popup__point-text popup__point-text_left" data-value="to 50">to 50</p>
+                            <div class="popup__point-item"><div></div></div>
+                        </div>
+                        <div class="popup__line-point active">
+                            <p class="popup__point-text" data-value="50-150">50-150</p>
+                            <div class="popup__point-item"><div></div></div>
+                        </div>
+                        <div class="popup__line-point">
+                            <p class="popup__point-text" data-value="150-250">150-250</p>
+                            <div class="popup__point-item"><div></div></div>
+                        </div>
+                        <div class="popup__line-point">
+                            <p class="popup__point-text popup__point-text_right-mob" data-value="250-400">250-400</p>
+                            <div class="popup__point-item"><div></div></div>
+                        </div>
+                    </div>
+                    <div class="popup__line-wrapper">
+                        <hr class="popup__line">
+                        <div class="popup__line-point">
+                            <p class="popup__point-text popup__point-text_left-mob" data-value="400-600">400-600</p>
+                            <div class="popup__point-item"><div></div></div>
+                        </div>
+                        <div class="popup__line-point">
+                            <p class="popup__point-text" data-value="600-800">600-800</p>
+                            <div class="popup__point-item"><div></div></div>
+                        </div>
+                        <div class="popup__line-point">
+                            <p class="popup__point-text" data-value="800-1000">800-1000</p>
+                            <div class="popup__point-item"><div></div></div>
+                        </div>
+                        <div class="popup__line-point">
+                            <p class="popup__point-text popup__point-text_right" data-value="1000+">1000+</p>
+                            <div class="popup__point-item"><div></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup__row-btn">
+                    <div class="popup__add">
+                        <label class="popup__add-file">
+                            <input type="file" name="file" form="formRequest">
+                            <span></span>
+                            <span></span>
+                        </label>
+                        <div class="popup__add-wrap">
+                            <h2 class="popup__add-title">Attach your file</h2>
+                            <p class="popup__add-text">File size not more than 10 MB</p>
+                        </div>
+                    </div>
+                    <button form="formRequest" class="popup__btn popup-request" data-popup-target="#popup_2">Send Request</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="popup_2" class="popup">
+    <button class="popup__close close-popup">
+        <span></span><span></span>
+    </button>
+    <div class="popup__body popup__body-wrap">
+        <div class="popup__content popup-thank">
+            <div class="popup-thank__wrap">
+                <h2 class="popup-thank__title">Thank you for your message!</h2>
+                <p class="popup-thank__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere.
+                    Ut at luctus ligula. Nunc ante felis, aliquam eu enim sed, ornare pretium velit.
+                </p>
+                <button class="popup-thank__btn close-popup">Send again</button>
+            </div>
+        </div>
+    </div>
 </div>
     <div class="body-content body-content_hidden">
         <header class="header" id="header"> 
@@ -37,7 +139,6 @@
                 </li>
                 <li class="menu__item">
                     <a href="contacts-page.html" class="menu__link">Contacts</a>
-                    <!-- <a href="contacts-page.html" class="menu__link">Contacts</a> -->
                 </li>
             </ul>
         <div class="burger"> 
@@ -78,7 +179,7 @@
             <a href="contacts-page.html" class="burger__item-link">Contacts</a>
         </li>
         <li class="menu__btn burger__menu-btn">
-            <button href="#!" class="burger__item-btn btn">Send Request</button>
+            <button href="#!" class="burger__item-btn btn popup-request" data-popup-target="#popup">Send Request</button>
         </li>
     </ul>
     <div class="container">
@@ -404,7 +505,7 @@
             </div>
         </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20251020205438"></script>
-    <script src="js/app-one-news.js?_v=20251020205438" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20251021164633"></script>
+    <script src="js/app-one-news.js?_v=20251021164633" defer></script>
 </body>
 </html>

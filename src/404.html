@@ -12,24 +12,26 @@
     <title>SL</title>
 </head>
 <body class="error-body">
-    <header class="header" id="header"> 
-        <div class="container">
-            @@include('html/header.html',{})
-        </div>
-        @@include('html/burger.html',{})
-    </header>
-    <main>
-        <section class="hero">
-            <!-- <div class="container"> -->
+    @@include('html/popup/popup-request.html',{})
+    @@include('html/popup/popup-thank.html',{})
+    <div class="body-content">
+        <header class="header" id="header">
+            <div class="container">
+                @@include('html/header.html',{})
+            </div>
+            @@include('html/burger.html',{})
+        </header>
+        <main>
+            <section class="hero">
                 @@include('html/error/hero-error.html',{})
-            <!-- </div> -->
-        </section>
-    </main>
-    <footer class="footer" id="footer">
-        <div class="container"> 
-            @@include('html/footer.html',{})
-        </div>
-    </footer>
-    <script src="js/app-error.js" defer></script>
+            </section>
+        </main>
+        <footer class="footer" id="footer">
+            <div class="container">
+                @@include('html/footer.html',{})
+            </div>
+        </footer>
+    </div>
+        <script src="js/app-error.js" defer></script>
 </body>
 </html>

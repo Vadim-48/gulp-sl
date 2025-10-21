@@ -2,14 +2,13 @@
 @use "base/null.scss";
 @use "base/base.scss";
 // @use "base/preloader.scss";
+@use "popup/popup-request.scss";
+@use "popup/popup-thank.scss";
 
 @use "base/header.scss";
 @use "base/burger.scss";
-// @use "base/header-black.scss";
 @use "main/main-footer";
 
 @use "error/hero-error.scss";
 
 @use "base/footer.scss";
-
-@use "popup/popup-request.scss";
