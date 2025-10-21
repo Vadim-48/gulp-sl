@@ -67,6 +67,7 @@
     &__footer{
         & .hero__main-footer{
             // bottom: 48px;
+            margin-bottom: 50px;
             bottom: calc(50px + env(safe-area-inset-bottom));
             // position: fixed;
             transform: translateZ(0);
@@ -122,6 +123,7 @@
         }
         &__footer{
             & .hero__main-footer{
+                margin-bottom: 32px;
                 bottom: calc(32px + env(safe-area-inset-bottom));
             }       
         }
@@ -141,6 +143,7 @@
         }
         &__footer{
             & .hero__main-footer{
+                margin-bottom: 22px;
                 bottom: calc(22px + env(safe-area-inset-bottom));
                 width: 93%;
             }       
