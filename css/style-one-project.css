@@ -853,6 +853,7 @@ body {
   font-weight: 600;
   font-size: 11px;
   letter-spacing: 0.06em;
+  min-height: 0;
 }
 
 .main-footer__text {

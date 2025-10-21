@@ -906,6 +906,7 @@ body {
   font-weight: 600;
   font-size: 11px;
   letter-spacing: 0.06em;
+  min-height: 0;
 }
 
 .main-footer__text {
@@ -2170,7 +2171,8 @@ body {
   }
 
   .company__content {
-    width: 90%;
+    width: 85%;
+    margin: 13.7% 0 0 0;
   }
 
   .team__wrapper {
