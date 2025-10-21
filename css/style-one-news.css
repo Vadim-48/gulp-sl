@@ -698,7 +698,6 @@ body {
 }
 
 .burger__block {
-  position: relative;
   color: #fff;
   position: fixed;
   width: 100vw;
@@ -744,6 +743,7 @@ body {
 
 .burger__footer .hero__main-footer {
   bottom: calc(50px + env(safe-area-inset-bottom));
+  position: fixed;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
   margin: 0;
@@ -1584,7 +1584,7 @@ body {
   }
 
   .burger__footer .hero__main-footer {
-    margin-bottom: 32px;
+    bottom: 32px;
     bottom: calc(32px + env(safe-area-inset-bottom));
   }
 
@@ -1825,7 +1825,7 @@ body {
   }
 
   .burger__footer .hero__main-footer {
-    margin-bottom: 22px;
+    bottom: 22px;
     bottom: calc(22px + env(safe-area-inset-bottom));
     width: 93%;
   }
