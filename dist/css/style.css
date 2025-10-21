@@ -463,6 +463,7 @@ p {
   grid-template-columns: 48% 47.5%;
   gap: 34px 4.5%;
   margin-top: 27px;
+  color: #3a3e4b;
 }
 
 .form__title {
@@ -485,6 +486,7 @@ p {
   font-size: 11px;
   letter-spacing: 0.06em;
   color: #313131;
+  background: transparent;
   border-bottom: 1px solid rgba(214, 214, 214, 0.3);
   padding-bottom: 5px;
   background: url("../img/popup/popup-arrow.svg") no-repeat right center;
@@ -495,6 +497,7 @@ p {
 }
 
 .form__select-option {
+  width: 100%;
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 11px;
@@ -975,6 +978,7 @@ body {
   font-weight: 600;
   font-size: 11px;
   letter-spacing: 0.06em;
+  min-height: 0;
 }
 
 .main-footer__text {
@@ -3066,7 +3070,7 @@ body {
 
   .lorem__photo_5 {
     display: block;
-    z-index: -14;
+    z-index: 1;
     top: 71.3%;
     left: -11.5%;
     width: 39.4%;
@@ -3076,7 +3080,7 @@ body {
     top: 68%;
     left: 4.8%;
     width: 28%;
-    z-index: -14;
+    z-index: 2;
   }
 
   .lorem__photo_7 {
