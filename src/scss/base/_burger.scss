@@ -32,14 +32,15 @@
 }
 
 .burger{
-    &__block-wrap{
-        position: relative;
-    }
+    //&__block-wrap{
+    //    position: relative;
+    //
+    //}
     &__block{
         //position: relative;
         color: #fff;
-        position: fixed;
-        //position: absolute;
+        //position: fixed;
+        position: absolute;
         width: 100vw;
         height: 100vh;
         background: #000;
