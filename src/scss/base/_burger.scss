@@ -32,6 +32,9 @@
 }
 
 .burger{
+    &__block-wrap{
+        position: relative;
+    }
     &__block{
         //position: relative;
         color: #fff;
@@ -70,8 +73,8 @@
             // bottom: 48px;
             //margin-bottom: 50px;
             bottom: calc(50px + env(safe-area-inset-bottom));
-            //position: fixed;
-            position: absolute;
+            position: fixed;
+            //position: absolute;
             transform: translateZ(0);
             // left: 0;
             // right: 0;
