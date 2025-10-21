@@ -35,8 +35,8 @@
     &__block{
         //position: relative;
         color: #fff;
-        //position: fixed;
-        position: absolute;
+        position: fixed;
+        //position: absolute;
         width: 100vw;
         height: 100vh;
         background: #000;
@@ -71,7 +71,7 @@
             //margin-bottom: 50px;
             bottom: calc(50px + env(safe-area-inset-bottom));
             //position: fixed;
-            position: relative;
+            position: absolute;
             transform: translateZ(0);
             // left: 0;
             // right: 0;
