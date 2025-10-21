@@ -33,7 +33,7 @@
 
 .burger{
     &__block{
-        position: relative;
+        //position: relative;
         color: #fff;
         position: fixed;
         width: 100vw;
@@ -67,9 +67,9 @@
     &__footer{
         & .hero__main-footer{
             // bottom: 48px;
-            margin-bottom: 50px;
+            //margin-bottom: 50px;
             bottom: calc(50px + env(safe-area-inset-bottom));
-            // position: fixed;
+            position: fixed;
             transform: translateZ(0);
             // left: 0;
             // right: 0;
@@ -123,7 +123,7 @@
         }
         &__footer{
             & .hero__main-footer{
-                margin-bottom: 32px;
+                bottom: 32px;
                 bottom: calc(32px + env(safe-area-inset-bottom));
             }       
         }
@@ -143,7 +143,7 @@
         }
         &__footer{
             & .hero__main-footer{
-                margin-bottom: 22px;
+                bottom: 22px;
                 bottom: calc(22px + env(safe-area-inset-bottom));
                 width: 93%;
             }       
