@@ -29,13 +29,12 @@
         margin-top: 56px;
         display: none;
     }
+    &__item-btn{
+        border-color: #fff;
+    }
 }
 
 .burger{
-    //&__block-wrap{
-    //    position: relative;
-    //
-    //}
     &__block{
         //position: relative;
         color: #fff;
@@ -54,8 +53,7 @@
     }
     &__menu{
         font-weight: 700;
-        font-size: 32px;  
-        opacity: 0.5;
+        font-size: 32px;
         margin-left: 21%;
         height: 100%;
         display: flex;
@@ -65,10 +63,15 @@
     }
     &__item{
         margin-top: 41px;
+        opacity: 0.5;
         &:first-child{
             margin-top: 0;
         }
+        &.active{
+                opacity: 1;
+        }
     }
+
     &__block{
         & .hero__main-footer{
             // bottom: 48px;

@@ -121,7 +121,21 @@ function initBurger() {
       }
       wasBelowOrEqual1100 = window.innerWidth <= 1100;
     });
-  }
+
+    let currentPath = window.location.pathname.split("/").pop();
+    if (currentPath === "") {
+        currentPath = "index.html";
+    }
+
+    const burgerLinks = document.querySelectorAll(".burger__menu .burger__item a");
+
+    burgerLinks.forEach(link => {
+        const href = link.getAttribute("href");
+        if (href === currentPath) {
+            link.parentElement.classList.add("active");
+        }
+    });
+}
 
 /***/ }),
 /* 4 */,

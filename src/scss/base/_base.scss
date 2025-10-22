@@ -14,9 +14,7 @@ body{
     position: relative;
     // position: relative;
 }
-//body.lock-popup {
-//    overflow: hidden;
-//}
+
 .lock-popup {
     overflow: hidden;
     height: 100vh;
@@ -26,6 +24,16 @@ body{
     max-width: 1440px;
     padding: 0 64px;
     margin: 0 auto;
+}
+
+.title{
+    font-size: 36px;
+}
+.text{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.71;
+    opacity: 0.7;
 }
 
 .btn{
@@ -39,10 +47,9 @@ body{
     border: 1px solid rgba(253, 253, 253, 0.32);
     width: 183px;
     height: 48px; 
-    // transition: all 0.3s ease;
+    transition: all 0.3s ease;
 
     &-more{
-
         font-size: 10px;
         letter-spacing: 0.12em;
         text-transform: uppercase; 
@@ -67,14 +74,44 @@ body{
     }
 }
 
-.title{
-    font-size: 36px; 
+.link{
+    transition: all 0.3s ease;
+    &:focus-visible{
+        border-bottom: 1px dashed grey;
+    }
+    &:hover{
+        opacity: 0.5;
+    }
+    &:active{
+        background: grey;
+    }
 }
-.text{
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 1.71;
-    opacity: 0.7;
+
+.link-btn{
+    transition: all 0.3s ease;
+    &:focus-visible{
+        box-shadow: 0 0 8px darkgrey;
+    }
+    &:hover{
+        opacity: 0.5;
+        background: grey;
+    }
+    &:active{
+        background: slategrey;
+        color: darkslategray;
+    }
+}
+.link-svg{
+    &:focus-visible{
+        transform: scale(1.2);
+    }
+    &:hover{
+        opacity: 0.5;
+    }
+    &:active{
+        background: slategrey;
+        border-radius: 100%;
+    }
 }
 
 
