@@ -40,10 +40,11 @@
         padding: 10px 15px;
         margin-top: 10px;
         // bottom: 38px;
-        width: 100%;
+        //width: 100%;
+        width: 128px;
         background: rgb(181, 181, 181, 0.6);
-        left: 50%;
-        transform: translateX(-50%);
+        //left: 50%;
+        //transform: translateX(-50%);
         border-radius: 8px;
             &.active{
                 display: flex;
