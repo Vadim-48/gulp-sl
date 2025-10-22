@@ -168,7 +168,7 @@ function initSwiper() {
       },
       slidesPerView: 1.17,
       loop: true,
-      grabCursor: true,
+      // grabCursor: true,
     });
   
     // Update slide number display

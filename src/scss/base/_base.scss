@@ -75,9 +75,8 @@ body{
 }
 
 .link{
-    transition: all 0.3s ease;
     &:focus-visible{
-        border-bottom: 1px dashed grey;
+        background: #6767e5;
     }
     &:hover{
         opacity: 0.5;
@@ -88,7 +87,6 @@ body{
 }
 
 .link-btn{
-    transition: all 0.3s ease;
     &:focus-visible{
         box-shadow: 0 0 8px darkgrey;
     }
