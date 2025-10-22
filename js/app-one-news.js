@@ -121,7 +121,21 @@ function initBurger() {
       }
       wasBelowOrEqual1100 = window.innerWidth <= 1100;
     });
-  }
+
+    let currentPath = window.location.pathname.split("/").pop();
+    if (currentPath === "") {
+        currentPath = "index.html";
+    }
+
+    const burgerLinks = document.querySelectorAll(".burger__menu .burger__item a");
+
+    burgerLinks.forEach(link => {
+        const href = link.getAttribute("href");
+        if (href === currentPath) {
+            link.parentElement.classList.add("active");
+        }
+    });
+}
 
 /***/ }),
 /* 4 */,
@@ -370,7 +384,8 @@ function initPopupToggle() {
 /* 12 */,
 /* 13 */,
 /* 14 */,
-/* 15 */
+/* 15 */,
+/* 16 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -467,7 +482,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _modules_preloader_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _modules_init_burger_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-/* harmony import */ var _modules_init_swiper_one_news_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(15);
+/* harmony import */ var _modules_init_swiper_one_news_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
 /* harmony import */ var _modules_init_location_dropdown_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
 /* harmony import */ var _modules_init_header_scroll_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
 /* harmony import */ var _modules_init_area_selector_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9);

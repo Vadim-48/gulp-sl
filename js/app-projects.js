@@ -121,7 +121,21 @@ function initBurger() {
       }
       wasBelowOrEqual1100 = window.innerWidth <= 1100;
     });
-  }
+
+    let currentPath = window.location.pathname.split("/").pop();
+    if (currentPath === "") {
+        currentPath = "index.html";
+    }
+
+    const burgerLinks = document.querySelectorAll(".burger__menu .burger__item a");
+
+    burgerLinks.forEach(link => {
+        const href = link.getAttribute("href");
+        if (href === currentPath) {
+            link.parentElement.classList.add("active");
+        }
+    });
+}
 
 /***/ }),
 /* 4 */,
@@ -444,6 +458,25 @@ function initApartamentsToggle() {
     });
   }
 
+/***/ }),
+/* 13 */
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   activeMenuItem: () => (/* binding */ activeMenuItem)
+/* harmony export */ });
+function activeMenuItem() {
+    const items = document.querySelectorAll(".hero__list-item");
+
+    items.forEach(item => {
+        item.addEventListener("click", () => {
+            items.forEach(i => i.classList.remove("active"));
+            item.classList.add("active");
+        });
+    });
+}
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -515,6 +548,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_init_apartaments_toggle_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(12);
 /* harmony import */ var _modules_init_area_selector_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9);
 /* harmony import */ var _modules_popup_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(10);
+/* harmony import */ var _modules_active_menu_item_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(13);
+
 
 
 
@@ -554,6 +589,8 @@ document.addEventListener("DOMContentLoaded", () => {
   (0,_modules_init_area_selector_js__WEBPACK_IMPORTED_MODULE_8__.initAreaSelector)();
 
   (0,_modules_popup_js__WEBPACK_IMPORTED_MODULE_9__.initPopupToggle)();
+
+  (0,_modules_active_menu_item_js__WEBPACK_IMPORTED_MODULE_10__.activeMenuItem)();
 });
 })();
 

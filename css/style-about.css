@@ -122,6 +122,17 @@ body {
   margin: 0 auto;
 }
 
+.title {
+  font-size: 36px;
+}
+
+.text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.71;
+  opacity: 0.7;
+}
+
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,6 +150,8 @@ body {
   border: 1px solid rgba(253, 253, 253, 0.32);
   width: 183px;
   height: 48px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .btn-more {
@@ -171,15 +184,56 @@ body {
   background: rgba(49, 49, 49, 0.2);
 }
 
-.title {
-  font-size: 36px;
+.link {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.text {
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 1.71;
-  opacity: 0.7;
+.link:focus-visible {
+  border-bottom: 1px dashed grey;
+}
+
+.link:hover {
+  opacity: 0.5;
+}
+
+.link:active {
+  background: grey;
+}
+
+.link-btn {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.link-btn:focus-visible {
+  -webkit-box-shadow: 0 0 8px darkgrey;
+          box-shadow: 0 0 8px darkgrey;
+}
+
+.link-btn:hover {
+  opacity: 0.5;
+  background: grey;
+}
+
+.link-btn:active {
+  background: slategrey;
+  color: darkslategray;
+}
+
+.link-svg:focus-visible {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.link-svg:hover {
+  opacity: 0.5;
+}
+
+.link-svg:active {
+  background: slategrey;
+  border-radius: 100%;
 }
 
 .body-content {
@@ -745,6 +799,9 @@ body {
   font-weight: 400;
   font-size: 14px;
   letter-spacing: 0.3em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .logo,
@@ -785,6 +842,10 @@ body {
   display: none;
 }
 
+.burger__item-btn {
+  border-color: #fff;
+}
+
 .burger__block {
   color: #fff;
   position: absolute;
@@ -805,7 +866,6 @@ body {
 .burger__menu {
   font-weight: 700;
   font-size: 32px;
-  opacity: 0.5;
   margin-left: 21%;
   height: 100%;
   display: -webkit-box;
@@ -823,10 +883,15 @@ body {
 
 .burger__item {
   margin-top: 41px;
+  opacity: 0.5;
 }
 
 .burger__item:first-child {
   margin-top: 0;
+}
+
+.burger__item.active {
+  opacity: 1;
 }
 
 .burger__block .hero__main-footer {
@@ -1467,6 +1532,10 @@ body {
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
+}
+
+.work__form-btn {
+  height: 15px;
 }
 
 .work__content {
