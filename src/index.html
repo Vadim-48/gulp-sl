@@ -20,7 +20,7 @@
     @@include('html/popup/popup-request.html',{})
     @@include('html/popup/popup-thank.html',{})
     <div class="body-content body-content_hidden">
-        <header class="header" id="header"> 
+        <header class="header lock-padding" id="header"> 
             <div class="container">
                 @@include('html/header.html',{})
             </div>
@@ -76,6 +76,6 @@
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/app.js" defer></script>
+    <script type="module" src="js/app.js" defer></script>
 </body>
 </html>

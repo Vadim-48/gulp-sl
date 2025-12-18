@@ -1,5 +1,6 @@
 .our-project {
     position: relative;
+    z-index: 1;
     background: #080808;
     margin-top: 140px;
     padding-top: 10%;
@@ -31,7 +32,7 @@
     }
     &__galery-decor-text{
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         top: -41px;
         left: 22%;
         font-size: 56px;
@@ -39,7 +40,7 @@
     }
     &__block {
         position: relative;
-        z-index: 2;
+        z-index: 3;
         height: 100%;
     }
 

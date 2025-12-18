@@ -4,30 +4,27 @@ export function initPopupToggle() {
     const lockPadding = document.querySelectorAll(".lock-padding");
 
     let unlock = true;
-
     const timeout = 800;
 
     if (popupLinks.length > 0) {
-        for (let index = 0; index < popupLinks.length; index++) {
-            const popupLink = popupLinks[index];
+        popupLinks.forEach(popupLink => {
             popupLink.addEventListener('click', function (e)  {
-                // const popupName = popupLink.getAttribute('href').replace('#', '');
                 const popupName = popupLink.dataset.popupTarget?.replace('#', '');
                 const curentPopup = document.getElementById(popupName);
                 popupOpen(curentPopup);
                 e.preventDefault();
             });
-        }
+        });
     }
+
     const popupCloseIcon = document.querySelectorAll('.close-popup');
     if (popupCloseIcon.length > 0) {
-        for (let index = 0; index < popupCloseIcon.length; index++) {
-            const el = popupCloseIcon[index];
+        popupCloseIcon.forEach(el => {
             el.addEventListener('click', function (e) {
                 popupClose(el.closest('.popup'));
                 e.preventDefault();
             });
-        }
+        });
     }
 
     function popupOpen(curentPopup) {
@@ -38,18 +35,41 @@ export function initPopupToggle() {
             } else {
                 bodyLock();
             }
+
             curentPopup.classList.add('open');
-            // curentPopup.addEventListener('click', function (e) {
-            //     if (!e.target.closest('.popup__content')) {
-            //         popupClose(e.target.closest('.popup'));
-            //     }
-            // });
+
+            // Маска для телефону
+            const phoneInput = curentPopup.querySelector('#userPhone');
+            if (phoneInput && !phoneInput.inputmask) {
+                const im = new Inputmask("+38 (999) 999-99-99", {
+                    placeholder: "",
+                    showMaskOnHover: false,
+                    showMaskOnFocus: false,
+                    jitMasking: true
+                });
+                im.mask(phoneInput);
+            }
         }
+        const phoneInput = curentPopup.querySelector('#userPhone');
+        console.log('Телефонний інпут:', phoneInput);
+        console.log('Inputmask присутній:', phoneInput.inputmask);
     }
+
+    // function popupClose(popupActive, doUnlock = true) {
+    //     if (unlock) {
+    //         popupActive.classList.remove('open');
+    //         if (doUnlock) {
+    //             bodyUnlock();
+    //         }
+    //     }
+    // }
     function popupClose(popupActive, doUnlock = true) {
         if (unlock) {
             popupActive.classList.remove('open');
-            if (doUnlock) {
+    
+            // Перевіряємо, чи другий попап ще відкритий
+            const secondPopup = document.getElementById('popup_2');
+            if (doUnlock && (!secondPopup || !secondPopup.classList.contains('open'))) {
                 bodyUnlock();
             }
         }
@@ -57,72 +77,70 @@ export function initPopupToggle() {
 
     function bodyLock() {
         const lockPaddingValue = window.innerWidth - document.querySelector('.body-content').offsetWidth + 'px';
-
-        if (lockPadding.length > 0) {
-            for (let index = 0; index < lockPadding.length; index++) {
-                const el = lockPadding[index];
-                el.style.paddingRight = lockPaddingValue;
-            }
-        }
+        lockPadding.forEach(el => el.style.paddingRight = lockPaddingValue);
         body.style.paddingRight = lockPaddingValue;
         body.classList.add('lock-popup');
-
         unlock = false;
-        setTimeout(function () {
-            unlock = true;
-            }, timeout);
+        setTimeout(() => unlock = true, timeout);
     }
 
     function bodyUnlock() {
-        setTimeout(function () {
-            if (lockPadding.length > 0) {
-                for (let index = 0; index < lockPadding.length; index++) {
-                    const el = lockPadding[index];
-                    el.style.paddingRight = '0px'
-                }
-            }
+        setTimeout(() => {
+            lockPadding.forEach(el => el.style.paddingRight = '0px');
             body.style.paddingRight = '0px';
             body.classList.remove('lock-popup');
         }, timeout);
-
         unlock = false;
-        setTimeout(function () {
-            unlock = true;
-        }, timeout);
+        setTimeout(() => unlock = true, timeout);
     }
 
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
-        const popupActive = document.querySelector('.popup.open');
-        popupClose(popupActive);
+            const popupActive = document.querySelector('.popup.open');
+            if (popupActive) popupClose(popupActive);
         }
     });
 
-    (function () {
+    // Полифіли
+    if (!Element.prototype.closest) {
+        Element.prototype.closest = function (css) {
+            var node = this;
+            while (node) {
+                if (node.matches(css)) return node;
+                else node = node.parentElement;
+            }
+            return null;
+        };
+    }
 
-        if (!Element.prototype.closest) {
+    if (!Element.prototype.matches) {
+        Element.prototype.matches = Element.prototype.matchesSelector ||
+            Element.prototype.webkitMatchesSelector ||
+            Element.prototype.mozMatchesSelector ||
+            Element.prototype.msMatchesSelector;
+    }
 
-            Element.prototype.closest = function (css) {
-                var node = this;
-                while (node) {
-                    if (node.matches(css)) return node;
-                    else node = node.parentElement;
-                }
-                return null;
-            };
-        }
-    })();
-    (function () {
+    const form = document.getElementById('formRequest');
 
-        if(!Element.prototype.matches) {
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Зупиняємо стандартну відправку
+            const firstPopup = document.getElementById('popup');
+            const secondPopup = document.getElementById('popup_2');
 
-            Element.prototype.matches = Element.prototype.matchesSelector ||
-                Element.prototype.webkitMatchesSelector ||
-                Element.prototype.mozMatchesSelector ||
-                Element.prototype.msMatchesSelector;
-        }
-    })();
+            // Перевірка заповнення обов'язкових полів
+            // if (form.checkValidity()) {
+            //     popupClose(firstPopup);
+            //     popupOpen(secondPopup);
+            // } else {
+            //     form.reportValidity();
+            // }
+            // Використовуємо нашу кастомну валідацію
+            if (window.validateForm()) {
+                popupClose(firstPopup);
+                popupOpen(secondPopup);
+            }
+        });
+    }
+
 }
-
-
-

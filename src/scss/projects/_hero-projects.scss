@@ -1,8 +1,6 @@
 .hero {
-    // color: #080808;
    padding-top: 7%;
    color: #000;
-//    padding-bottom: 10%;
 
     &__row {
         display: flex;
@@ -16,7 +14,6 @@
     }
 
     &__wrap {
-        // display: flex;
         width: 35%;
         margin-right: 9.5%;
     }
@@ -24,22 +21,18 @@
     &__text {
         color: #080808;
     }
-    &__dropdown{
+
+    &__dropdown-btn{
         position: relative;
         display: none;
         font-weight: 600;
         font-size: 11px;
         letter-spacing: 0.06em;
         color: #080808;
-    }
-    &__dropdown-btn{
-        display: flex;
         align-items: center;
         gap: 20px;
-        justify-content: center;
-        // font-weight: 600;
-        // font-size: 11px;
-        // letter-spacing: 0.06em;
+        justify-content: space-between;
+        padding-inline: 10px;
 
         width: 128px;
         height: 29px;
@@ -55,14 +48,12 @@
         flex-direction: column;
         gap: 10px;
         padding: 10px 15px;
-        // margin-top: 10px;
-        //width: 100%;
         background: rgb(181, 181, 181, 0.6);
-        //left: 50%;
-        //transform: translateX(-50%);
-        bottom: 38px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 32px;
         border-radius: 8px;
-        width: 128px;
+        width: 100%;
             &.active{
                 display: flex;
             }
@@ -139,9 +130,10 @@
 @media (max-width: 650px){
     .hero {
         // padding-bottom: 0px;
-        &__dropdown{
+        &__dropdown-btn{
+            display: flex;
             margin-top: 27px;
-            display: block;
+            // display: block;
         }
         &__list {
             display: none;
@@ -161,13 +153,9 @@
         }
     
         &__wrap {
-            // display: flex;
             width: 100%;
             margin: 16px 0 0 0;
         }
-        // &__btn{
-           
-        // }
     }
 }
 

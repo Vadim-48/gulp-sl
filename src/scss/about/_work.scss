@@ -1,9 +1,10 @@
 .work {
     color: #080808;
-    padding-bottom: 13%;
+    padding: 9.3% 0 13% 0;
+    background: #ececec;
 
     &__title {
-        margin: 10.3% 0 0 10.3%;
+        margin: 0 0 0 10.3%;
         // width: 30%;
         width: 400px;
         line-height: 1.42;
@@ -40,6 +41,9 @@
     }
     &__form-btn{
         height: 15px;
+        & img{
+            opacity: 0.5;
+        }
     }
 
     &__content {
@@ -49,6 +53,7 @@
     }
 
     &__content-text {
+        color: #080808;
     }
 
     &__content-wrap {
@@ -91,7 +96,7 @@
 }
 @media (max-width: 650px){
     .work {
-        padding-bottom: 28%;
+        padding: 9.3% 0 28% 0;
         &__form {
             width: 99%;
         }
@@ -103,7 +108,7 @@
 }
 @media (max-width: 450px){
     .work {
-        padding-bottom: 38%;
+        padding: 9.3% 0 38% 0;
     }
 }
 

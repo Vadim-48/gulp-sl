@@ -6,9 +6,14 @@ import { handleBlockLargeResize } from "./modules/block-large-handler.js";
 import { initHeaderScroll } from "./modules/init-header-scroll.js";
 import { initLangToggle } from './modules/init-lang-toggle.js';
 import { initApartamentsToggle } from './modules/init-apartaments-toggle.js';
-import { initAreaSelector } from './modules/init-area-selector.js';
-import { initPopupToggle } from './modules/popup.js';
+import { initAreaSelector } from './modules/init-area-selector.js';;
 import { activeMenuItem } from './modules/active-menu-item.js';
+
+import { initCustomSelect } from './modules/custom-select.js';
+import { initFormValidation } from './modules/form-validation.js'; 
+import { initFileDrop } from './modules/init-file-drop.js';
+import { initPopupToggle } from './modules/popup.js';
+import Inputmask from 'inputmask';
 
 // WebP support check
 flsFunctions.isWebp();
@@ -37,7 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initAreaSelector();
 
-  initPopupToggle();
-
   activeMenuItem();
+
+  initCustomSelect()
+  initFormValidation();
+  initFileDrop();
+  initPopupToggle();
 });

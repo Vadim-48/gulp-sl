@@ -2,8 +2,14 @@
     color: #080808;
     margin-top: 10%;
     padding-bottom: 13%;
+    position: relative;
     &__wrapper{
         margin-left: 14%;
+    }
+    &__block-name{
+        position: absolute;
+        left: 1.5%;
+        top: 5.5%;
     }
 }
 .swiper {

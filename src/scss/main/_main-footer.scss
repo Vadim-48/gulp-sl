@@ -57,6 +57,7 @@
     }
 
     &__content {
+       
         position: absolute;
         display: none;
         flex-direction: column;
@@ -69,6 +70,7 @@
         z-index: 4;
         & span{
             margin-top: 10px;
+            cursor: pointer;
         }
         &.active{
             display: flex;
