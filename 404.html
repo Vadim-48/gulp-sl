@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap&_v=20251022163707" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap&_v=20251218133354" rel="stylesheet">
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <link rel="stylesheet" href="css/style-error.css?_v=20251022163707">
+    <link rel="stylesheet" href="css/style-error.css?_v=20251218133354">
     <title>SL</title>
 </head>
 <body class="error-body">
@@ -20,19 +20,41 @@
         <div class="popup__content popup__content-wrap">
             <div class="popup__form-wrap">
                 <h1 class="form__title">Calculate the cost of work</h1>
-                <form action="#" id="formRequest" method="post" enctype="multipart/form-data" class="popup__form form">
-                    <input type="text" required name="name" placeholder="Name" class="form__input">
-                    <input type="text" required name="surename" placeholder="Last name" class="form__input">
-                    <input type="tel" required pattern="\+?[0-9\s\-\(\)]{10,20}" title = "+38(067)123-45-67, 067 123 4567" name="phone" placeholder="Phone" class="form__input">
-                    <input type="text" required name="city" placeholder="Your city" class="form__input">
-                    <input type="email" required name="email" placeholder="Email" class="form__input">
-                    <select name="type" required class="form__select">
-                        <option value="" disabled selected hidden class="form__select-option">Property type</option>
-                        <option  value="type-1" class="form__select-option">Property type-1</option>
-                        <option value="type-2" class="form__select-option">Property type-2</option>
-                        <option value="type-3" class="form__select-option">Property type-3</option>
-                    </select>
-                    <input type="text" name="comment" placeholder="Your comment" class="form__input form__input-comment">
+                <form action="#" novalidate id="formRequest" method="post" enctype="multipart/form-data" class="popup__form form">
+                    <div class="form__input-wrap">
+                        <input type="text"id="userName"  name="name" placeholder="Name" class="form__input">
+                        <p class="form__text-error" id="nameError"></p>
+                    </div>
+                    <div class="form__input-wrap">
+                        <input type="text" id="userSurename"  name="surename" placeholder="Last name" class="form__input">
+                        <p class="form__text-error" id="lastNameError"></p>
+                    </div>
+                    <div class="form__input-wrap">
+                        <input type="tel" id="userPhone" name="phone" placeholder="Phone" class="form__input">
+                        <p class="form__text-error" id="phoneError"></p>
+                    </div>
+                    <div class="form__input-wrap">
+                        <input type="text" id="userCity"  name="city" placeholder="Your city" class="form__input">
+                        <p class="form__text-error" id="cityError"></p>
+                    </div>
+                    <div class="form__input-wrap">
+                        <input type="email" id="userMail" name="email" placeholder="Email" class="form__input">
+                        <p class="form__text-error"  id="mailError"></p>
+                    </div>
+                    <div class="form__select">
+                        <input type="text" id="userType" class="form__select-input form__input" placeholder="Property type" autocomplete="off">
+                        <img src="img/popup/popup-arrow.svg" alt="^" class="form__select-arrow">
+                        <input type="hidden" class="form__select-hidden" name="type">
+                        <div class="form__select-options">
+                            <span>Property type 1</span>
+                            <span>Property type 2</span>
+                            <span>Property type 3</span>
+                            <span>Property type 4</span>
+                            <span>Property type 5</span>
+                        </div>
+                        <p class="form__text-error"  id="typeError"></p>
+                    </div>
+                    <input type="text" id="userComment" name="comment" placeholder="Your comment" class="form__input form__input-comment">
                     <input type="hidden" name="area" id="areaValue">
                 </form>
             </div>
@@ -80,19 +102,26 @@
                     </div>
                 </div>
                 <div class="popup__row-btn">
-                    <div class="popup__add">
+                    <div class="popup__add"  id="dropZone">
                         <label class="popup__add-file">
-                            <input type="file" name="file" form="formRequest">
+                            <input type="file" name="file" id="fileInput" form="formRequest">
                             <span></span>
                             <span></span>
                         </label>
                         <div class="popup__add-wrap">
-                            <h2 class="popup__add-title">Attach your file</h2>
-                            <p class="popup__add-text">File size not more than 10 MB</p>
+                            <h2 class="popup__add-title" id="fileTitle">Attach your file</h2>
+                            <p class="popup__add-text"  id="fileText">File size not more than 10 MB</p>
+                            <p class="popup__file-name" id="fileName">
+                                <span class="popup__file-text"></span>
+                                <button type="button" class="popup__file-remove" aria-label="Remove file">×</button>
+                            </p>
                         </div>
                     </div>
-                    <button form="formRequest" class="popup__btn popup-request" data-popup-target="#popup_2">Send Request</button>
+                    <button form="formRequest" class="popup__btn popup-request">Send Request</button>
                 </div>
+                <p class="popup__foot-text">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+                </p>
             </div>
         </div>
     </div>
@@ -115,7 +144,7 @@
     </div>
 </div>
     <div class="body-content">
-        <header class="header" id="header">
+        <header class="header lock-padding" id="header">
             <div class="container">
                 <div class="header__wrapper">
     <nav class="nav">
@@ -145,8 +174,8 @@
             <button class="link">En</button>
             <div class="header__lang-menu">
                 <span>En</span>
-                <span>En</span>
-                <span>En</span>
+                <span>Ua</span>
+                <span>Fr</span>
             </div>
         </div>
         <button class="header__btn btn popup-request link-btn" data-popup-target="#popup">Send Request</button>
@@ -183,7 +212,7 @@
         <span>Be</span>
     </div>
     <div class="main-footer__location">
-        <button class="location__btn link-btn">
+        <button class="location__btn link-btn" aria-expanded="false">
             <img src="img/main/main-footer/location-img.svg" alt="" class="location__img">
             <span class="location__text">Berlin</span>
             <img src="img/main/main-footer/location-arrow.svg" alt="" class="location__arrow">
@@ -198,7 +227,7 @@
     </div>
     <div class="main-footer__contacts">
         <a href="tel:+380983527547" class="main-footer__phone link">+380983527547</a>
-        <a href="maito:info@gmail.com" class="main-footer__mail link">E: info@gmail.com</a>
+        <a href="mailto:info@gmail.com" class="main-footer__mail link">E: info@gmail.com</a>
     </div>
 </div>
     </div>
@@ -248,6 +277,6 @@
             </div>
         </footer>
     </div>
-        <script src="js/app-error.js?_v=20251022163707" defer></script>
+        <script src="js/app-error.js?_v=20251218133354" defer></script>
 </body>
 </html>
