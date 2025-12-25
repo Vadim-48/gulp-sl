@@ -6,10 +6,13 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam.
         </p>
-        <form action="#!" class="send__form">
+        <form action="#!" method="post" class="send__form" autocomplete="off">
             <span class="send__form-text">Email</span>
             <input type="text" class="send__form-input">
-            <img src="img/news-page/send/arrow-right.svg" alt="->" class="send__form-img">
+            <button class="send__form-btn"  type="submit">
+                <img src="img/news-page/send/arrow-right.svg" alt="->" class="send__form-img">
+            </button>
+            <p class="send__mail-error"  id="mailError"></p>
         </form>
     </div>
 </div>
