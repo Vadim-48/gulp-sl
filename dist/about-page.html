@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap&_v=20251218144926" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto&display=swap&_v=20260108014201" rel="stylesheet">
     <link
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20251218144926"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20260108014201"
     />
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <link rel="stylesheet" href="css/style-about.css?_v=20251218144926">
+    <link rel="stylesheet" href="css/style-about.css?_v=20260108014201">
     <title>SL</title>
 </head>
 <body>
@@ -27,7 +27,7 @@
         <div class="popup__content popup__content-wrap">
             <div class="popup__form-wrap">
                 <h1 class="form__title">Calculate the cost of work</h1>
-                <form action="#" novalidate id="formRequest" method="post" enctype="multipart/form-data" class="popup__form form">
+                <form action="#" novalidate id="formRequest" method="post" enctype="multipart/form-data" class="popup__form form" autocomplete="off">
                     <div class="form__input-wrap">
                         <input type="text"id="userName"  name="name" placeholder="Name" class="form__input">
                         <p class="form__text-error" id="nameError"></p>
@@ -596,12 +596,13 @@
                 <div class="container">
                     <h2 class="work__title title">Do you want to work in our team?</h2>
 <div class="work__wrap">
-    <form action="#!" class="work__form">
+    <form action="#!" method="post" class="work__form" autocomplete="off">
         <span class="work__form-text">Email</span>
         <input type="text" class="work__form-input">
-        <button class="work__form-btn">
-        <img src="img/about/arrow-right.svg" alt="->" >
+        <button class="work__form-btn"  type="submit">
+            <img src="img/about/arrow-right.svg" alt="->" >
         </button>
+        <p class="work__mail-error"  id="mailError"></p>
     </form>
     <div class="work__content">
         <p class="work__content-text text">
@@ -609,7 +610,7 @@
             Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam.
         </p>
         <div class="work__content-wrap">
-            <a href="maito:info@hi-light.pl" class="work__mail link">info@hi-light.pl</a>
+            <a href="mailto:info@hi-light.pl" class="work__mail link">info@hi-light.pl</a>
             <div class="work__sub-text">
                 <span>Fb</span>
                 <span>In</span>
@@ -639,7 +640,7 @@
             </div>
         </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20251218144926"></script>
-    <script src="js/app-about.js?_v=20251218144926" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20260108014201"></script>
+    <script src="js/app-about.js?_v=20260108014201" defer></script>
 </body>
 </html>

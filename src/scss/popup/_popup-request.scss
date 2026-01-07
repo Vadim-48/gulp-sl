@@ -83,7 +83,7 @@
         width: 76.5%;
         background: #fff;
         border: 1px solid rgba(0, 0, 0, 0.04);
-        padding: 4% 6.5% 3.7% 6.5%; 
+        padding: 4.3% 6.5% 3.7% 6.5%; 
         margin-top: 7px;
     }
     &__title{
@@ -315,7 +315,7 @@
         text-align: center;
         color: #afb0b2;
         width: 92%;
-        margin: 38px auto 0 auto;
+        margin: 35px auto 0 auto;
     }
 
 }
@@ -339,9 +339,33 @@
     }
     &__text-error{
         position: absolute;
-        color: red;
+        // color: red;
         font-weight: 500;
         font-size: 11px;
+
+        z-index: 2;
+        color: #fff;
+        background: red;
+        line-height: 1;
+        border-radius: 4px;
+        padding: 4px 8px;
+        top: 105%;
+        display: none;
+
+        &::after{
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 6px;
+            height: 6px;
+            background: red;
+            top: calc(0% - 3px);
+            left: 11px;
+            transform: rotate(45deg);
+        }
+        &:not(:empty) {
+            display: block;
+        }
     }
 
     &__input {

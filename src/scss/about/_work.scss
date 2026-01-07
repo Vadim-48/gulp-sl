@@ -28,6 +28,7 @@
         gap: 4px;
         border-bottom: 1px solid #515151;
         width: 380px;
+        position: relative;
     }
 
     &__form-text {
@@ -43,6 +44,33 @@
         height: 15px;
         & img{
             opacity: 0.5;
+        }
+    }
+
+    &__mail-error{
+        position: absolute;
+        z-index: 2;
+        color: #fff;
+        background: red;
+        font-size: 12px;
+        line-height: 1;
+        border-radius: 4px;
+        padding: 4px 8px;
+        top: 105%;
+        display: none;
+        &::after{
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 6px;
+            height: 6px;
+            background: red;
+            top: calc(0% - 3px);
+            left: 35%;
+            transform: rotate(45deg);
+        }
+        &:not(:empty) {
+            display: block;
         }
     }
 

@@ -9,10 +9,17 @@
     &__photo {
         position: absolute;
         z-index: 3;
+        background-color: #080808;
         // display: block;
         // line-height: 0;
         & img{
             width: 100%;
+            // height: 100%; 
+            // object-fit: cover; 
+            display: block;
+            // position: relative;
+            // left: 0;
+            // top: 0;
             // display: block;
             // height: auto;
         }
@@ -23,6 +30,8 @@
             right: 6.5%;
             width: 19%;
             max-width: 271px;
+            // height: 30%;
+            // aspect-ratio: 271 / 180;
         }
 
         &_2 {

@@ -1,13 +1,13 @@
-/******/ (function() { // webpackBootstrap
+/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ([
 /* 0 */,
 /* 1 */
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   isWebp: function() { return /* binding */ isWebp; }
+/* harmony export */   isWebp: () => (/* binding */ isWebp)
 /* harmony export */ });
 function isWebp() {
 	function testWebP(callback) {
@@ -28,12 +28,12 @@ function isWebp() {
 
 /***/ }),
 /* 2 */
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   runPreloader: function() { return /* binding */ runPreloader; }
+/* harmony export */   runPreloader: () => (/* binding */ runPreloader)
 /* harmony export */ });
 // preloader.js
 function runPreloader() {
@@ -81,12 +81,12 @@ function runPreloader() {
 
 /***/ }),
 /* 3 */
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   initBurger: function() { return /* binding */ initBurger; }
+/* harmony export */   initBurger: () => (/* binding */ initBurger)
 /* harmony export */ });
 function initBurger() {
     const burgerBtn = document.querySelector(".burger__btn");
@@ -142,12 +142,12 @@ function initBurger() {
 /***/ }),
 /* 4 */,
 /* 5 */
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   initLocationDropdown: function() { return /* binding */ initLocationDropdown; }
+/* harmony export */   initLocationDropdown: () => (/* binding */ initLocationDropdown)
 /* harmony export */ });
 function initLocationDropdown() {
   const buttons = document.querySelectorAll(".location__btn");
@@ -204,12 +204,12 @@ function initLocationDropdown() {
 /***/ }),
 /* 6 */,
 /* 7 */
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   initHeaderScroll: function() { return /* binding */ initHeaderScroll; }
+/* harmony export */   initHeaderScroll: () => (/* binding */ initHeaderScroll)
 /* harmony export */ });
 function initHeaderScroll() {
     window.addEventListener('scroll', () => {
@@ -222,12 +222,12 @@ function initHeaderScroll() {
 
 /***/ }),
 /* 8 */
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   initLangToggle: function() { return /* binding */ initLangToggle; }
+/* harmony export */   initLangToggle: () => (/* binding */ initLangToggle)
 /* harmony export */ });
 // export function initLangToggle() {
 //   const langToggle = document.querySelector('.header__lang');
@@ -274,12 +274,12 @@ function initLangToggle() {
 
 /***/ }),
 /* 9 */
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   initAreaSelector: function() { return /* binding */ initAreaSelector; }
+/* harmony export */   initAreaSelector: () => (/* binding */ initAreaSelector)
 /* harmony export */ });
 function initAreaSelector() {
     const points = document.querySelectorAll('.popup__line-point');
@@ -323,12 +323,12 @@ function initAreaSelector() {
 
 /***/ }),
 /* 10 */
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   initCustomSelect: function() { return /* binding */ initCustomSelect; }
+/* harmony export */   initCustomSelect: () => (/* binding */ initCustomSelect)
 /* harmony export */ });
 function initCustomSelect() {
     const selects = document.querySelectorAll(".form__select");
@@ -425,12 +425,12 @@ function initCustomSelect() {
 
 /***/ }),
 /* 11 */
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   initFormValidation: function() { return /* binding */ initFormValidation; }
+/* harmony export */   initFormValidation: () => (/* binding */ initFormValidation)
 /* harmony export */ });
 function initFormValidation() {
     const form = document.getElementById('formRequest');
@@ -541,12 +541,12 @@ function initFormValidation() {
 
 /***/ }),
 /* 12 */
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   initFileDrop: function() { return /* binding */ initFileDrop; }
+/* harmony export */   initFileDrop: () => (/* binding */ initFileDrop)
 /* harmony export */ });
 function initFileDrop() {
 
@@ -631,12 +631,12 @@ function initFileDrop() {
 
 /***/ }),
 /* 13 */
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   initPopupToggle: function() { return /* binding */ initPopupToggle; }
+/* harmony export */   initPopupToggle: () => (/* binding */ initPopupToggle)
 /* harmony export */ });
 function initPopupToggle() {
     const popupLinks = document.querySelectorAll('.popup-request');
@@ -4561,12 +4561,12 @@ function initPopupToggle() {
 /***/ }),
 /* 15 */,
 /* 16 */
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   initApartamentsToggle: function() { return /* binding */ initApartamentsToggle; }
+/* harmony export */   initApartamentsToggle: () => (/* binding */ initApartamentsToggle)
 /* harmony export */ });
 function initApartamentsToggle() {
   const apartamentsToggle = document.querySelector('.hero__dropdown-btn');
@@ -4624,12 +4624,12 @@ function initApartamentsToggle() {
 
 /***/ }),
 /* 17 */
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   activeMenuItem: function() { return /* binding */ activeMenuItem; }
+/* harmony export */   activeMenuItem: () => (/* binding */ activeMenuItem)
 /* harmony export */ });
 function activeMenuItem() {
     const items = document.querySelectorAll(".hero__list-item");
@@ -4641,6 +4641,49 @@ function activeMenuItem() {
         });
     });
 }
+
+/***/ }),
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initSendFormValidation: () => (/* binding */ initSendFormValidation)
+/* harmony export */ });
+function initSendFormValidation() {
+    const form = document.querySelector('.send__form');
+    if (!form) return;
+
+    const input = form.querySelector('.send__form-input');
+    const error = form.querySelector('.send__mail-error');
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    form.addEventListener('submit', (e) => {
+        const email = input.value.trim();
+
+        //  не валідно — блокуємо відправку
+        if (!email || !emailRegex.test(email)) {
+            e.preventDefault();
+            error.textContent = 'Введіть коректний email';
+            input.classList.add('error');
+            return;
+        }
+
+        //  валідно — дозволяємо submit
+        error.textContent = '';
+        input.classList.remove('error');
+
+        // очищаємо форму після submit
+        form.reset();
+    });
+}
+
 
 /***/ })
 /******/ 	]);
@@ -4671,37 +4714,37 @@ function activeMenuItem() {
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/define property getters */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 		__webpack_require__.d = (exports, definition) => {
 /******/ 			for(var key in definition) {
 /******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	!function() {
-/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
-/******/ 	}();
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
+/******/ 		__webpack_require__.r = (exports) => {
 /******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
-!function() {
+(() => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
@@ -4718,6 +4761,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_init_file_drop_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(12);
 /* harmony import */ var _modules_popup_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(13);
 /* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(14);
+/* harmony import */ var _modules_send_form_validation_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(22);
 
 
 
@@ -4730,6 +4774,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
  
+
+
 
 
 
@@ -4764,8 +4810,11 @@ document.addEventListener("DOMContentLoaded", () => {
   ;(0,_modules_form_validation_js__WEBPACK_IMPORTED_MODULE_10__.initFormValidation)();
   (0,_modules_init_file_drop_js__WEBPACK_IMPORTED_MODULE_11__.initFileDrop)();
   (0,_modules_popup_js__WEBPACK_IMPORTED_MODULE_12__.initPopupToggle)();
+
+  (0,_modules_send_form_validation_js__WEBPACK_IMPORTED_MODULE_14__.initSendFormValidation)();
 });
 
-}();
+})();
+
 /******/ })()
 ;

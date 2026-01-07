@@ -14,6 +14,8 @@ import { initFileDrop } from './modules/init-file-drop.js';
 import { initPopupToggle } from './modules/popup.js';
 import Inputmask from 'inputmask';
 
+import { initSendFormValidation } from './modules/send-form-validation.js';
+
 // WebP support check
 flsFunctions.isWebp();
 
@@ -44,4 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initFormValidation();
   initFileDrop();
   initPopupToggle();
+
+  initSendFormValidation();
 });
